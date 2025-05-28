@@ -19,11 +19,6 @@ const WhatsAppButton = () => {
       >
         <MessageCircle className="h-6 w-6" />
       </Button>
-      
-      {/* Tooltip */}
-      <div className="absolute bottom-full right-0 mb-2 px-3 py-1 bg-black text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-        Chat with us on WhatsApp
-      </div>
     </div>
   );
 };
