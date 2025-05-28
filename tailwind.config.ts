@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,7 +62,7 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Enhanced tropical luxury theme colors
+				// Enhanced dark luxury theme colors
 				jungle: {
 					50: '#f0fdf4',
 					100: '#dcfce7',
@@ -74,7 +73,7 @@ export default {
 					600: '#15803d',
 					700: '#14532d',
 					800: '#0f2419',
-					900: '#0a1f0c',
+					900: '#051206',
 				},
 				emerald: {
 					50: '#ecfdf5',
@@ -147,6 +146,31 @@ export default {
 					700: '#334155',
 					800: '#1e293b',
 					900: '#0f172a',
+				},
+				// New dark luxury colors
+				onyx: {
+					50: '#f6f7f9',
+					100: '#ebeef3',
+					200: '#d3dae4',
+					300: '#aebccd',
+					400: '#8396b0',
+					500: '#647896',
+					600: '#51627e',
+					700: '#425067',
+					800: '#3a4557',
+					900: '#1a1d23',
+				},
+				platinum: {
+					50: '#fefefe',
+					100: '#fdfdfd',
+					200: '#fafafa',
+					300: '#f4f4f5',
+					400: '#e4e4e7',
+					500: '#d4d4d8',
+					600: '#a1a1aa',
+					700: '#71717a',
+					800: '#52525b',
+					900: '#27272a',
 				}
 			},
 			borderRadius: {
@@ -198,6 +222,14 @@ export default {
 					'50%': {
 						boxShadow: '0 0 30px rgba(251, 191, 36, 0.5)'
 					}
+				},
+				'pulse-gold': {
+					'0%, 100%': {
+						opacity: '1'
+					},
+					'50%': {
+						opacity: '0.7'
+					}
 				}
 			},
 			animation: {
@@ -205,12 +237,16 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.6s ease-out',
 				'slide-up': 'slide-up 0.8s ease-out',
-				'luxury-glow': 'luxury-glow 2s ease-in-out infinite'
+				'luxury-glow': 'luxury-glow 2s ease-in-out infinite',
+				'pulse-gold': 'pulse-gold 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
 			},
 			backgroundImage: {
-				'luxury-gradient': 'linear-gradient(135deg, #0f172a 0%, #1e293b  50%, #0a1f0c 100%)',
-				'sunset-luxury': 'linear-gradient(135deg, #ea580c 0%, #f59e0b  50%, #d97706 100%)',
-				'emerald-luxury': 'linear-gradient(135deg, #059669 0%, #10b981 50%, #047857 100%)'
+				'luxury-gradient': 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0a1f0c 100%)',
+				'sunset-luxury': 'linear-gradient(135deg, #ea580c 0%, #f59e0b 50%, #d97706 100%)',
+				'emerald-luxury': 'linear-gradient(135deg, #059669 0%, #10b981 50%, #047857 100%)',
+				'dark-luxury': 'linear-gradient(135deg, #1a1d23 0%, #27272a 50%, #18181b 100%)',
+				'gold-shimmer': 'linear-gradient(45deg, #f59e0b, #fbbf24, #f59e0b)',
+				'platinum-gradient': 'linear-gradient(135deg, #27272a 0%, #3f3f46 50%, #18181b 100%)'
 			}
 		}
 	},
