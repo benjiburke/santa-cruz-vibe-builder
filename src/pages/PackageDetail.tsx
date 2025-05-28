@@ -18,6 +18,7 @@ const packageData = {
     groupSize: '4-8 people',
     category: 'party',
     popular: true,
+    badge: undefined,
     images: ['/api/placeholder/600/400', '/api/placeholder/600/400', '/api/placeholder/600/400']
   },
   'vida-loca': {
@@ -31,6 +32,7 @@ const packageData = {
     groupSize: '6-12 people',
     category: 'party',
     badge: 'Premium',
+    popular: undefined,
     images: ['/api/placeholder/600/400', '/api/placeholder/600/400', '/api/placeholder/600/400']
   },
   'bachelor-bash': {
@@ -43,6 +45,8 @@ const packageData = {
     duration: '2-3 nights',
     groupSize: '6-15 people',
     category: 'party',
+    popular: undefined,
+    badge: undefined,
     images: ['/api/placeholder/600/400', '/api/placeholder/600/400', '/api/placeholder/600/400']
   },
   'andes-adventure': {
@@ -55,6 +59,8 @@ const packageData = {
     duration: '3 days',
     groupSize: '2-6 people',
     category: 'curated',
+    popular: undefined,
+    badge: undefined,
     images: ['/api/placeholder/600/400', '/api/placeholder/600/400', '/api/placeholder/600/400']
   },
   'amazon-expedition': {
@@ -68,6 +74,7 @@ const packageData = {
     groupSize: '2-8 people',
     category: 'curated',
     badge: 'Eco-Friendly',
+    popular: undefined,
     images: ['/api/placeholder/600/400', '/api/placeholder/600/400', '/api/placeholder/600/400']
   },
   'city-explorer': {
@@ -80,6 +87,8 @@ const packageData = {
     duration: '2 days',
     groupSize: '2-4 people',
     category: 'curated',
+    popular: undefined,
+    badge: undefined,
     images: ['/api/placeholder/600/400', '/api/placeholder/600/400', '/api/placeholder/600/400']
   }
 };
