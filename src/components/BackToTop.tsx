@@ -34,7 +34,7 @@ const BackToTop = () => {
   return (
     <Button
       onClick={scrollToTop}
-      className="fixed bottom-8 right-8 z-50 bg-gold-500 hover:bg-gold-600 text-onyx-900 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+      className="fixed bottom-24 right-8 z-50 bg-gold-500 hover:bg-gold-600 text-onyx-900 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
       size="icon"
     >
       <ChevronUp className="h-5 w-5" />
