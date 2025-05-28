@@ -1,8 +1,8 @@
-
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Star, Users, MapPin, Calendar, Crown, Sparkles, Flame, Zap } from 'lucide-react';
+import { useState } from 'react';
 
 interface Package {
   id: string;
@@ -201,6 +201,8 @@ const getTierInfo = (tier: string) => {
 };
 
 const Packages = () => {
+  const [selectedTier, setSelectedTier] = useState<string | null>(null);
+
   const scrollToForm = () => {
     const element = document.getElementById('intake-form');
     if (element) {
@@ -213,6 +215,14 @@ const Packages = () => {
     return (tierOrder[a.tier || 'budget'] || 1) - (tierOrder[b.tier || 'budget'] || 1);
   });
 
+  const filteredPackages = selectedTier 
+    ? sortedPackages.filter(pkg => pkg.tier === selectedTier)
+    : sortedPackages;
+
+  const handleTierClick = (tier: string) => {
+    setSelectedTier(selectedTier === tier ? null : tier);
+  };
+
   return (
     <section id="packages" className="py-20 px-4 sm:px-6 lg:px-8 bg-dark-luxury">
       <div className="max-w-7xl mx-auto">
@@ -224,13 +234,19 @@ const Packages = () => {
             From budget backpacker vibes to billionaire-level madness. We handle the wild — you choose your level.
           </p>
           
-          {/* Enhanced Tier Legend */}
+          {/* Enhanced Tier Legend with Filtering */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             {['budget', 'premium', 'luxury', 'vip'].map((tier) => {
               const tierInfo = getTierInfo(tier);
+              const isSelected = selectedTier === tier;
               return (
                 <div key={tier} className="text-center">
-                  <Badge className={`${tierInfo.badgeClass} px-4 py-2 text-sm font-semibold mb-2 flex items-center gap-2`}>
+                  <Badge 
+                    className={`${tierInfo.badgeClass} px-4 py-2 text-sm font-semibold mb-2 flex items-center gap-2 cursor-pointer transition-all duration-300 hover:scale-105 ${
+                      isSelected ? 'ring-2 ring-white scale-110' : ''
+                    }`}
+                    onClick={() => handleTierClick(tier)}
+                  >
                     <span>{tierInfo.icon}</span>
                     {tierInfo.label}
                     {tier === 'vip' && <Crown className="h-4 w-4" />}
@@ -240,11 +256,31 @@ const Packages = () => {
               );
             })}
           </div>
+
+          {/* Clear Filter Button */}
+          {selectedTier && (
+            <div className="mb-8">
+              <Button
+                variant="outline"
+                onClick={() => setSelectedTier(null)}
+                className="border-gold-400 text-gold-400 hover:bg-gold-400 hover:text-onyx-900"
+              >
+                Show All Packages
+              </Button>
+            </div>
+          )}
+
+          {/* Filter Status */}
+          {selectedTier && (
+            <p className="text-gold-400 mb-8">
+              Showing {filteredPackages.length} {getTierInfo(selectedTier).label} package{filteredPackages.length !== 1 ? 's' : ''}
+            </p>
+          )}
         </div>
 
         {/* Enhanced Package Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
-          {sortedPackages.map((pkg) => {
+          {filteredPackages.map((pkg) => {
             const tierInfo = getTierInfo(pkg.tier || 'budget');
             const isVip = pkg.tier === 'vip';
             
@@ -340,6 +376,15 @@ const Packages = () => {
             );
           })}
         </div>
+
+        {/* No Results Message */}
+        {selectedTier && filteredPackages.length === 0 && (
+          <div className="text-center mb-16">
+            <p className="text-gray-400 text-lg">
+              No packages found for {getTierInfo(selectedTier).label} tier.
+            </p>
+          </div>
+        )}
 
         {/* Testimonials Section */}
         <div className="mb-16">
