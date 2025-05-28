@@ -15,6 +15,7 @@ const IntakeForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     tripType: '',
+    selectedPackage: '',
     groupSize: '',
     budget: '',
     dates: '',
@@ -22,6 +23,7 @@ const IntakeForm = () => {
     packageType: '',
     services: [] as string[],
     contactMethod: '',
+    contactInfo: '',
     additionalInfo: ''
   });
   const { toast } = useToast();
@@ -32,6 +34,18 @@ const IntakeForm = () => {
     { value: 'explore', label: 'Explore 🌄' },
     { value: 'vip', label: 'VIP 💎' },
     { value: 'other', label: 'Other' }
+  ];
+
+  const availablePackages = [
+    { value: 'weekend-bender', label: 'Weekend Bender - $450/person', category: 'Party' },
+    { value: 'la-vida-loca', label: 'La Vida Loca - $650/person', category: 'Party' },
+    { value: 'santa-cruz-sampler', label: 'The Santa Cruz Sampler - $380/person', category: 'Explorer' },
+    { value: 'romantic-escape', label: 'Romantic Escape - $420/couple', category: 'Curated' },
+    { value: 'chill-grill', label: 'Chill & Grill - $350/person', category: 'Curated' },
+    { value: 'influencer-escape', label: 'Influencer Escape - $580/person', category: 'Curated' },
+    { value: 'explorers-route', label: 'Explorer\'s Route - $480/person', category: 'Explorer' },
+    { value: 'custom-vip', label: 'Custom VIP Experience - Contact for pricing', category: 'VIP' },
+    { value: 'not-sure', label: 'Not sure yet - help me choose!', category: 'Other' }
   ];
 
   const services = [
@@ -55,8 +69,45 @@ const IntakeForm = () => {
     }
   };
 
+  const getContactPlaceholder = () => {
+    switch (formData.contactMethod) {
+      case 'whatsapp':
+        return '+1 555 123 4567';
+      case 'email':
+        return 'your.email@example.com';
+      case 'instagram':
+        return '@yourusername';
+      default:
+        return 'Your contact information';
+    }
+  };
+
+  const getContactLabel = () => {
+    switch (formData.contactMethod) {
+      case 'whatsapp':
+        return 'WhatsApp Number *';
+      case 'email':
+        return 'Email Address *';
+      case 'instagram':
+        return 'Instagram Handle *';
+      default:
+        return 'Contact Information *';
+    }
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Basic validation
+    if (!formData.tripType || !formData.groupSize || !formData.budget || !formData.contactMethod || !formData.contactInfo) {
+      toast({
+        title: "Missing information",
+        description: "Please fill in all required fields marked with *",
+        variant: "destructive"
+      });
+      return;
+    }
+
     console.log('Form submitted:', formData);
     
     toast({
@@ -65,9 +116,6 @@ const IntakeForm = () => {
     });
     
     setIsSubmitted(true);
-    
-    // Here you would typically send the data to your backend
-    // For now, we'll just show the success state
   };
 
   if (isSubmitted) {
@@ -84,7 +132,7 @@ const IntakeForm = () => {
                 Your trip request has been submitted. Our team is already crafting something incredible for you.
               </p>
               <p className="text-jungle-500 mb-8">
-                Expect a personalized response via WhatsApp or email within 24 hours.
+                Expect a personalized response via {formData.contactMethod === 'whatsapp' ? 'WhatsApp' : formData.contactMethod === 'instagram' ? 'Instagram' : 'email'} within 24 hours.
               </p>
               <Button 
                 onClick={() => setIsSubmitted(false)}
@@ -141,6 +189,28 @@ const IntakeForm = () => {
                     </div>
                   ))}
                 </RadioGroup>
+              </div>
+
+              {/* Package Selection */}
+              <div className="space-y-3">
+                <Label htmlFor="selectedPackage" className="text-lg font-semibold text-jungle-800">
+                  Interested in a specific package?
+                </Label>
+                <Select onValueChange={(value) => setFormData(prev => ({ ...prev, selectedPackage: value }))}>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select a package or skip if not sure" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {availablePackages.map((pkg) => (
+                      <SelectItem key={pkg.value} value={pkg.value}>
+                        {pkg.label}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+                <p className="text-sm text-jungle-500">
+                  Don't worry if you're not sure - we can help you choose the perfect package!
+                </p>
               </div>
 
               {/* Group Size and Budget */}
@@ -256,7 +326,7 @@ const IntakeForm = () => {
                 </Label>
                 <RadioGroup 
                   value={formData.contactMethod} 
-                  onValueChange={(value) => setFormData(prev => ({ ...prev, contactMethod: value }))}
+                  onValueChange={(value) => setFormData(prev => ({ ...prev, contactMethod: value, contactInfo: '' }))}
                   className="flex flex-wrap gap-6"
                 >
                   <div className="flex items-center space-x-2">
@@ -273,6 +343,22 @@ const IntakeForm = () => {
                   </div>
                 </RadioGroup>
               </div>
+
+              {/* Contact Information Input */}
+              {formData.contactMethod && (
+                <div className="space-y-3">
+                  <Label htmlFor="contactInfo" className="text-lg font-semibold text-jungle-800">
+                    {getContactLabel()}
+                  </Label>
+                  <Input
+                    id="contactInfo"
+                    placeholder={getContactPlaceholder()}
+                    value={formData.contactInfo}
+                    onChange={(e) => setFormData(prev => ({ ...prev, contactInfo: e.target.value }))}
+                    required
+                  />
+                </div>
+              )}
 
               {/* Additional Info */}
               <div className="space-y-3">
