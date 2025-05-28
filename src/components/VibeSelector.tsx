@@ -47,6 +47,20 @@ const VibeSelector = () => {
 
   const activeVibe = vibes.find(vibe => vibe.id === selectedVibe) || vibes[0];
 
+  const getVibeLink = (vibeId: string) => {
+    switch (vibeId) {
+      case 'party':
+        return '/party-vibes';
+      case 'relax':
+      case 'explore':
+        return '/curated-experiences';
+      case 'vip':
+        return '/intake-form';
+      default:
+        return '/intake-form';
+    }
+  };
+
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-jungle-50 to-sunset-50">
       <div className="max-w-6xl mx-auto">
@@ -87,9 +101,17 @@ const VibeSelector = () => {
               <h3 className="text-3xl font-bold text-jungle-800 mb-4">
                 {activeVibe.title} Vibes
               </h3>
-              <p className="text-lg text-jungle-600 max-w-2xl mx-auto">
+              <p className="text-lg text-jungle-600 max-w-2xl mx-auto mb-6">
                 {activeVibe.description}
               </p>
+              <Link to={getVibeLink(activeVibe.id)}>
+                <Button 
+                  size="lg"
+                  className="bg-jungle-600 hover:bg-jungle-700 text-white px-8 py-3 rounded-full font-semibold"
+                >
+                  Explore {activeVibe.title} Packages
+                </Button>
+              </Link>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -108,6 +130,7 @@ const VibeSelector = () => {
                     variant="outline" 
                     size="sm" 
                     className="w-full border-jungle-300 text-jungle-700 hover:bg-jungle-600 hover:text-white"
+                    onClick={() => document.getElementById('packages')?.scrollIntoView({ behavior: 'smooth' })}
                   >
                     Learn More
                   </Button>

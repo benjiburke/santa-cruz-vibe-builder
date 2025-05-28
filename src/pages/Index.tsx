@@ -1,4 +1,4 @@
-
+import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import VibeSelector from '@/components/VibeSelector';
 import Packages from '@/components/Packages';
@@ -8,6 +8,7 @@ import WhatsAppButton from '@/components/WhatsAppButton';
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <Navigation />
       <Hero />
       <VibeSelector />
       <Packages />
