@@ -62,6 +62,7 @@ const allPackages = {
     price: 'From $420/couple',
     duration: '3 nights',
     groupSize: '2 people',
+    popular: false,
     images: ['/api/placeholder/800/600', '/api/placeholder/800/600', '/api/placeholder/800/600'],
     features: [
       'Luxury couple\'s suite with romantic setup',
