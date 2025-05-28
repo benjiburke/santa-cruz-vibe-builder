@@ -12,8 +12,7 @@ const Navigation = () => {
     { to: '/party-vibes', label: 'Party Vibes' },
     { to: '/curated-experiences', label: 'Curated Experiences' },
     { to: '/why-us', label: 'Why Us' },
-    { to: '/about', label: 'About' },
-    { to: '/intake-form', label: 'Plan Trip' }
+    { to: '/about', label: 'About' }
   ];
 
   return (
