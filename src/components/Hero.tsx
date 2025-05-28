@@ -61,8 +61,7 @@ const Hero = () => {
             
             <Button 
               size="lg" 
-              variant="outline" 
-              className="border-2 border-white text-white hover:bg-white hover:text-jungle-800 px-8 py-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl backdrop-blur-sm"
+              className="bg-green-500 hover:bg-green-600 text-white px-8 py-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl"
               onClick={openWhatsApp}
             >
               <MessageCircle className="mr-2 h-5 w-5" />
