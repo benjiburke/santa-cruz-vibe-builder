@@ -9,6 +9,7 @@ import PartyVibes from "./pages/PartyVibes";
 import CuratedExperiences from "./pages/CuratedExperiences";
 import PackageDetail from "./pages/PackageDetail";
 import About from "./pages/About";
+import WhyUs from "./pages/WhyUs";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/curated-experiences" element={<CuratedExperiences />} />
           <Route path="/package/:packageId" element={<PackageDetail />} />
           <Route path="/about" element={<About />} />
+          <Route path="/why-us" element={<WhyUs />} />
           <Route path="/intake-form" element={<Index />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
