@@ -25,13 +25,13 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
                 onClick={() => window.open('https://wa.me/1234567890', '_blank')}
-                className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300"
+                className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full font-semibold"
               >
                 💬 WhatsApp
               </button>
               <button 
                 onClick={() => document.getElementById('intake-form')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-sunset-500 hover:bg-sunset-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300"
+                className="bg-sunset-500 hover:bg-sunset-600 text-white px-6 py-3 rounded-full font-semibold"
               >
                 📋 Plan My Trip
               </button>
