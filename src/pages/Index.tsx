@@ -5,6 +5,7 @@ import VibeSelector from '@/components/VibeSelector';
 import Packages from '@/components/Packages';
 import IntakeForm from '@/components/IntakeForm';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import BackToTop from '@/components/BackToTop';
 
 const Index = () => {
   return (
@@ -15,6 +16,7 @@ const Index = () => {
       <Packages />
       <IntakeForm />
       <WhatsAppButton />
+      <BackToTop />
       
       {/* Footer */}
       <footer className="bg-gradient-to-r from-onyx-900 via-midnight-800 to-onyx-900 text-white py-12 px-4 sm:px-6 lg:px-8 border-t border-gold-400/20">
