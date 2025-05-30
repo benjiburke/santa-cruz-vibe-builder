@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
@@ -8,8 +7,12 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Checkbox } from '@/components/ui/checkbox';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
-import { Send, CheckCircle } from 'lucide-react';
+import { Calendar } from '@/components/ui/calendar';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { Send, CheckCircle, Calendar as CalendarIcon } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { format } from 'date-fns';
+import { cn } from '@/lib/utils';
 
 const IntakeForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -18,7 +21,8 @@ const IntakeForm = () => {
     selectedPackage: '',
     groupSize: '',
     budget: '',
-    dates: '',
+    startDate: undefined as Date | undefined,
+    endDate: undefined as Date | undefined,
     flexibility: false,
     packageType: '',
     services: [] as string[],
@@ -251,18 +255,75 @@ const IntakeForm = () => {
                 </div>
               </div>
 
-              {/* Dates */}
+              {/* Dates with Calendar */}
               <div className="space-y-3">
-                <Label htmlFor="dates" className="text-lg font-semibold text-jungle-800">
+                <Label className="text-lg font-semibold text-jungle-800">
                   Preferred dates
                 </Label>
-                <Input
-                  id="dates"
-                  placeholder="e.g., March 15-18, 2024 or Weekend in April"
-                  value={formData.dates}
-                  onChange={(e) => setFormData(prev => ({ ...prev, dates: e.target.value }))}
-                />
-                <div className="flex items-center space-x-2">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {/* Start Date */}
+                  <div className="space-y-2">
+                    <Label className="text-sm text-jungle-600">Start Date</Label>
+                    <Popover>
+                      <PopoverTrigger asChild>
+                        <Button
+                          variant="outline"
+                          className={cn(
+                            "w-full justify-start text-left font-normal",
+                            !formData.startDate && "text-muted-foreground"
+                          )}
+                        >
+                          <CalendarIcon className="mr-2 h-4 w-4" />
+                          {formData.startDate ? format(formData.startDate, "PPP") : <span>Pick start date</span>}
+                        </Button>
+                      </PopoverTrigger>
+                      <PopoverContent className="w-auto p-0" align="start">
+                        <Calendar
+                          mode="single"
+                          selected={formData.startDate}
+                          onSelect={(date) => setFormData(prev => ({ ...prev, startDate: date }))}
+                          disabled={(date) => date < new Date()}
+                          initialFocus
+                          className="pointer-events-auto"
+                        />
+                      </PopoverContent>
+                    </Popover>
+                  </div>
+
+                  {/* End Date */}
+                  <div className="space-y-2">
+                    <Label className="text-sm text-jungle-600">End Date</Label>
+                    <Popover>
+                      <PopoverTrigger asChild>
+                        <Button
+                          variant="outline"
+                          className={cn(
+                            "w-full justify-start text-left font-normal",
+                            !formData.endDate && "text-muted-foreground"
+                          )}
+                        >
+                          <CalendarIcon className="mr-2 h-4 w-4" />
+                          {formData.endDate ? format(formData.endDate, "PPP") : <span>Pick end date</span>}
+                        </Button>
+                      </PopoverTrigger>
+                      <PopoverContent className="w-auto p-0" align="start">
+                        <Calendar
+                          mode="single"
+                          selected={formData.endDate}
+                          onSelect={(date) => setFormData(prev => ({ ...prev, endDate: date }))}
+                          disabled={(date) => 
+                            date < new Date() || 
+                            (formData.startDate && date < formData.startDate)
+                          }
+                          initialFocus
+                          className="pointer-events-auto"
+                        />
+                      </PopoverContent>
+                    </Popover>
+                  </div>
+                </div>
+                
+                <div className="flex items-center space-x-2 mt-3">
                   <Checkbox 
                     id="flexibility"
                     checked={formData.flexibility}
