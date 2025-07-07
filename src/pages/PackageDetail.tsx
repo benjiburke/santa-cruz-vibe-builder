@@ -1,11 +1,12 @@
-
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from '@/components/ui/breadcrumb';
-import { Star, Users, MapPin, Calendar, Check, X, ArrowLeft } from 'lucide-react';
+import { Star, Users, MapPin, Calendar, Check, X, ArrowLeft, DollarSign } from 'lucide-react';
 
 const packageData = {
   'weekend-bender': {
@@ -94,9 +95,33 @@ const packageData = {
   }
 };
 
+const exchangeRates = {
+  USD: 1,
+  EUR: 0.85,
+  GBP: 0.73
+};
+
+const currencySymbols = {
+  USD: '$',
+  EUR: '€',
+  GBP: '£'
+};
+
 const PackageDetail = () => {
   const { packageId } = useParams();
+  const navigate = useNavigate();
+  const [currency, setCurrency] = useState<'USD' | 'EUR' | 'GBP'>('USD');
   const pkg = packageData[packageId as keyof typeof packageData];
+
+  const convertPrice = (priceString: string) => {
+    const numericPrice = parseInt(priceString.replace(/[^\d]/g, ''));
+    const convertedPrice = Math.round(numericPrice * exchangeRates[currency]);
+    return `From ${currencySymbols[currency]}${convertedPrice}/person`;
+  };
+
+  const handleGoBack = () => {
+    navigate(-1);
+  };
 
   if (!pkg) {
     return (
@@ -105,12 +130,13 @@ const PackageDetail = () => {
         <div className="flex items-center justify-center min-h-[60vh]">
           <div className="text-center">
             <h1 className="text-xl font-light text-gray-900 mb-4">Package Not Found</h1>
-            <Link to="/">
-              <Button className="bg-gray-900 hover:bg-gray-800 text-white text-sm font-normal">
-                <ArrowLeft className="mr-2 h-3 w-3" />
-                Back to Home
-              </Button>
-            </Link>
+            <Button 
+              className="bg-gray-900 hover:bg-gray-800 text-white text-sm font-normal"
+              onClick={handleGoBack}
+            >
+              <ArrowLeft className="mr-2 h-3 w-3" />
+              Go Back
+            </Button>
           </div>
         </div>
       </div>
@@ -121,6 +147,38 @@ const PackageDetail = () => {
     <div className="min-h-screen bg-white">
       <Navigation />
       
+      {/* Fixed Navigation Bar */}
+      <div className="sticky top-0 z-40 bg-white border-b border-gray-200 shadow-sm">
+        <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+          <Button 
+            variant="outline" 
+            size="sm"
+            onClick={handleGoBack}
+            className="text-gray-600 hover:text-gray-900 border-gray-300"
+          >
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Back
+          </Button>
+          
+          <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 text-sm text-gray-600">
+              <DollarSign className="h-4 w-4" />
+              <span>Currency:</span>
+            </div>
+            <Select value={currency} onValueChange={(value: 'USD' | 'EUR' | 'GBP') => setCurrency(value)}>
+              <SelectTrigger className="w-20 h-8 text-sm">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="USD">USD</SelectItem>
+                <SelectItem value="EUR">EUR</SelectItem>
+                <SelectItem value="GBP">GBP</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+        </div>
+      </div>
+
       {/* Breadcrumb */}
       <div className="py-3 px-4 bg-gray-50 border-b border-gray-200">
         <div className="max-w-4xl mx-auto">
@@ -146,19 +204,6 @@ const PackageDetail = () => {
         </div>
       </div>
 
-      {/* Back Button */}
-      <div className="py-3 px-4">
-        <div className="max-w-4xl mx-auto">
-          <Link 
-            to={pkg.category === 'party' ? '/party-vibes' : '/curated-experiences'}
-            className="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors text-sm"
-          >
-            <ArrowLeft className="mr-2 h-3 w-3" />
-            Back to {pkg.category === 'party' ? 'Party Vibes' : 'Curated Experiences'}
-          </Link>
-        </div>
-      </div>
-
       {/* Hero Section */}
       <section className="py-8 px-4">
         <div className="max-w-4xl mx-auto">
@@ -181,6 +226,11 @@ const PackageDetail = () => {
                     {pkg.badge}
                   </Badge>
                 )}
+              </div>
+              <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
+                <span className="text-lg font-semibold text-gray-900">
+                  {convertPrice(pkg.price)}
+                </span>
               </div>
             </div>
             <CardHeader className="text-center">
