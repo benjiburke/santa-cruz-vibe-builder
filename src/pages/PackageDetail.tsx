@@ -1,3 +1,4 @@
+
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import Navigation from '@/components/Navigation';
@@ -97,19 +98,23 @@ const packageData = {
 const exchangeRates = {
   USD: 1,
   EUR: 0.85,
-  GBP: 0.73
+  GBP: 0.73,
+  JPY: 150,
+  CNY: 7.2
 };
 
 const currencySymbols = {
   USD: '$',
   EUR: '€',
-  GBP: '£'
+  GBP: '£',
+  JPY: '¥',
+  CNY: '¥'
 };
 
 const PackageDetail = () => {
   const { packageId } = useParams();
   const navigate = useNavigate();
-  const [currency, setCurrency] = useState<'USD' | 'EUR' | 'GBP'>('USD');
+  const [currency, setCurrency] = useState<'USD' | 'EUR' | 'GBP' | 'JPY' | 'CNY'>('USD');
   const pkg = packageData[packageId as keyof typeof packageData];
 
   const convertPrice = (priceString: string) => {
@@ -166,7 +171,7 @@ const PackageDetail = () => {
         <div className="flex items-center gap-1">
           <DollarSign className="h-4 w-4 text-gray-600" />
           <div className="flex bg-gray-100 rounded-md p-1">
-            {(['USD', 'EUR', 'GBP'] as const).map((curr) => (
+            {(['USD', 'EUR', 'GBP', 'JPY', 'CNY'] as const).map((curr) => (
               <button
                 key={curr}
                 onClick={() => setCurrency(curr)}
