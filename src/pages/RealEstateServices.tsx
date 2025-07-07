@@ -13,19 +13,71 @@ const RealEstateServices = () => {
       title: "Title Verification & Legal Due Diligence",
       description: "Comprehensive property title research and legal verification to ensure secure transactions",
       icon: Shield,
-      features: ["Property history analysis", "Legal compliance verification", "Risk assessment reports"]
+      features: ["Property history analysis", "Legal compliance verification", "Risk assessment reports"],
+      detailedInfo: {
+        overview: "Complete legal investigation of property ownership, liens, and potential legal issues before purchase.",
+        process: [
+          "Property title search and verification",
+          "Municipal registry checks", 
+          "Lien and encumbrance investigation",
+          "Legal compliance assessment",
+          "Final risk assessment report"
+        ],
+        timeline: "5-7 business days",
+        included: [
+          "Complete title history report",
+          "Legal compliance certification",
+          "Risk assessment summary",
+          "Purchase recommendation"
+        ]
+      }
     },
     {
       title: "NIT Setup & Tax Guidance",
       description: "Complete assistance with tax identification setup and ongoing tax compliance for foreign buyers",
       icon: FileText,
-      features: ["NIT registration process", "Tax obligation guidance", "Ongoing compliance support"]
+      features: ["NIT registration process", "Tax obligation guidance", "Ongoing compliance support"],
+      detailedInfo: {
+        overview: "Navigate Bolivia's tax system with expert guidance on NIT registration and ongoing compliance requirements.",
+        process: [
+          "Document preparation and review",
+          "NIT registration at tax office",
+          "Municipal tax registration",
+          "Ongoing compliance setup",
+          "Annual filing guidance"
+        ],
+        timeline: "3-5 business days",
+        included: [
+          "Complete NIT registration",
+          "Tax obligation consultation",
+          "Compliance calendar setup",
+          "Annual filing reminders"
+        ]
+      }
     },
     {
       title: "Property Tours & Market Analysis",
       description: "Curated property viewings with detailed market insights and investment potential analysis",
       icon: Building,
-      features: ["Exclusive property access", "Market trend analysis", "Investment ROI projections"]
+      features: ["Exclusive property access", "Market trend analysis", "Investment ROI projections"],
+      detailedInfo: {
+        overview: "Professional property tours combined with comprehensive market analysis to help you make informed investment decisions.",
+        process: [
+          "Initial consultation and preferences",
+          "Property selection and scheduling",
+          "Guided property tours",
+          "Market analysis preparation",
+          "Investment recommendation report"
+        ],
+        timeline: "1-2 weeks",
+        included: [
+          "Curated property selection",
+          "Professional guided tours",
+          "Market analysis report",
+          "ROI projections",
+          "Investment recommendations"
+        ]
+      }
     }
   ];
 
@@ -34,19 +86,76 @@ const RealEstateServices = () => {
       title: "Property Management Services",
       description: "Full-service property management for landlords and investors seeking hands-off rental income",
       icon: Home,
-      features: ["Tenant screening & placement", "Monthly rent collection", "Property maintenance coordination", "Financial reporting"]
+      features: ["Tenant screening & placement", "Monthly rent collection", "Property maintenance coordination", "Financial reporting"],
+      detailedInfo: {
+        overview: "Complete property management solution allowing you to earn rental income without the day-to-day responsibilities.",
+        process: [
+          "Property evaluation and setup",
+          "Marketing and tenant screening",
+          "Lease agreement and placement",
+          "Ongoing management and maintenance",
+          "Monthly reporting and payments"
+        ],
+        timeline: "Ongoing service",
+        included: [
+          "Professional tenant screening",
+          "Lease agreement preparation",
+          "Monthly rent collection",
+          "24/7 maintenance coordination",
+          "Detailed financial reporting",
+          "Legal compliance monitoring"
+        ]
+      }
     },
     {
       title: "Tenant Placement & Screening",
       description: "Professional tenant screening and placement services to ensure reliable, long-term renters",
       icon: Users,
-      features: ["Background & credit checks", "Income verification", "Reference validation", "Legal compliance"]
+      features: ["Background & credit checks", "Income verification", "Reference validation", "Legal compliance"],
+      detailedInfo: {
+        overview: "Comprehensive tenant screening process to find reliable, long-term tenants for your property.",
+        process: [
+          "Property marketing and advertising",
+          "Application collection and review",
+          "Background and credit verification",
+          "Income and employment verification",
+          "Reference checks and validation",
+          "Lease agreement preparation"
+        ],
+        timeline: "2-4 weeks",
+        included: [
+          "Professional property marketing",
+          "Comprehensive background checks",
+          "Credit and income verification",
+          "Reference validation",
+          "Legal lease preparation",
+          "Move-in coordination"
+        ]
+      }
     },
     {
       title: "Rental Market Analysis",
       description: "Data-driven rental pricing and market analysis to maximize your property's rental potential",
       icon: TrendingUp,
-      features: ["Competitive market analysis", "Rental rate optimization", "Occupancy forecasting", "Investment performance tracking"]
+      features: ["Competitive market analysis", "Rental rate optimization", "Occupancy forecasting", "Investment performance tracking"],
+      detailedInfo: {
+        overview: "Detailed analysis of rental market conditions to optimize your property's performance and maximize returns.",
+        process: [
+          "Property evaluation and positioning",
+          "Comparative market analysis",
+          "Rental rate optimization",
+          "Occupancy forecasting",
+          "Performance tracking setup"
+        ],
+        timeline: "1-2 weeks",
+        included: [
+          "Comprehensive market analysis",
+          "Optimal rental rate recommendations",
+          "Occupancy forecasting",
+          "Performance tracking dashboard",
+          "Quarterly market updates"
+        ]
+      }
     }
   ];
 
@@ -97,19 +206,74 @@ const RealEstateServices = () => {
       title: "Residency & Investment Visa Guidance",
       description: "Complete support for foreigners seeking Bolivian residency through property investment",
       icon: FileText,
-      features: ["Investment visa pathways", "Legal partner referrals", "NIT & municipal registration", "Ongoing compliance support"]
+      features: ["Investment visa pathways", "Legal partner referrals", "NIT & municipal registration", "Ongoing compliance support"],
+      detailedInfo: {
+        overview: "Navigate Bolivia's investment visa programs with expert guidance and trusted legal partnerships.",
+        process: [
+          "Visa eligibility assessment",
+          "Documentation preparation",
+          "Legal partner coordination",
+          "Application submission",
+          "Follow-up and compliance"
+        ],
+        timeline: "3-6 months",
+        included: [
+          "Visa pathway consultation",
+          "Trusted lawyer referrals",
+          "Document preparation assistance",
+          "Application process coordination",
+          "Ongoing compliance support"
+        ]
+      }
     },
     {
       title: "Banking & Financial Setup",
       description: "Navigate Bolivia's banking system with local expertise and trusted partner introductions",
       icon: CreditCard,
-      features: ["Bank account opening assistance", "Credit establishment guidance", "Financial service introductions", "Currency exchange guidance"]
+      features: ["Bank account opening assistance", "Credit establishment guidance", "Financial service introductions", "Currency exchange guidance"],
+      detailedInfo: {
+        overview: "Complete banking and financial setup assistance for new residents and investors in Bolivia.",
+        process: [
+          "Banking needs assessment",
+          "Bank selection and introduction",
+          "Account opening assistance",
+          "Credit establishment guidance",
+          "Financial service setup"
+        ],
+        timeline: "2-3 weeks",
+        included: [
+          "Bank account opening support",
+          "Credit establishment guidance",
+          "Financial service introductions",
+          "Currency exchange guidance",
+          "Ongoing banking support"
+        ]
+      }
     },
     {
       title: "Relocation Concierge Services",
       description: "Complete onboarding support for new residents settling into Bolivian life",
       icon: Heart,
-      features: ["SIM card & connectivity setup", "Health insurance coordination", "Local service introductions", "Cultural orientation support"]
+      features: ["SIM card & connectivity setup", "Health insurance coordination", "Local service introductions", "Cultural orientation support"],
+      detailedInfo: {
+        overview: "Comprehensive relocation support to help you settle into your new life in Bolivia smoothly.",
+        process: [
+          "Arrival coordination and pickup",
+          "Essential services setup",
+          "Local service introductions",
+          "Cultural orientation sessions",
+          "Ongoing support and check-ins"
+        ],
+        timeline: "First month of residence",
+        included: [
+          "Airport pickup coordination",
+          "SIM card and connectivity setup",
+          "Health insurance coordination",
+          "Local service introductions",
+          "Cultural orientation support",
+          "30-day follow-up support"
+        ]
+      }
     }
   ];
 
@@ -245,6 +409,7 @@ const RealEstateServices = () => {
                 description={service.description}
                 icon={service.icon}
                 features={service.features}
+                detailedInfo={service.detailedInfo}
                 onButtonClick={() => window.open('https://wa.me/1234567890', '_blank')}
               />
             ))}
@@ -272,6 +437,7 @@ const RealEstateServices = () => {
                 description={service.description}
                 icon={service.icon}
                 features={service.features}
+                detailedInfo={service.detailedInfo}
                 buttonText="Get Started"
                 onButtonClick={() => window.open('https://wa.me/1234567890', '_blank')}
               />
@@ -300,6 +466,7 @@ const RealEstateServices = () => {
                 description={service.description}
                 icon={service.icon}
                 features={service.features}
+                detailedInfo={service.detailedInfo}
                 buttonText="Get Support"
                 onButtonClick={() => window.open('https://wa.me/1234567890', '_blank')}
               />
