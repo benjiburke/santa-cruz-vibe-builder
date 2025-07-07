@@ -1,10 +1,12 @@
 
 import Navigation from '@/components/Navigation';
+import ServiceCard from '@/components/ServiceCard';
+import PropertyCard from '@/components/PropertyCard';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Diamond, Building, Shield, FileText, MapPin, Users, Globe, TrendingUp, ArrowRight, CheckCircle } from 'lucide-react';
+import { Diamond, Building, Shield, FileText, MapPin, Users, Globe, TrendingUp, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { featuredProperties, investmentOpportunities } from '@/data/properties';
 
 const RealEstateServices = () => {
   const buyerServices = [
@@ -70,6 +72,11 @@ const RealEstateServices = () => {
     }
   ];
 
+  const handlePropertyInquiry = (propertyTitle: string) => {
+    const message = `Hi! I'm interested in learning more about the ${propertyTitle} property. Can you provide more details?`;
+    window.open(`https://wa.me/1234567890?text=${encodeURIComponent(message)}`, '_blank');
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-onyx-900 via-midnight-800 to-onyx-900">
       <Navigation />
@@ -110,6 +117,74 @@ const RealEstateServices = () => {
         </div>
       </section>
 
+      {/* Featured Properties Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-light text-white mb-6">
+              Featured Properties
+            </h2>
+            <p className="text-lg text-gray-400 font-light leading-relaxed">
+              Curated selection of premium properties available for immediate purchase.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {featuredProperties.slice(0, 3).map((property) => (
+              <PropertyCard
+                key={property.id}
+                title={property.title}
+                location={property.location}
+                price={property.price}
+                type={property.type}
+                bedrooms={property.bedrooms}
+                bathrooms={property.bathrooms}
+                area={property.area}
+                features={property.features}
+                image={property.image}
+                onInquire={() => handlePropertyInquiry(property.title)}
+              />
+            ))}
+          </div>
+          
+          {/* Investment Opportunities */}
+          <div className="text-center mb-12">
+            <h3 className="text-2xl md:text-3xl font-light text-white mb-4">
+              Investment Opportunities
+            </h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {investmentOpportunities.map((property) => (
+              <PropertyCard
+                key={property.id}
+                title={property.title}
+                location={property.location}
+                price={property.price}
+                type={property.type}
+                area={property.area}
+                features={property.features}
+                image={property.image}
+                onInquire={() => handlePropertyInquiry(property.title)}
+              />
+            ))}
+            {featuredProperties.slice(3).map((property) => (
+              <PropertyCard
+                key={property.id}
+                title={property.title}
+                location={property.location}
+                price={property.price}
+                type={property.type}
+                bedrooms={property.bedrooms}
+                bathrooms={property.bathrooms}
+                area={property.area}
+                features={property.features}
+                image={property.image}
+                onInquire={() => handlePropertyInquiry(property.title)}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Core Services Section */}
       <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-onyx-800/40 to-midnight-800/40 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto">
@@ -123,23 +198,14 @@ const RealEstateServices = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {buyerServices.map((service, index) => (
-              <Card key={index} className="bg-gradient-to-br from-onyx-800/50 to-midnight-800/50 border-gold-400/20 backdrop-blur-sm">
-                <CardHeader className="text-center pb-4">
-                  <service.icon className="h-10 w-10 text-gold-400 mx-auto mb-4" />
-                  <CardTitle className="text-lg font-medium text-white tracking-wide leading-tight">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <p className="text-gray-300 font-light leading-relaxed mb-6 text-center">{service.description}</p>
-                  <ul className="space-y-3">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="text-sm text-gray-400 font-light flex items-center">
-                        <CheckCircle className="w-4 h-4 text-gold-400 mr-3 flex-shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+              <ServiceCard
+                key={index}
+                title={service.title}
+                description={service.description}
+                icon={service.icon}
+                features={service.features}
+                onButtonClick={() => window.open('https://wa.me/1234567890', '_blank')}
+              />
             ))}
           </div>
         </div>
@@ -150,49 +216,24 @@ const RealEstateServices = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-light text-white mb-6">
-              Investment Opportunities
+              Investment Packages
             </h2>
             <p className="text-lg text-gray-400 font-light leading-relaxed">
-              Curated property portfolios designed for sophisticated international investors.
+              Structured investment opportunities designed for sophisticated international investors.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {investmentPackages.map((pkg, index) => (
-              <Card key={index} className="bg-gradient-to-br from-onyx-800/50 to-midnight-800/50 border-gold-400/20 backdrop-blur-sm">
-                <CardHeader>
-                  <div className="flex justify-between items-start mb-2">
-                    <CardTitle className="text-xl font-medium text-white tracking-wide">{pkg.name}</CardTitle>
-                    <Badge className="bg-gold-600/20 text-gold-400 border-gold-400/30">
-                      {pkg.price}
-                    </Badge>
-                  </div>
-                  <p className="text-gray-300 font-light leading-relaxed">{pkg.description}</p>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <div className="mb-6">
-                    <h4 className="text-sm font-medium text-gold-400 mb-3">Package Includes:</h4>
-                    <ul className="space-y-2">
-                      {pkg.features.map((feature, idx) => (
-                        <li key={idx} className="text-sm text-gray-400 font-light flex items-center">
-                          <CheckCircle className="w-3 h-3 text-gold-400 mr-2 flex-shrink-0" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="mb-6">
-                    <p className="text-xs text-gray-500 font-light">
-                      <span className="text-gold-400">Ideal for:</span> {pkg.ideal}
-                    </p>
-                  </div>
-                  <Button 
-                    className="w-full bg-gold-600 hover:bg-gold-700 text-white rounded-none"
-                    onClick={() => window.open('https://wa.me/1234567890', '_blank')}
-                  >
-                    Learn More
-                  </Button>
-                </CardContent>
-              </Card>
+              <ServiceCard
+                key={index}
+                title={pkg.name}
+                description={pkg.description}
+                price={pkg.price}
+                features={pkg.features}
+                icon={Building}
+                buttonText="Learn More"
+                onButtonClick={() => window.open('https://wa.me/1234567890', '_blank')}
+              />
             ))}
           </div>
         </div>
