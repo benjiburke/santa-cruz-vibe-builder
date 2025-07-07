@@ -439,7 +439,6 @@ const RealEstateServices = () => {
                 features={service.features}
                 detailedInfo={service.detailedInfo}
                 buttonText="Get Started"
-                onButtonClick={() => window.open('https://wa.me/1234567890', '_blank')}
               />
             ))}
           </div>
@@ -468,7 +467,6 @@ const RealEstateServices = () => {
                 features={service.features}
                 detailedInfo={service.detailedInfo}
                 buttonText="Get Support"
-                onButtonClick={() => window.open('https://wa.me/1234567890', '_blank')}
               />
             ))}
           </div>
