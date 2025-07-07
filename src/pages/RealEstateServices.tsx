@@ -1,10 +1,9 @@
-
 import Navigation from '@/components/Navigation';
 import ServiceCard from '@/components/ServiceCard';
 import PropertyCard from '@/components/PropertyCard';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Diamond, Building, Shield, FileText, MapPin, Users, Globe, TrendingUp, ArrowRight, Key, Home } from 'lucide-react';
+import { Diamond, Building, Shield, FileText, MapPin, Users, Globe, TrendingUp, ArrowRight, Key, Home, Plane, CreditCard, Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { featuredProperties, investmentOpportunities } from '@/data/properties';
 
@@ -93,6 +92,27 @@ const RealEstateServices = () => {
     }
   ];
 
+  const relocationServices = [
+    {
+      title: "Residency & Investment Visa Guidance",
+      description: "Complete support for foreigners seeking Bolivian residency through property investment",
+      icon: FileText,
+      features: ["Investment visa pathways", "Legal partner referrals", "NIT & municipal registration", "Ongoing compliance support"]
+    },
+    {
+      title: "Banking & Financial Setup",
+      description: "Navigate Bolivia's banking system with local expertise and trusted partner introductions",
+      icon: CreditCard,
+      features: ["Bank account opening assistance", "Credit establishment guidance", "Financial service introductions", "Currency exchange guidance"]
+    },
+    {
+      title: "Relocation Concierge Services",
+      description: "Complete onboarding support for new residents settling into Bolivian life",
+      icon: Heart,
+      features: ["SIM card & connectivity setup", "Health insurance coordination", "Local service introductions", "Cultural orientation support"]
+    }
+  ];
+
   const handlePropertyInquiry = (propertyTitle: string) => {
     const message = `Hi! I'm interested in learning more about the ${propertyTitle} property. Can you provide more details?`;
     window.open(`https://wa.me/1234567890?text=${encodeURIComponent(message)}`, '_blank');
@@ -107,16 +127,16 @@ const RealEstateServices = () => {
         <div className="max-w-4xl mx-auto text-center">
           <Diamond className="w-12 h-12 text-gold-400 mx-auto mb-8" />
           <Badge className="mb-8 bg-gold-400/10 text-gold-400 border-gold-400/20 text-sm font-light px-6 py-2">
-            Sales • Investments • Rentals
+            Sales • Investments • Rentals • Relocation
           </Badge>
           <h1 className="text-4xl md:text-6xl font-light text-white mb-8 leading-tight tracking-wide">
             Real Estate Services
             <br />
-            <span className="text-gold-400">for Sophisticated Investors</span>
+            <span className="text-gold-400">& Relocation Support</span>
           </h1>
           <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
-            Navigate Bolivia's property market with confidence. From urban homes and rental management to rural land investments, 
-            we provide comprehensive legal guidance and local expertise for foreign buyers and property owners.
+            From property acquisition to seamless relocation. Navigate Bolivia's real estate market and immigration 
+            process with comprehensive legal guidance, local expertise, and trusted partner networks.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button 
@@ -260,6 +280,44 @@ const RealEstateServices = () => {
         </div>
       </section>
 
+      {/* Relocation & Immigration Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <Plane className="w-12 h-12 text-gold-400 mx-auto mb-6" />
+            <h2 className="text-3xl md:text-4xl font-light text-white mb-6">
+              Relocation & Immigration Support
+            </h2>
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
+              Seamless transition from property purchase to permanent relocation with trusted legal partnerships and local expertise.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            {relocationServices.map((service, index) => (
+              <ServiceCard
+                key={index}
+                title={service.title}
+                description={service.description}
+                icon={service.icon}
+                features={service.features}
+                buttonText="Get Support"
+                onButtonClick={() => window.open('https://wa.me/1234567890', '_blank')}
+              />
+            ))}
+          </div>
+          
+          {/* Integration Notice */}
+          <div className="bg-gradient-to-br from-gold-600/10 to-gold-400/10 border border-gold-400/20 p-8 text-center backdrop-blur-sm">
+            <Globe className="w-8 h-8 text-gold-400 mx-auto mb-4" />
+            <h3 className="text-xl font-medium text-white mb-4">Integrated Investment Pathway</h3>
+            <p className="text-gray-300 font-light leading-relaxed max-w-2xl mx-auto">
+              Our real estate investments can qualify for Bolivia's investment visa programs. We coordinate with trusted 
+              immigration lawyers to create a seamless path from property purchase to permanent residency.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Investment Packages Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-onyx-800/40 to-midnight-800/40 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto">
@@ -343,10 +401,10 @@ const RealEstateServices = () => {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-gold-600/20 to-gold-400/20 backdrop-blur-sm">
         <div className="max-w-4xl mx-auto text-center text-white">
           <h2 className="text-3xl md:text-4xl font-light mb-8">
-            Secure Your Bolivian Investment
+            From Investment to Relocation
           </h2>
           <p className="text-xl mb-10 text-gray-300 font-light leading-relaxed">
-            Partner with local experts who understand both international requirements and Bolivian regulations.
+            Complete support for international clients seeking both property investment and permanent relocation to Bolivia.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link to="/intake-form">
