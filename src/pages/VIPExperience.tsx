@@ -3,7 +3,7 @@ import Navigation from '@/components/Navigation';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import BackToTop from '@/components/BackToTop';
 import { Button } from '@/components/ui/button';
-import { Diamond, Star, Shield, Users } from 'lucide-react';
+import { Diamond, Star, Shield, Users, Home, User, Car, Clock } from 'lucide-react';
 
 const VIPExperience = () => {
   const openWhatsApp = () => {
@@ -47,17 +47,17 @@ const VIPExperience = () => {
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { icon: "🏠", title: "Luxury Penthouse", desc: "Premium location in Equipetrol" },
-              { icon: "👨‍🍳", title: "Private Chef", desc: "Full dining service & gourmet meals" },
-              { icon: "🚐", title: "Private Driver", desc: "Airport pickup & city transport" },
-              { icon: "🧖", title: "Spa & Excursions", desc: "Guided tours & wellness treatments" },
-              { icon: "🎉", title: "VIP Nightlife", desc: "Exclusive access & reservations" },
-              { icon: "👩‍💼", title: "Personal Concierge", desc: "Dedicated host team" },
-              { icon: "🛡️", title: "Security", desc: "Discreet protection & safety" },
-              { icon: "📱", title: "24/7 Support", desc: "WhatsApp assistance anytime" }
+              { icon: Home, title: "Luxury Penthouse", desc: "Premium location in Equipetrol" },
+              { icon: User, title: "Private Chef", desc: "Full dining service & gourmet meals" },
+              { icon: Car, title: "Private Driver", desc: "Airport pickup & city transport" },
+              { icon: Star, title: "Spa & Excursions", desc: "Guided tours & wellness treatments" },
+              { icon: Star, title: "VIP Nightlife", desc: "Exclusive access & reservations" },
+              { icon: User, title: "Personal Concierge", desc: "Dedicated host team" },
+              { icon: Shield, title: "Security", desc: "Discreet protection & safety" },
+              { icon: Clock, title: "24/7 Support", desc: "WhatsApp assistance anytime" }
             ].map((item, idx) => (
               <div key={idx} className="bg-white/5 backdrop-blur-sm border border-gold-400/20 p-6 rounded-lg text-center hover:bg-white/10 transition-all duration-300">
-                <div className="text-4xl mb-4">{item.icon}</div>
+                <item.icon className="w-8 h-8 text-gold-400 mx-auto mb-4" />
                 <h3 className="text-white font-medium mb-2">{item.title}</h3>
                 <p className="text-gray-400 text-sm font-light">{item.desc}</p>
               </div>
