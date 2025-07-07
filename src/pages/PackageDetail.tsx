@@ -4,7 +4,6 @@ import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from '@/components/ui/breadcrumb';
 import { Star, Users, MapPin, Calendar, Check, X, ArrowLeft, DollarSign } from 'lucide-react';
 
@@ -147,34 +146,33 @@ const PackageDetail = () => {
     <div className="min-h-screen bg-white">
       <Navigation />
       
-      {/* Fixed Navigation Bar */}
-      <div className="sticky top-0 z-40 bg-white border-b border-gray-200 shadow-sm">
-        <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
-          <Button 
-            variant="outline" 
-            size="sm"
-            onClick={handleGoBack}
-            className="text-gray-600 hover:text-gray-900 border-gray-300"
-          >
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Back
-          </Button>
-          
-          <div className="flex items-center gap-3">
-            <div className="flex items-center gap-2 text-sm text-gray-600">
-              <DollarSign className="h-4 w-4" />
-              <span>Currency:</span>
-            </div>
-            <Select value={currency} onValueChange={(value: 'USD' | 'EUR' | 'GBP') => setCurrency(value)}>
-              <SelectTrigger className="w-20 h-8 text-sm">
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="USD">USD</SelectItem>
-                <SelectItem value="EUR">EUR</SelectItem>
-                <SelectItem value="GBP">GBP</SelectItem>
-              </SelectContent>
-            </Select>
+      {/* Floating Back Button */}
+      <Button 
+        className="fixed top-20 left-4 z-50 bg-white/90 backdrop-blur-sm border border-gray-200 text-gray-700 hover:bg-white hover:text-gray-900 shadow-lg"
+        size="sm"
+        onClick={handleGoBack}
+      >
+        <ArrowLeft className="h-4 w-4" />
+      </Button>
+
+      {/* Floating Currency Selector */}
+      <div className="fixed top-20 right-4 z-50 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-lg shadow-lg p-2">
+        <div className="flex items-center gap-1">
+          <DollarSign className="h-4 w-4 text-gray-600" />
+          <div className="flex bg-gray-100 rounded-md p-1">
+            {(['USD', 'EUR', 'GBP'] as const).map((curr) => (
+              <button
+                key={curr}
+                onClick={() => setCurrency(curr)}
+                className={`px-2 py-1 text-xs font-medium rounded transition-colors ${
+                  currency === curr
+                    ? 'bg-white text-gray-900 shadow-sm'
+                    : 'text-gray-600 hover:text-gray-900'
+                }`}
+              >
+                {curr}
+              </button>
+            ))}
           </div>
         </div>
       </div>
