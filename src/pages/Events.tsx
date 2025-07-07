@@ -1,10 +1,12 @@
 
 import Navigation from '@/components/Navigation';
+import RSVPModal from '@/components/RSVPModal';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 import { Calendar, MapPin, Users, Music, Crown, Sparkles, Camera, Mountain } from 'lucide-react';
+import { useState } from 'react';
 
 const eventsData = [
   {
@@ -75,6 +77,19 @@ const eventsData = [
 ];
 
 const Events = () => {
+  const [selectedEvent, setSelectedEvent] = useState<typeof eventsData[0] | null>(null);
+  const [isRSVPModalOpen, setIsRSVPModalOpen] = useState(false);
+
+  const handleRSVPClick = (event: typeof eventsData[0]) => {
+    setSelectedEvent(event);
+    setIsRSVPModalOpen(true);
+  };
+
+  const closeRSVPModal = () => {
+    setIsRSVPModalOpen(false);
+    setSelectedEvent(null);
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
@@ -139,11 +154,12 @@ const Events = () => {
                     ))}
                   </ul>
                   <div className="flex gap-2">
-                    <Link to="/intake-form" className="flex-1">
-                      <Button className="w-full bg-gray-900 hover:bg-gray-800 text-white text-sm font-normal">
-                        Join Waitlist
-                      </Button>
-                    </Link>
+                    <Button 
+                      className="flex-1 bg-gold-600 hover:bg-gold-700 text-white text-sm font-normal"
+                      onClick={() => handleRSVPClick(event)}
+                    >
+                      RSVP Now
+                    </Button>
                     <Button 
                       variant="outline" 
                       size="sm"
@@ -184,6 +200,15 @@ const Events = () => {
           </div>
         </div>
       </section>
+
+      {/* RSVP Modal */}
+      {selectedEvent && (
+        <RSVPModal
+          isOpen={isRSVPModalOpen}
+          onClose={closeRSVPModal}
+          event={selectedEvent}
+        />
+      )}
     </div>
   );
 };
