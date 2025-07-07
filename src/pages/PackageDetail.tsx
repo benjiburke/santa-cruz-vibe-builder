@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from '@/components/ui/breadcrumb';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Star, Users, MapPin, Calendar, Check, X, ArrowLeft, DollarSign } from 'lucide-react';
 
 const packageData = {
@@ -111,6 +112,14 @@ const currencySymbols = {
   CNY: '¥'
 };
 
+const currencyNames = {
+  USD: 'US Dollar',
+  EUR: 'Euro',
+  GBP: 'British Pound',
+  JPY: 'Japanese Yen',
+  CNY: 'Chinese Yuan'
+};
+
 const PackageDetail = () => {
   const { packageId } = useParams();
   const navigate = useNavigate();
@@ -168,23 +177,20 @@ const PackageDetail = () => {
 
       {/* Floating Currency Selector */}
       <div className="fixed top-20 right-4 z-50 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-lg shadow-lg p-2">
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-2">
           <DollarSign className="h-4 w-4 text-gray-600" />
-          <div className="flex bg-gray-100 rounded-md p-1">
-            {(['USD', 'EUR', 'GBP', 'JPY', 'CNY'] as const).map((curr) => (
-              <button
-                key={curr}
-                onClick={() => setCurrency(curr)}
-                className={`px-2 py-1 text-xs font-medium rounded transition-colors ${
-                  currency === curr
-                    ? 'bg-white text-gray-900 shadow-sm'
-                    : 'text-gray-600 hover:text-gray-900'
-                }`}
-              >
-                {curr}
-              </button>
-            ))}
-          </div>
+          <Select value={currency} onValueChange={(value: 'USD' | 'EUR' | 'GBP' | 'JPY' | 'CNY') => setCurrency(value)}>
+            <SelectTrigger className="w-32 h-8 text-xs">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              {Object.entries(currencyNames).map(([code, name]) => (
+                <SelectItem key={code} value={code} className="text-xs">
+                  {code} - {name}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
         </div>
       </div>
 
