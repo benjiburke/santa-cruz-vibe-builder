@@ -18,27 +18,28 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="bg-white/90 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+    <nav className="bg-white/95 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center py-3">
           {/* Logo */}
-          <Link to="/" className="text-2xl font-bold text-jungle-800">
+          <Link to="/" className="text-xl font-medium text-gray-900 tracking-tight">
             Santa Cruz Experience
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navLinks.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
-                className="text-jungle-700 hover:text-jungle-900 transition-colors font-medium"
+                className="text-gray-700 hover:text-gray-900 transition-colors font-normal text-sm"
               >
                 {link.label}
               </Link>
             ))}
             <Button 
-              className="bg-green-500 hover:bg-green-600 text-white"
+              size="sm"
+              className="bg-gray-900 hover:bg-gray-800 text-white text-sm font-normal px-4 py-2"
               onClick={() => window.open('https://wa.me/1234567890', '_blank')}
             >
               WhatsApp
@@ -49,29 +50,30 @@ const Navigation = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className="md:hidden h-8 w-8 text-gray-700 hover:bg-gray-100"
             onClick={() => setIsOpen(!isOpen)}
           >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
           </Button>
         </div>
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden border-t border-gray-200 py-4">
-            <div className="flex flex-col space-y-4">
+          <div className="md:hidden border-t border-gray-100 py-3">
+            <div className="flex flex-col space-y-3">
               {navLinks.map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}
-                  className="text-jungle-700 hover:text-jungle-900 transition-colors font-medium px-2 py-1"
+                  className="text-gray-700 hover:text-gray-900 transition-colors font-normal text-sm px-2 py-1"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}
                 </Link>
               ))}
               <Button 
-                className="bg-green-500 hover:bg-green-600 text-white w-fit"
+                size="sm"
+                className="bg-gray-900 hover:bg-gray-800 text-white w-fit text-sm font-normal px-4 py-2 mt-2"
                 onClick={() => {
                   window.open('https://wa.me/1234567890', '_blank');
                   setIsOpen(false);
