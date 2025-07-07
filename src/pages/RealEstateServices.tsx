@@ -4,7 +4,7 @@ import ServiceCard from '@/components/ServiceCard';
 import PropertyCard from '@/components/PropertyCard';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Diamond, Building, Shield, FileText, MapPin, Users, Globe, TrendingUp, ArrowRight } from 'lucide-react';
+import { Diamond, Building, Shield, FileText, MapPin, Users, Globe, TrendingUp, ArrowRight, Key, Home } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { featuredProperties, investmentOpportunities } from '@/data/properties';
 
@@ -27,6 +27,27 @@ const RealEstateServices = () => {
       description: "Curated property viewings with detailed market insights and investment potential analysis",
       icon: Building,
       features: ["Exclusive property access", "Market trend analysis", "Investment ROI projections"]
+    }
+  ];
+
+  const rentalServices = [
+    {
+      title: "Property Management Services",
+      description: "Full-service property management for landlords and investors seeking hands-off rental income",
+      icon: Home,
+      features: ["Tenant screening & placement", "Monthly rent collection", "Property maintenance coordination", "Financial reporting"]
+    },
+    {
+      title: "Tenant Placement & Screening",
+      description: "Professional tenant screening and placement services to ensure reliable, long-term renters",
+      icon: Users,
+      features: ["Background & credit checks", "Income verification", "Reference validation", "Legal compliance"]
+    },
+    {
+      title: "Rental Market Analysis",
+      description: "Data-driven rental pricing and market analysis to maximize your property's rental potential",
+      icon: TrendingUp,
+      features: ["Competitive market analysis", "Rental rate optimization", "Occupancy forecasting", "Investment performance tracking"]
     }
   ];
 
@@ -86,7 +107,7 @@ const RealEstateServices = () => {
         <div className="max-w-4xl mx-auto text-center">
           <Diamond className="w-12 h-12 text-gold-400 mx-auto mb-8" />
           <Badge className="mb-8 bg-gold-400/10 text-gold-400 border-gold-400/20 text-sm font-light px-6 py-2">
-            Foreign Buyer Assistance
+            Sales • Investments • Rentals
           </Badge>
           <h1 className="text-4xl md:text-6xl font-light text-white mb-8 leading-tight tracking-wide">
             Real Estate Services
@@ -94,8 +115,8 @@ const RealEstateServices = () => {
             <span className="text-gold-400">for Sophisticated Investors</span>
           </h1>
           <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
-            Navigate Bolivia's property market with confidence. From urban homes in Santa Cruz to rural land investments, 
-            we provide comprehensive legal guidance and local expertise for foreign buyers.
+            Navigate Bolivia's property market with confidence. From urban homes and rental management to rural land investments, 
+            we provide comprehensive legal guidance and local expertise for foreign buyers and property owners.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button 
@@ -125,7 +146,7 @@ const RealEstateServices = () => {
               Featured Properties
             </h2>
             <p className="text-lg text-gray-400 font-light leading-relaxed">
-              Curated selection of premium properties available for immediate purchase.
+              Curated selection of premium properties available for purchase or rent.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
@@ -211,8 +232,36 @@ const RealEstateServices = () => {
         </div>
       </section>
 
-      {/* Investment Packages Section */}
+      {/* Rental Services Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <Key className="w-12 h-12 text-gold-400 mx-auto mb-6" />
+            <h2 className="text-3xl md:text-4xl font-light text-white mb-6">
+              Professional Rental Services
+            </h2>
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
+              Complete property management and rental services for landlords and property investors.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {rentalServices.map((service, index) => (
+              <ServiceCard
+                key={index}
+                title={service.title}
+                description={service.description}
+                icon={service.icon}
+                features={service.features}
+                buttonText="Get Started"
+                onButtonClick={() => window.open('https://wa.me/1234567890', '_blank')}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Investment Packages Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-onyx-800/40 to-midnight-800/40 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-light text-white mb-6">
