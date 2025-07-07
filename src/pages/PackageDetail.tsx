@@ -1,3 +1,4 @@
+
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import Navigation from '@/components/Navigation';
@@ -311,16 +312,15 @@ const PackageDetail = () => {
             <Link to="/intake-form">
               <Button
                 size="lg"
-                variant="outline"
-                className="border-white/30 text-white hover:bg-white/10 hover:border-white text-sm font-normal"
+                className="bg-white text-gray-900 hover:bg-gray-100 border border-white text-sm font-normal"
               >
                 Plan My Trip
               </Button>
             </Link>
             <Button
               size="lg"
-              variant="ghost"
-              className="text-white hover:bg-white/20 text-sm font-normal"
+              variant="outline"
+              className="border-white/50 text-white hover:bg-white/10 hover:border-white text-sm font-normal"
               onClick={() =>
                 window.open(
                   'https://wa.me/1234567890?text=I want to book the Santa Cruz Experience!',
