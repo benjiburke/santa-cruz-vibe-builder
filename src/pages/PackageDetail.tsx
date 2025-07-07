@@ -119,7 +119,13 @@ const PackageDetail = () => {
   };
 
   const handleGoBack = () => {
-    navigate(-1);
+    console.log('Back button clicked');
+    // Try to go back in history, but if there's no history, go to home
+    if (window.history.length > 1) {
+      navigate(-1);
+    } else {
+      navigate('/');
+    }
   };
 
   if (!pkg) {
