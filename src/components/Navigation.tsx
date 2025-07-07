@@ -11,6 +11,7 @@ const Navigation = () => {
     { to: '/', label: 'Home' },
     { to: '/party-vibes', label: 'Party Vibes' },
     { to: '/curated-experiences', label: 'Curated Experiences' },
+    { to: '/vacation-rentals', label: 'Vacation Rentals' },
     { to: '/why-us', label: 'Why Us' },
     { to: '/about', label: 'About' }
   ];
