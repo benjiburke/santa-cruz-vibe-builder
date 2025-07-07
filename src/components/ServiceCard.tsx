@@ -26,28 +26,28 @@ const ServiceCard = ({
   className = ""
 }: ServiceCardProps) => {
   return (
-    <Card className={`bg-gradient-to-br from-onyx-800/50 to-midnight-800/50 border-gold-400/20 backdrop-blur-sm ${className}`}>
-      <CardHeader className="text-center pb-4">
+    <Card className={`bg-white/95 backdrop-blur-sm border border-gray-200/60 hover:shadow-sm transition-all duration-200 ${className}`}>
+      <CardHeader className="text-center pb-3">
         {price && (
-          <Badge className="bg-gold-600/20 text-gold-400 border-gold-400/30 mb-4 w-fit mx-auto">
+          <Badge className="bg-gray-50 text-gray-700 border-gray-200 mb-3 w-fit mx-auto text-xs font-normal">
             {price}
           </Badge>
         )}
-        <Icon className="h-10 w-10 text-gold-400 mx-auto mb-4" />
-        <CardTitle className="text-lg font-medium text-white tracking-wide leading-tight">{title}</CardTitle>
+        <Icon className="h-6 w-6 text-gray-700 mx-auto mb-3" />
+        <CardTitle className="text-base font-medium text-gray-900 leading-tight">{title}</CardTitle>
       </CardHeader>
       <CardContent className="pt-0">
-        <p className="text-gray-300 font-light leading-relaxed mb-6 text-center">{description}</p>
-        <ul className="space-y-3 mb-6">
+        <p className="text-gray-600 text-sm font-light leading-relaxed mb-4 text-center">{description}</p>
+        <ul className="space-y-2 mb-4">
           {features.map((feature, idx) => (
-            <li key={idx} className="text-sm text-gray-400 font-light flex items-center">
-              <span className="w-1.5 h-1.5 bg-gold-400 rounded-full mr-3 flex-shrink-0" />
+            <li key={idx} className="text-xs text-gray-500 font-light flex items-center">
+              <span className="w-1 h-1 bg-gray-400 rounded-full mr-2 flex-shrink-0" />
               {feature}
             </li>
           ))}
         </ul>
         <Button 
-          className="w-full bg-gold-600 hover:bg-gold-700 text-white rounded-none"
+          className="w-full bg-gray-900 hover:bg-gray-800 text-white text-sm font-normal border-0"
           onClick={onButtonClick}
         >
           {buttonText}

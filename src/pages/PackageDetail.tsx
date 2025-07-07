@@ -1,3 +1,4 @@
+
 import { useParams, Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
@@ -99,14 +100,14 @@ const PackageDetail = () => {
 
   if (!pkg) {
     return (
-      <div className="min-h-screen">
+      <div className="min-h-screen bg-white">
         <Navigation />
         <div className="flex items-center justify-center min-h-[60vh]">
           <div className="text-center">
-            <h1 className="text-2xl font-bold text-jungle-800 mb-4">Package Not Found</h1>
+            <h1 className="text-xl font-light text-gray-900 mb-4">Package Not Found</h1>
             <Link to="/">
-              <Button>
-                <ArrowLeft className="mr-2 h-4 w-4" />
+              <Button className="bg-gray-900 hover:bg-gray-800 text-white text-sm font-normal">
+                <ArrowLeft className="mr-2 h-3 w-3" />
                 Back to Home
               </Button>
             </Link>
@@ -117,88 +118,88 @@ const PackageDetail = () => {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       <Navigation />
       
       {/* Breadcrumb */}
-      <div className="py-4 px-4 sm:px-6 lg:px-8 bg-white border-b">
-        <div className="max-w-6xl mx-auto">
+      <div className="py-3 px-4 bg-gray-50 border-b border-gray-200">
+        <div className="max-w-4xl mx-auto">
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
-                  <Link to="/">Home</Link>
+                  <Link to="/" className="text-gray-600 text-sm">Home</Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
-                  <Link to={pkg.category === 'party' ? '/party-vibes' : '/curated-experiences'}>
+                  <Link to={pkg.category === 'party' ? '/party-vibes' : '/curated-experiences'} className="text-gray-600 text-sm">
                     {pkg.category === 'party' ? 'Party Vibes' : 'Curated Experiences'}
                   </Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
-              <BreadcrumbPage>{pkg.title}</BreadcrumbPage>
+              <BreadcrumbPage className="text-gray-900 text-sm">{pkg.title}</BreadcrumbPage>
             </BreadcrumbList>
           </Breadcrumb>
         </div>
       </div>
 
       {/* Back Button */}
-      <div className="py-4 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+      <div className="py-3 px-4">
+        <div className="max-w-4xl mx-auto">
           <Link 
             to={pkg.category === 'party' ? '/party-vibes' : '/curated-experiences'}
-            className="inline-flex items-center text-jungle-600 hover:text-jungle-800 transition-colors"
+            className="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors text-sm"
           >
-            <ArrowLeft className="mr-2 h-4 w-4" />
+            <ArrowLeft className="mr-2 h-3 w-3" />
             Back to {pkg.category === 'party' ? 'Party Vibes' : 'Curated Experiences'}
           </Link>
         </div>
       </div>
 
       {/* Hero Section */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <Card className="overflow-hidden">
+      <section className="py-8 px-4">
+        <div className="max-w-4xl mx-auto">
+          <Card className="overflow-hidden border border-gray-200">
             <div className="relative">
               <img
                 src={pkg.images[0]}
                 alt={pkg.title}
                 className="w-full h-64 object-cover object-center"
               />
-              <div className="absolute top-4 left-4">
+              <div className="absolute top-3 left-3">
                 {pkg.popular && (
-                  <Badge className="bg-gold-400 text-jungle-800 font-bold">
-                    <Star className="inline h-4 w-4 mr-1" />
+                  <Badge className="bg-gray-900 text-white font-normal text-xs">
+                    <Star className="inline h-3 w-3 mr-1" />
                     Popular
                   </Badge>
                 )}
                 {pkg.badge && !pkg.popular && (
-                  <Badge className="bg-coral-500 text-white font-bold">
+                  <Badge className="bg-gray-100 text-gray-800 font-normal text-xs">
                     {pkg.badge}
                   </Badge>
                 )}
               </div>
             </div>
             <CardHeader className="text-center">
-              <div className="text-5xl mb-2">{pkg.emoji}</div>
-              <h2 className="text-3xl font-bold text-jungle-800 mb-2">
+              <div className="text-3xl mb-2">{pkg.emoji}</div>
+              <h2 className="text-2xl font-light text-gray-900 mb-2">
                 {pkg.title}
               </h2>
-              <p className="text-jungle-600 mb-4">{pkg.description}</p>
-              <div className="flex justify-center gap-4 text-sm text-jungle-500">
+              <p className="text-gray-600 mb-3 text-sm font-light">{pkg.description}</p>
+              <div className="flex justify-center gap-4 text-xs text-gray-500">
                 <div className="flex items-center gap-1">
-                  <Calendar className="h-4 w-4" />
+                  <Calendar className="h-3 w-3" />
                   {pkg.duration}
                 </div>
                 <div className="flex items-center gap-1">
-                  <Users className="h-4 w-4" />
+                  <Users className="h-3 w-3" />
                   {pkg.groupSize}
                 </div>
                 <div className="flex items-center gap-1">
-                  <MapPin className="h-4 w-4" />
+                  <MapPin className="h-3 w-3" />
                   Santa Cruz, Bolivia
                 </div>
               </div>
@@ -208,44 +209,43 @@ const PackageDetail = () => {
       </section>
 
       {/* Content Grid */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+      <section className="py-8 px-4">
+        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Features */}
           <div>
-            <h3 className="text-2xl font-bold text-jungle-800 mb-4">
+            <h3 className="text-xl font-light text-gray-900 mb-4">
               What's Included
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               {pkg.features.map((feature, index) => (
                 <li
                   key={index}
-                  className="flex items-center text-jungle-700"
+                  className="flex items-center text-gray-700 text-sm"
                 >
-                  <Check className="mr-2 h-5 w-5 text-coral-500" />
+                  <Check className="mr-2 h-4 w-4 text-gray-600" />
                   {feature}
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Itinerary (Placeholder) */}
+          {/* Itinerary */}
           <div>
-            <h3 className="text-2xl font-bold text-jungle-800 mb-4">
+            <h3 className="text-xl font-light text-gray-900 mb-4">
               Itinerary (Example)
             </h3>
-            <div className="text-jungle-700">
-              <p className="mb-2">
-                <strong>Day 1:</strong> Arrival and Welcome Dinner
+            <div className="text-gray-700 text-sm font-light space-y-2">
+              <p>
+                <strong className="font-medium">Day 1:</strong> Arrival and Welcome Dinner
               </p>
-              <p className="mb-2">
-                <strong>Day 2:</strong> City Tour and Cultural Experience
+              <p>
+                <strong className="font-medium">Day 2:</strong> City Tour and Cultural Experience
               </p>
-              <p className="mb-2">
-                <strong>Day 3:</strong> Adventure Activity (e.g., hiking,
-                biking)
+              <p>
+                <strong className="font-medium">Day 3:</strong> Adventure Activity (e.g., hiking, biking)
               </p>
-              <p className="mb-2">
-                <strong>Day 4:</strong> Relaxation and Departure
+              <p>
+                <strong className="font-medium">Day 4:</strong> Relaxation and Departure
               </p>
             </div>
           </div>
@@ -253,18 +253,18 @@ const PackageDetail = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-jungle-600 to-jungle-800">
-        <div className="max-w-4xl mx-auto text-center text-white">
-          <h3 className="text-3xl font-bold mb-4">Ready to Book?</h3>
-          <p className="text-lg mb-8 opacity-90">
+      <section className="py-12 px-4 bg-gray-900">
+        <div className="max-w-3xl mx-auto text-center text-white">
+          <h3 className="text-2xl font-light mb-4">Ready to Book?</h3>
+          <p className="text-sm mb-6 opacity-90 font-light">
             Contact us to customize your experience and book your adventure.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link to="/intake-form">
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-jungle-600"
+                className="border-white/30 text-white hover:bg-white/10 hover:border-white text-sm font-normal"
               >
                 Plan My Trip
               </Button>
@@ -272,7 +272,7 @@ const PackageDetail = () => {
             <Button
               size="lg"
               variant="ghost"
-              className="text-white hover:bg-white/20"
+              className="text-white hover:bg-white/20 text-sm font-normal"
               onClick={() =>
                 window.open(
                   'https://wa.me/1234567890?text=I want to book the Santa Cruz Experience!',

@@ -50,37 +50,37 @@ const PartyVibes = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <div 
-            className="w-full h-full bg-gradient-to-br from-onyx-900 via-midnight-800 to-onyx-900 bg-cover bg-center"
+            className="w-full h-full bg-cover bg-center"
             style={{
-              backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('/api/placeholder/1400/900')`
+              backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('/api/placeholder/1400/900')`
             }}
           />
         </div>
 
-        <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+        <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
           <div className="animate-fade-in">
-            <Diamond className="w-16 h-16 text-gold-400 mx-auto mb-8" />
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-light text-white mb-6 leading-tight tracking-wide">
+            <Diamond className="w-8 h-8 text-white mx-auto mb-6" />
+            <h1 className="text-4xl lg:text-5xl font-light text-white mb-4 leading-tight tracking-tight">
               Diamond
               <br />
-              <span className="text-gold-400 font-extralight">Santa Cruz</span>
+              <span className="text-gray-200 font-normal">Santa Cruz</span>
             </h1>
             
-            <p className="text-lg sm:text-xl text-gray-300 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+            <p className="text-base text-gray-300 mb-8 max-w-xl mx-auto font-light leading-relaxed">
               Exclusive access. Refined experiences. Curated for those who appreciate the finer details.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-12">
               <Button 
                 size="lg" 
-                className="bg-gold-600 hover:bg-gold-700 text-white px-10 py-4 text-base font-medium rounded-none transition-all duration-300"
+                className="bg-white hover:bg-gray-100 text-gray-900 px-6 py-2 text-sm font-normal"
                 onClick={scrollToPackages}
               >
                 View Collections
@@ -89,7 +89,7 @@ const PartyVibes = () => {
               <Button 
                 size="lg" 
                 variant="outline"
-                className="border-gold-400/40 text-gold-400 hover:bg-gold-400/10 hover:border-gold-400 px-10 py-4 text-base font-medium rounded-none transition-all duration-300"
+                className="border-white/40 text-white hover:bg-white/10 hover:border-white px-6 py-2 text-sm font-normal"
                 onClick={() => window.open('https://wa.me/1234567890?text=Diamond Santa Cruz inquiry', '_blank')}
               >
                 Contact
@@ -97,21 +97,21 @@ const PartyVibes = () => {
             </div>
 
             {/* Features */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-              <div className="text-center text-white">
-                <Zap className="h-6 w-6 text-gold-400 mb-4 mx-auto" />
-                <h3 className="text-lg font-medium mb-3">Exclusive Access</h3>
-                <p className="text-sm text-gray-400 font-light">Private venues and experiences unavailable elsewhere</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto">
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-3 text-white">
+                <Zap className="h-4 w-4 text-gray-300 mb-2 mx-auto" />
+                <h3 className="text-sm font-medium mb-1">Exclusive Access</h3>
+                <p className="text-xs opacity-80 font-light">Private venues and experiences unavailable elsewhere</p>
               </div>
-              <div className="text-center text-white">
-                <Users className="h-6 w-6 text-gold-400 mb-4 mx-auto" />
-                <h3 className="text-lg font-medium mb-3">Curated Service</h3>
-                <p className="text-sm text-gray-400 font-light">Personalized attention to every detail of your experience</p>
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-3 text-white">
+                <Users className="h-4 w-4 text-gray-300 mb-2 mx-auto" />
+                <h3 className="text-sm font-medium mb-1">Curated Service</h3>
+                <p className="text-xs opacity-80 font-light">Personalized attention to every detail of your experience</p>
               </div>
-              <div className="text-center text-white">
-                <MapPin className="h-6 w-6 text-gold-400 mb-4 mx-auto" />
-                <h3 className="text-lg font-medium mb-3">Local Expertise</h3>
-                <p className="text-sm text-gray-400 font-light">Insider knowledge and connections throughout Santa Cruz</p>
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-3 text-white">
+                <MapPin className="h-4 w-4 text-gray-300 mb-2 mx-auto" />
+                <h3 className="text-sm font-medium mb-1">Local Expertise</h3>
+                <p className="text-xs opacity-80 font-light">Insider knowledge and connections throughout Santa Cruz</p>
               </div>
             </div>
           </div>
@@ -119,73 +119,73 @@ const PartyVibes = () => {
       </section>
 
       {/* Packages */}
-      <section id="party-packages" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-onyx-900 to-midnight-900">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl sm:text-5xl font-light text-white mb-6">
+      <section id="party-packages" className="py-16 px-4 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-light text-gray-900 mb-3 tracking-tight">
               Experience Collections
             </h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto font-light">
+            <p className="text-base text-gray-600 max-w-xl mx-auto font-light leading-relaxed">
               Thoughtfully crafted experiences designed for discerning travelers
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {partyPackages.map((pkg) => (
               <Card 
                 key={pkg.id} 
-                className={`group relative overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 bg-gradient-to-br from-onyx-800/90 to-midnight-800/90 border-gold-400/20 backdrop-blur-sm ${
-                  pkg.popular ? 'ring-1 ring-gold-400/30' : ''
+                className={`group relative transition-all duration-200 hover:shadow-sm bg-white border border-gray-200/60 ${
+                  pkg.popular ? 'ring-1 ring-gray-300/50' : ''
                 }`}
               >
                 {pkg.popular && (
-                  <div className="absolute top-0 right-0 bg-gold-600 text-white px-4 py-2 text-xs font-medium tracking-wide">
+                  <div className="absolute top-0 right-0 bg-gray-900 text-white px-3 py-1 text-xs font-normal">
                     FEATURED
                   </div>
                 )}
                 
                 {pkg.badge && !pkg.popular && (
-                  <div className="absolute top-0 right-0 bg-onyx-700 text-gold-400 px-4 py-2 text-xs font-medium tracking-wide border-l border-b border-gold-400/30">
+                  <div className="absolute top-0 right-0 bg-gray-100 text-gray-700 px-3 py-1 text-xs font-normal border-l border-b border-gray-200">
                     {pkg.badge}
                   </div>
                 )}
 
-                <CardHeader className="text-center pb-6">
-                  <div className="text-3xl mb-4 text-gold-400">{pkg.emoji}</div>
-                  <h3 className="text-xl font-medium text-white mb-3 tracking-wide">
+                <CardHeader className="text-center pb-4">
+                  <div className="text-2xl mb-3 text-gray-700">{pkg.emoji}</div>
+                  <h3 className="text-lg font-medium text-gray-900 mb-2 tracking-tight">
                     {pkg.title}
                   </h3>
-                  <p className="text-sm text-gray-400 mb-6 leading-relaxed">
+                  <p className="text-sm text-gray-600 mb-4 leading-relaxed font-light">
                     {pkg.description}
                   </p>
-                  <div className="flex justify-center gap-6 text-xs text-gray-500">
-                    <div className="flex items-center gap-2">
+                  <div className="flex justify-center gap-4 text-xs text-gray-500">
+                    <div className="flex items-center gap-1">
                       <Calendar className="h-3 w-3" />
                       {pkg.duration}
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-1">
                       <Users className="h-3 w-3" />
                       {pkg.groupSize}
                     </div>
                   </div>
                 </CardHeader>
 
-                <CardContent className="space-y-6">
-                  <div className="space-y-3">
+                <CardContent className="space-y-4">
+                  <div className="space-y-2">
                     {pkg.features.map((feature, index) => (
-                      <div key={index} className="flex items-center text-sm text-gray-300">
-                        <div className="w-1.5 h-1.5 bg-gold-400 rounded-full mr-4 flex-shrink-0"></div>
+                      <div key={index} className="flex items-center text-xs text-gray-600 font-light">
+                        <div className="w-1 h-1 bg-gray-400 rounded-full mr-2 flex-shrink-0"></div>
                         {feature}
                       </div>
                     ))}
                   </div>
 
-                  <div className="border-t border-gold-400/20 pt-6">
-                    <div className="text-lg font-medium text-gold-400 mb-4 tracking-wide">
+                  <div className="border-t border-gray-100 pt-4">
+                    <div className="text-base font-medium text-gray-900 mb-3">
                       {pkg.price}
                     </div>
                     <Link to={`/package/${pkg.id}`}>
-                      <Button className="w-full bg-onyx-700 hover:bg-onyx-600 text-white transition-all duration-300 border border-gold-400/30 hover:border-gold-400 rounded-none font-medium">
+                      <Button className="w-full bg-gray-900 hover:bg-gray-800 text-white text-sm font-normal">
                         Learn More
                       </Button>
                     </Link>
@@ -198,20 +198,20 @@ const PartyVibes = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-onyx-800 to-midnight-800 border-t border-gold-400/20">
-        <div className="max-w-4xl mx-auto text-center text-white">
-          <h3 className="text-3xl font-light mb-6">
+      <section className="py-12 px-4 bg-gray-900">
+        <div className="max-w-2xl mx-auto text-center text-white">
+          <h3 className="text-2xl font-light mb-3">
             Bespoke Experiences
           </h3>
-          <p className="text-lg mb-10 text-gray-300 font-light leading-relaxed">
+          <p className="text-sm mb-6 text-gray-300 font-light leading-relaxed">
             Every experience is tailored to your preferences. Let us create something unique for you.
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link to="/intake-form">
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-gold-400/50 text-gold-400 hover:bg-gold-400/10 hover:border-gold-400 rounded-none font-medium px-8"
+                className="border-white/30 text-white hover:bg-white/10 hover:border-white text-sm font-normal"
               >
                 Design Your Experience
               </Button>
@@ -219,7 +219,7 @@ const PartyVibes = () => {
             <Button 
               size="lg" 
               variant="ghost" 
-              className="text-white hover:bg-white/10 rounded-none font-medium px-8"
+              className="text-white hover:bg-white/10 text-sm font-normal"
               onClick={() => window.open('https://wa.me/1234567890?text=Diamond Santa Cruz bespoke inquiry', '_blank')}
             >
               Speak With Us
