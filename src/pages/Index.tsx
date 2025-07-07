@@ -3,6 +3,7 @@ import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import VibeSelector from '@/components/VibeSelector';
 import Packages from '@/components/Packages';
+import EventsPreview from '@/components/EventsPreview';
 import IntakeForm from '@/components/IntakeForm';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import BackToTop from '@/components/BackToTop';
@@ -15,6 +16,7 @@ const Index = () => {
       <Hero />
       <VibeSelector />
       <Packages />
+      <EventsPreview />
       <IntakeForm />
       <WhatsAppButton />
       <BackToTop />

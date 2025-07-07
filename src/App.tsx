@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import PartyVibes from "./pages/PartyVibes";
 import CuratedExperiences from "./pages/CuratedExperiences";
 import PackageDetail from "./pages/PackageDetail";
+import Events from "./pages/Events";
 import About from "./pages/About";
 import WhyUs from "./pages/WhyUs";
 import VacationRentals from "./pages/VacationRentals";
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/party-vibes" element={<PartyVibes />} />
           <Route path="/curated-experiences" element={<CuratedExperiences />} />
+          <Route path="/events" element={<Events />} />
           <Route path="/vacation-rentals" element={<VacationRentals />} />
           <Route path="/real-estate-services" element={<RealEstateServices />} />
           <Route path="/vip" element={<VIPExperience />} />
