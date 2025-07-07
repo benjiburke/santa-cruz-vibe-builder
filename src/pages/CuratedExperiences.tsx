@@ -1,64 +1,120 @@
+
 import Navigation from '@/components/Navigation';
+import ServiceCard from '@/components/ServiceCard';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Star, Users, MapPin, Calendar, Camera, Leaf, Coffee } from 'lucide-react';
+import { Star, Users, MapPin, Calendar, Camera, Leaf, Coffee, Compass, Mountain, TreePine } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const curatedPackages = [
+const curatedExperiences = [
   {
-    id: 'coffee-tour',
-    title: 'Coffee Immersion',
-    emoji: '☕',
-    description: 'Explore the best coffee plantations and brewing methods',
-    features: ['Guided plantation tour', 'Coffee tasting sessions', 'Brewing workshop', 'Local cafe visits'],
+    title: 'Coffee Heritage Experience',
+    description: 'Immerse yourself in Bolivia\'s rich coffee culture with expert-guided plantation tours and professional tasting sessions.',
     price: 'From $280/person',
-    duration: '1 day',
-    groupSize: '2-6 people',
-    popular: true
+    features: [
+      'Private plantation tours with local farmers',
+      'Professional cupping and tasting sessions',
+      'Traditional brewing workshops',
+      'Artisan roastery visits',
+      'Coffee bean selection and packaging'
+    ],
+    icon: Coffee,
+    buttonText: 'Reserve Experience'
   },
   {
-    id: 'amazon-adventure',
-    title: 'Amazon Adventure',
-    emoji: '🌿',
-    description: 'Venture into the Amazon rainforest for an unforgettable experience',
-    features: ['Jungle trekking', 'Wildlife spotting', 'Canoe rides', 'Indigenous community visit'],
+    title: 'Amazon Rainforest Expedition',
+    description: 'Venture deep into the pristine Amazon rainforest for an authentic eco-adventure with indigenous communities.',
     price: 'From $750/person',
-    duration: '3 days',
-    groupSize: '4-8 people',
-    badge: 'Eco-Friendly'
+    features: [
+      'Expert naturalist guides',
+      'Wildlife photography opportunities',
+      'Traditional canoe expeditions',
+      'Indigenous community interactions',
+      'Sustainable eco-lodge accommodation'
+    ],
+    icon: TreePine,
+    buttonText: 'Book Adventure'
   },
   {
-    id: 'photography-tour',
-    title: 'Photography Expedition',
-    emoji: '📸',
-    description: 'Capture the beauty of Santa Cruz with professional guidance',
-    features: ['Photography workshop', 'Scenic location visits', 'Post-processing session', 'Equipment guidance'],
+    title: 'Photography Masterclass',
+    description: 'Capture Santa Cruz\'s stunning landscapes and vibrant culture with professional photography instruction.',
     price: 'From $420/person',
-    duration: '2 days',
-    groupSize: '3-5 people'
+    features: [
+      'Professional photography instruction',
+      'Exclusive location access',
+      'Post-processing workshops',
+      'Equipment rental included',
+      'Portfolio development session'
+    ],
+    icon: Camera,
+    buttonText: 'Start Creating'
+  },
+  {
+    title: 'Samaipata Cultural Journey',
+    description: 'Explore the mystical pre-Columbian ruins and immerse yourself in local Andean traditions.',
+    price: 'From $320/person',
+    features: [
+      'Archaeological site guided tours',
+      'Traditional craft workshops',
+      'Local artisan meetings',
+      'Authentic cuisine experiences',
+      'Mountain hiking expeditions'
+    ],
+    icon: Mountain,
+    buttonText: 'Discover History'
+  },
+  {
+    title: 'Wellness & Spa Retreat',
+    description: 'Rejuvenate your body and mind with holistic wellness treatments in serene natural settings.',
+    price: 'From $480/person',
+    features: [
+      'Luxury spa treatments',
+      'Meditation and yoga sessions',
+      'Natural hot spring access',
+      'Nutritional wellness consultations',
+      'Mindfulness workshops'
+    ],
+    icon: Leaf,
+    buttonText: 'Book Retreat'
+  },
+  {
+    title: 'Adventure Sports Package',
+    description: 'Experience the thrill of Santa Cruz\'s diverse landscapes through exciting adventure activities.',
+    price: 'From $380/person',
+    features: [
+      'Rappelling and rock climbing',
+      'White water rafting',
+      'Zip-lining adventures',
+      'ATV mountain tours',
+      'Professional safety instruction'
+    ],
+    icon: Compass,
+    buttonText: 'Get Adventurous'
   }
 ];
 
 const CuratedExperiences = () => {
-  const scrollToPackages = () => {
-    const element = document.getElementById('curated-packages');
+  const scrollToExperiences = () => {
+    const element = document.getElementById('curated-experiences');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
+  const handleWhatsAppInquiry = () => {
+    window.open('https://wa.me/1234567890?text=Hi! I want to book a curated experience in Santa Cruz!', '_blank');
+  };
+
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-br from-onyx-900 via-midnight-800 to-onyx-900">
       <Navigation />
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div 
-            className="w-full h-full bg-gradient-to-br from-jungle-700 via-jungle-800 to-jungle-900 bg-cover bg-center"
+            className="w-full h-full bg-gradient-to-br from-onyx-800 via-midnight-700 to-onyx-900 bg-cover bg-center"
             style={{
-              backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('/api/placeholder/1200/800')`
+              backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1472396961693-142e6e269027?w=1200&h=800&fit=crop')`
             }}
           />
         </div>
@@ -69,18 +125,18 @@ const CuratedExperiences = () => {
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
               Curated Experiences
               <br />
-              <span className="text-gold-400">Unique Adventures Await</span>
+              <span className="text-gold-400">Unforgettable Adventures</span>
             </h1>
             
             <p className="text-xl sm:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto font-light">
-              Immerse yourself in hand-picked experiences that showcase the best of Santa Cruz.
+              Discover Bolivia's hidden treasures through expertly crafted experiences that showcase the authentic beauty of Santa Cruz.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
               <Button 
                 size="lg" 
-                className="bg-gold-500 hover:bg-gold-600 text-jungle-800 px-8 py-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl"
-                onClick={scrollToPackages}
+                className="bg-gold-500 hover:bg-gold-600 text-onyx-800 px-8 py-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl font-semibold"
+                onClick={scrollToExperiences}
               >
                 <Camera className="mr-2 h-5 w-5" />
                 Explore Experiences
@@ -88,8 +144,8 @@ const CuratedExperiences = () => {
               
               <Button 
                 size="lg" 
-                className="bg-green-500 hover:bg-green-600 text-white px-8 py-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl"
-                onClick={() => window.open('https://wa.me/1234567890?text=Hi! I want to book a curated experience in Santa Cruz!', '_blank')}
+                className="bg-transparent border-2 border-gold-400 text-gold-400 hover:bg-gold-400 hover:text-onyx-800 px-8 py-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl font-semibold"
+                onClick={handleWhatsAppInquiry}
               >
                 <Leaf className="mr-2 h-5 w-5" />
                 Plan My Adventure
@@ -98,132 +154,80 @@ const CuratedExperiences = () => {
 
             {/* Experience Features */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white border border-gold-400/20">
                 <Camera className="h-8 w-8 text-gold-400 mb-3 mx-auto" />
                 <h3 className="text-lg font-bold mb-2">Expert Guides</h3>
-                <p className="text-sm opacity-90">Local experts to lead you on unforgettable journeys</p>
+                <p className="text-sm opacity-90">Local specialists with deep cultural knowledge</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white border border-gold-400/20">
                 <Coffee className="h-8 w-8 text-gold-400 mb-3 mx-auto" />
-                <h3 className="text-lg font-bold mb-2">Unique Activities</h3>
-                <p className="text-sm opacity-90">From coffee tours to jungle treks, discover hidden gems</p>
+                <h3 className="text-lg font-bold mb-2">Authentic Experiences</h3>
+                <p className="text-sm opacity-90">Genuine cultural immersion and local traditions</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white border border-gold-400/20">
                 <MapPin className="h-8 w-8 text-gold-400 mb-3 mx-auto" />
-                <h3 className="text-lg font-bold mb-2">Authentic Culture</h3>
-                <p className="text-sm opacity-90">Immerse yourself in the local culture and traditions</p>
+                <h3 className="text-lg font-bold mb-2">Exclusive Access</h3>
+                <p className="text-sm opacity-90">Private locations and experiences unavailable elsewhere</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Curated Packages */}
-      <section id="curated-packages" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white to-jungle-50">
+      {/* Curated Experiences */}
+      <section id="curated-experiences" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-onyx-900 via-midnight-800 to-onyx-900">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold text-jungle-800 mb-4">
-              Curated Experiences
+            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+              Curated <span className="text-gold-400">Experiences</span>
             </h2>
-            <p className="text-xl text-jungle-600 max-w-3xl mx-auto">
-              Hand-picked adventures designed to create lasting memories
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Hand-selected adventures designed to create extraordinary memories in Bolivia's most captivating destinations.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {curatedPackages.map((pkg) => (
-              <Card 
-                key={pkg.id} 
-                className={`group relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 ${
-                  pkg.popular ? 'ring-2 ring-gold-400 shadow-lg' : ''
-                }`}
-              >
-                {pkg.popular && (
-                  <div className="absolute top-0 right-0 bg-gold-400 text-jungle-800 px-3 py-1 text-sm font-bold">
-                    <Star className="inline h-4 w-4 mr-1" />
-                    Popular
-                  </div>
-                )}
-                
-                {pkg.badge && !pkg.popular && (
-                  <div className="absolute top-0 right-0 bg-jungle-500 text-white px-3 py-1 text-sm font-bold">
-                    {pkg.badge}
-                  </div>
-                )}
-
-                <CardHeader className="text-center pb-4">
-                  <div className="text-4xl mb-2">{pkg.emoji}</div>
-                  <h3 className="text-xl font-bold text-jungle-800 mb-2">
-                    {pkg.title}
-                  </h3>
-                  <p className="text-sm text-jungle-600 mb-4">
-                    {pkg.description}
-                  </p>
-                  <div className="flex justify-center gap-4 text-xs text-jungle-500">
-                    <div className="flex items-center gap-1">
-                      <Calendar className="h-3 w-3" />
-                      {pkg.duration}
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Users className="h-3 w-3" />
-                      {pkg.groupSize}
-                    </div>
-                  </div>
-                </CardHeader>
-
-                <CardContent className="space-y-4">
-                  <div className="space-y-2">
-                    {pkg.features.map((feature, index) => (
-                      <div key={index} className="flex items-center text-sm text-jungle-700">
-                        <div className="w-2 h-2 bg-gold-400 rounded-full mr-2 flex-shrink-0"></div>
-                        {feature}
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="border-t pt-4">
-                    <div className="text-lg font-bold text-jungle-600 mb-3">
-                      {pkg.price}
-                    </div>
-                    <Link to={`/package/${pkg.id}`}>
-                      <Button className="w-full bg-jungle-600 hover:bg-jungle-700 text-white transition-all duration-300">
-                        View Details
-                      </Button>
-                    </Link>
-                  </div>
-                </CardContent>
-              </Card>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {curatedExperiences.map((experience, index) => (
+              <ServiceCard
+                key={index}
+                title={experience.title}
+                description={experience.description}
+                price={experience.price}
+                features={experience.features}
+                icon={experience.icon}
+                buttonText={experience.buttonText}
+                onButtonClick={handleWhatsAppInquiry}
+              />
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-jungle-600 to-jungle-800">
-        <div className="max-w-4xl mx-auto text-center text-white">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-gold-600 to-gold-500">
+        <div className="max-w-4xl mx-auto text-center text-onyx-800">
           <h3 className="text-3xl font-bold mb-4">
-            Ready for a Unique Adventure?
+            Ready for Your Next Adventure?
           </h3>
           <p className="text-lg mb-8 opacity-90">
-            Let us curate the perfect experience for you.
+            Let us curate the perfect experience tailored to your interests and desires.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/intake-form">
               <Button 
                 size="lg" 
-                variant="outline" 
-                className="border-white text-white hover:bg-white hover:text-jungle-600"
+                className="bg-onyx-800 hover:bg-onyx-900 text-white border-2 border-onyx-800 hover:border-onyx-900 font-semibold"
               >
                 Plan My Experience
               </Button>
             </Link>
             <Button 
               size="lg" 
-              variant="ghost" 
-              className="text-white hover:bg-white/20"
-              onClick={() => window.open('https://wa.me/1234567890?text=I want to plan a custom curated experience!', '_blank')}
+              variant="outline" 
+              className="border-2 border-onyx-800 text-onyx-800 hover:bg-onyx-800 hover:text-white font-semibold"
+              onClick={handleWhatsAppInquiry}
             >
-              WhatsApp Us
+              WhatsApp Concierge
             </Button>
           </div>
         </div>
