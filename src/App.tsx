@@ -12,6 +12,7 @@ import About from "./pages/About";
 import WhyUs from "./pages/WhyUs";
 import VacationRentals from "./pages/VacationRentals";
 import RealEstateServices from "./pages/RealEstateServices";
+import VIPExperience from "./pages/VIPExperience";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/curated-experiences" element={<CuratedExperiences />} />
           <Route path="/vacation-rentals" element={<VacationRentals />} />
           <Route path="/real-estate-services" element={<RealEstateServices />} />
+          <Route path="/vip" element={<VIPExperience />} />
           <Route path="/package/:packageId" element={<PackageDetail />} />
           <Route path="/about" element={<About />} />
           <Route path="/why-us" element={<WhyUs />} />

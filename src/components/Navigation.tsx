@@ -13,6 +13,7 @@ const Navigation = () => {
     { to: '/curated-experiences', label: 'Curated Experiences' },
     { to: '/vacation-rentals', label: 'Vacation Rentals' },
     { to: '/real-estate-services', label: 'Real Estate Services' },
+    { to: '/vip', label: 'VIP Experience' },
     { to: '/why-us', label: 'Why Us' },
     { to: '/about', label: 'About' }
   ];
