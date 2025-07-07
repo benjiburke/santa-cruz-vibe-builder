@@ -26,20 +26,21 @@ const Index = () => {
             <Diamond className="w-8 h-8 text-gold-400 mx-auto mb-6" />
             <h3 className="text-2xl font-light mb-6 text-gold-400">Diamond Santa Cruz</h3>
             <p className="text-gray-300 mb-8 font-light leading-relaxed max-w-2xl mx-auto">
-              Sophisticated Santa Cruz experiences crafted for the discerning traveler.
+              Sophisticated Santa Cruz experiences crafted for the discerning traveler. 
+              Where luxury meets authentic Bolivian culture.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
                 onClick={() => window.open('https://wa.me/1234567890', '_blank')}
                 className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 font-medium rounded-none transition-all duration-300"
               >
-                WhatsApp
+                Private Consultation
               </button>
               <button 
                 onClick={() => document.getElementById('intake-form')?.scrollIntoView({ behavior: 'smooth' })}
                 className="bg-gold-600 hover:bg-gold-700 text-white px-8 py-3 font-medium rounded-none transition-all duration-300"
               >
-                Plan Experience
+                Curate Experience
               </button>
             </div>
           </div>
