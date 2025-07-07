@@ -319,7 +319,7 @@ const PackageDetail = () => {
             <Button
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-gray-900 text-sm font-normal"
+              className="bg-transparent border-white text-white hover:bg-white hover:text-gray-900 text-sm font-normal"
               onClick={() =>
                 window.open(
                   'https://wa.me/1234567890?text=I want to book the Santa Cruz Experience!',
