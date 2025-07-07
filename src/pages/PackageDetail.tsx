@@ -1,4 +1,3 @@
-
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import Navigation from '@/components/Navigation';
@@ -320,7 +319,7 @@ const PackageDetail = () => {
             <Button
               size="lg"
               variant="outline"
-              className="border-white/50 text-white hover:bg-white/10 hover:border-white text-sm font-normal"
+              className="border-white text-white hover:bg-white hover:text-gray-900 text-sm font-normal"
               onClick={() =>
                 window.open(
                   'https://wa.me/1234567890?text=I want to book the Santa Cruz Experience!',
