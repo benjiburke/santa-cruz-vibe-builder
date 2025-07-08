@@ -8,88 +8,88 @@ import { Link } from 'react-router-dom';
 
 const curatedExperiences = [
   {
-    title: 'Coffee Heritage Experience',
-    description: 'Immerse yourself in Bolivia\'s rich coffee culture with expert-guided plantation tours and professional tasting sessions.',
-    price: 'From $280/person',
+    title: 'Sandboarding at Lomas de Arena',
+    description: 'Glide down massive golden dunes just 45 minutes from the city with private 4x4 transport, boards, and sunset champagne.',
+    price: 'From $180/person',
     features: [
-      'Private plantation tours with local farmers',
-      'Professional cupping and tasting sessions',
-      'Traditional brewing workshops',
-      'Artisan roastery visits',
-      'Coffee bean selection and packaging'
-    ],
-    icon: Coffee,
-    buttonText: 'Reserve Experience'
-  },
-  {
-    title: 'Amazon Rainforest Expedition',
-    description: 'Venture deep into the pristine Amazon rainforest for an authentic eco-adventure with indigenous communities.',
-    price: 'From $750/person',
-    features: [
-      'Expert naturalist guides',
-      'Wildlife photography opportunities',
-      'Traditional canoe expeditions',
-      'Indigenous community interactions',
-      'Sustainable eco-lodge accommodation'
-    ],
-    icon: TreePine,
-    buttonText: 'Book Adventure'
-  },
-  {
-    title: 'Photography Masterclass',
-    description: 'Capture Santa Cruz\'s stunning landscapes and vibrant culture with professional photography instruction.',
-    price: 'From $420/person',
-    features: [
-      'Professional photography instruction',
-      'Exclusive location access',
-      'Post-processing workshops',
-      'Equipment rental included',
-      'Portfolio development session'
-    ],
-    icon: Camera,
-    buttonText: 'Start Creating'
-  },
-  {
-    title: 'Samaipata Cultural Journey',
-    description: 'Explore the mystical pre-Columbian ruins and immerse yourself in local Andean traditions.',
-    price: 'From $320/person',
-    features: [
-      'Archaeological site guided tours',
-      'Traditional craft workshops',
-      'Local artisan meetings',
-      'Authentic cuisine experiences',
-      'Mountain hiking expeditions'
+      'Private 4x4 desert transport',
+      'Professional sandboarding equipment',
+      'Sunset champagne service',
+      'Professional photography session',
+      'Gourmet snacks and refreshments'
     ],
     icon: Mountain,
-    buttonText: 'Discover History'
+    buttonText: 'Book Desert Adventure'
   },
   {
-    title: 'Wellness & Spa Retreat',
-    description: 'Rejuvenate your body and mind with holistic wellness treatments in serene natural settings.',
-    price: 'From $480/person',
+    title: 'Private Jungle & Waterfall Retreat',
+    description: 'Guided expedition to hidden waterfalls with hiking, swimming, and private picnic in pristine jungle paradise.',
+    price: 'From $320/person',
     features: [
-      'Luxury spa treatments',
-      'Meditation and yoga sessions',
-      'Natural hot spring access',
-      'Nutritional wellness consultations',
-      'Mindfulness workshops'
+      'Expert jungle guide and naturalist',
+      'Hidden waterfall access',
+      'Private jungle picnic setup',
+      'Swimming in natural pools',
+      'Wildlife spotting opportunities'
     ],
-    icon: Leaf,
-    buttonText: 'Book Retreat'
+    icon: TreePine,
+    buttonText: 'Explore Paradise'
   },
   {
-    title: 'Adventure Sports Package',
-    description: 'Experience the thrill of Santa Cruz\'s diverse landscapes through exciting adventure activities.',
-    price: 'From $380/person',
+    title: 'Samaipata Wine + Culture Day',
+    description: 'Sophisticated wine tastings at boutique vineyards plus pre-Columbian rock carvings and natural pools.',
+    price: 'From $420/person',
     features: [
-      'Rappelling and rock climbing',
-      'White water rafting',
-      'Zip-lining adventures',
-      'ATV mountain tours',
-      'Professional safety instruction'
+      'Boutique winery tours and tastings',
+      'Pre-Columbian archaeological sites',
+      'Las Cuevas natural pools',
+      'Gourmet lunch with wine pairings',
+      'Cultural heritage guide'
+    ],
+    icon: Coffee,
+    buttonText: 'Taste Culture'
+  },
+  {
+    title: 'Amboró Wilderness Adventure',
+    description: 'Exclusive guided nature trek into pristine wilderness - rivers, birds, wildlife with luxury eco-lodge comfort.',
+    price: 'From $680/person',
+    features: [
+      'Private nature guide specialist',
+      'Luxury eco-lodge accommodation',
+      'Bird watching and wildlife photography',
+      'River expeditions and hiking',
+      'Gourmet meals in nature'
     ],
     icon: Compass,
-    buttonText: 'Get Adventurous'
+    buttonText: 'Wild Luxury'
+  },
+  {
+    title: 'Villa Party + Nightlife Package',
+    description: 'Private villa with pool, chef, open bar, and VIP access to Santa Cruz\'s hottest lounges and nightlife.',
+    price: 'From $850/group',
+    features: [
+      'Private luxury villa with pool',
+      'Personal chef and open bar',
+      'Professional DJ and sound system',
+      'VIP nightclub access and transport',
+      'Hostess team and concierge service'
+    ],
+    icon: Users,
+    buttonText: 'Party Like VIP'
+  },
+  {
+    title: 'Spa Detox Recovery Day',
+    description: 'Ultimate recovery experience with massage, body treatments, IV hydration, and wellness consultation.',
+    price: 'From $380/person',
+    features: [
+      'Full body massage and treatments',
+      'IV hydration therapy',
+      'Luxury facial and body scrub',
+      'Wellness and nutrition consultation',
+      'Meditation and relaxation sessions'
+    ],
+    icon: Leaf,
+    buttonText: 'Restore & Recover'
   }
 ];
 
@@ -200,6 +200,55 @@ const CuratedExperiences = () => {
                 onButtonClick={handleWhatsAppInquiry}
               />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Customization Section */}
+      <section className="py-16 px-6 bg-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-light text-gray-900 mb-6 tracking-tight">
+            Every Experience is <span className="text-primary">Fully Customizable</span>
+          </h2>
+          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto font-light leading-relaxed">
+            Mix and match experiences, add luxury upgrades, or create entirely bespoke adventures. 
+            From intimate couples' retreats to epic group celebrations - we tailor everything to your vision.
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div className="p-4 border border-gray-200 bg-gray-50">
+              <Users className="w-6 h-6 text-primary mx-auto mb-3" />
+              <h3 className="text-base font-medium text-gray-900 mb-2">Group Size Flexibility</h3>
+              <p className="text-sm text-gray-600 font-light">From solo adventures to groups of 20+</p>
+            </div>
+            <div className="p-4 border border-gray-200 bg-gray-50">
+              <Calendar className="w-6 h-6 text-primary mx-auto mb-3" />
+              <h3 className="text-base font-medium text-gray-900 mb-2">Duration Options</h3>
+              <p className="text-sm text-gray-600 font-light">Half-day escapes to week-long journeys</p>
+            </div>
+            <div className="p-4 border border-gray-200 bg-gray-50">
+              <Star className="w-6 h-6 text-primary mx-auto mb-3" />
+              <h3 className="text-base font-medium text-gray-900 mb-2">Luxury Upgrades</h3>
+              <p className="text-sm text-gray-600 font-light">Private chefs, premium transport, VIP access</p>
+            </div>
+          </div>
+          
+          <div className="bg-gray-50 p-6 border border-gray-200">
+            <h4 className="text-lg font-medium text-gray-900 mb-3">Popular Combinations</h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-600">
+              <div className="text-left">
+                <strong className="text-gray-900">Weekend VIP Package:</strong> Villa Party + Sandboarding + Spa Recovery
+              </div>
+              <div className="text-left">
+                <strong className="text-gray-900">Culture & Adventure:</strong> Samaipata Wine + Jungle Waterfall + Amboró Trek
+              </div>
+              <div className="text-left">
+                <strong className="text-gray-900">Bachelor/Bachelorette:</strong> Villa Party + Nightlife + Private Chef + Spa Day
+              </div>
+              <div className="text-left">
+                <strong className="text-gray-900">Romantic Escape:</strong> Wine Culture + Waterfall Retreat + Couples Spa
+              </div>
+            </div>
           </div>
         </div>
       </section>
