@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from '@/components/ui/breadcrumb';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Star, Users, MapPin, Calendar, Check, X, ArrowLeft, DollarSign, Wifi, Coffee, Shield, Car, Plane, Diamond } from 'lucide-react';
 
 const rentalData = {
@@ -23,14 +24,14 @@ const rentalData = {
     location: "Las Palmas District",
     description: "Experience luxury living in this stunning villa featuring a private pool, lush garden views, and premium amenities. Perfect for families or groups seeking comfort and elegance.",
     amenities: [
-      { name: "Private Pool", icon: "🏊‍♂️", available: true },
-      { name: "WiFi", icon: "📶", available: true },
-      { name: "Kitchen", icon: "🍳", available: true },
-      { name: "Air Conditioning", icon: "❄️", available: true },
-      { name: "Security", icon: "🔒", available: true },
-      { name: "Parking", icon: "🚗", available: true },
-      { name: "Housekeeping", icon: "🧹", available: true },
-      { name: "Garden View", icon: "🌳", available: true }
+      { name: "Private Pool", icon: "🏊‍♂️", available: true, images: ["/api/placeholder/400/300", "/api/placeholder/400/300"] },
+      { name: "WiFi", icon: "📶", available: true, images: ["/api/placeholder/400/300"] },
+      { name: "Kitchen", icon: "🍳", available: true, images: ["/api/placeholder/400/300", "/api/placeholder/400/300"] },
+      { name: "Air Conditioning", icon: "❄️", available: true, images: ["/api/placeholder/400/300"] },
+      { name: "Security", icon: "🔒", available: true, images: ["/api/placeholder/400/300"] },
+      { name: "Parking", icon: "🚗", available: true, images: ["/api/placeholder/400/300"] },
+      { name: "Housekeeping", icon: "🧹", available: true, images: ["/api/placeholder/400/300"] },
+      { name: "Garden View", icon: "🌳", available: true, images: ["/api/placeholder/400/300", "/api/placeholder/400/300"] }
     ],
     images: ["/api/placeholder/600/400", "/api/placeholder/600/400", "/api/placeholder/600/400", "/api/placeholder/600/400"]
   },
@@ -47,12 +48,12 @@ const rentalData = {
     location: "Centro District",
     description: "Sophisticated penthouse in the heart of Santa Cruz with stunning city views and premium concierge services. Ideal for business travelers and urban explorers.",
     amenities: [
-      { name: "City View", icon: "🏙️", available: true },
-      { name: "Balcony", icon: "🏠", available: true },
-      { name: "WiFi", icon: "📶", available: true },
-      { name: "Concierge", icon: "🛎️", available: true },
-      { name: "Gym Access", icon: "💪", available: true },
-      { name: "Rooftop Terrace", icon: "🏢", available: true }
+      { name: "City View", icon: "🏙️", available: true, images: ["/api/placeholder/400/300", "/api/placeholder/400/300"] },
+      { name: "Balcony", icon: "🏠", available: true, images: ["/api/placeholder/400/300"] },
+      { name: "WiFi", icon: "📶", available: true, images: ["/api/placeholder/400/300"] },
+      { name: "Concierge", icon: "🛎️", available: true, images: ["/api/placeholder/400/300"] },
+      { name: "Gym Access", icon: "💪", available: true, images: ["/api/placeholder/400/300", "/api/placeholder/400/300"] },
+      { name: "Rooftop Terrace", icon: "🏢", available: true, images: ["/api/placeholder/400/300", "/api/placeholder/400/300"] }
     ],
     images: ["/api/placeholder/600/400", "/api/placeholder/600/400", "/api/placeholder/600/400"]
   },
@@ -69,12 +70,12 @@ const rentalData = {
     location: "Equipetrol District",
     description: "Spacious modern residence perfect for large groups with extensive outdoor areas and entertainment facilities. Premium location in exclusive neighborhood.",
     amenities: [
-      { name: "Private Garden", icon: "🌳", available: true },
-      { name: "BBQ Area", icon: "🔥", available: true },
-      { name: "WiFi", icon: "📶", available: true },
-      { name: "Parking", icon: "🚗", available: true },
-      { name: "Game Room", icon: "🎮", available: true },
-      { name: "Office Space", icon: "💼", available: true }
+      { name: "Private Garden", icon: "🌳", available: true, images: ["/api/placeholder/400/300", "/api/placeholder/400/300"] },
+      { name: "BBQ Area", icon: "🔥", available: true, images: ["/api/placeholder/400/300", "/api/placeholder/400/300"] },
+      { name: "WiFi", icon: "📶", available: true, images: ["/api/placeholder/400/300"] },
+      { name: "Parking", icon: "🚗", available: true, images: ["/api/placeholder/400/300"] },
+      { name: "Game Room", icon: "🎮", available: true, images: ["/api/placeholder/400/300", "/api/placeholder/400/300"] },
+      { name: "Office Space", icon: "💼", available: true, images: ["/api/placeholder/400/300"] }
     ],
     images: ["/api/placeholder/600/400", "/api/placeholder/600/400", "/api/placeholder/600/400", "/api/placeholder/600/400", "/api/placeholder/600/400"]
   }
@@ -263,10 +264,32 @@ const VacationRentalDetail = () => {
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
                 {rental.amenities.map((amenity, index) => (
-                  <div key={index} className="flex items-center gap-2 p-3 bg-gray-50 rounded-lg">
-                    <span className="text-lg">{amenity.icon}</span>
-                    <span className="text-sm text-gray-700">{amenity.name}</span>
-                  </div>
+                  <Dialog key={index}>
+                    <DialogTrigger asChild>
+                      <div className="flex items-center gap-2 p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors">
+                        <span className="text-lg">{amenity.icon}</span>
+                        <span className="text-sm text-gray-700">{amenity.name}</span>
+                      </div>
+                    </DialogTrigger>
+                    <DialogContent className="max-w-3xl">
+                      <DialogHeader>
+                        <DialogTitle className="flex items-center gap-2 text-lg">
+                          <span className="text-xl">{amenity.icon}</span>
+                          {amenity.name}
+                        </DialogTitle>
+                      </DialogHeader>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                        {amenity.images?.map((image, imgIndex) => (
+                          <img
+                            key={imgIndex}
+                            src={image}
+                            alt={`${amenity.name} ${imgIndex + 1}`}
+                            className="w-full h-64 object-cover rounded-lg"
+                          />
+                        ))}
+                      </div>
+                    </DialogContent>
+                  </Dialog>
                 ))}
               </div>
 
