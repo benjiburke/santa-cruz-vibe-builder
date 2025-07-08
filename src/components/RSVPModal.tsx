@@ -6,6 +6,7 @@ import { Label } from '@/components/ui/label';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { useToast } from '@/hooks/use-toast';
 import { PartyPopper, Users } from 'lucide-react';
+import { z } from 'zod';
 
 interface RSVPModalProps {
   isOpen: boolean;
@@ -20,6 +21,13 @@ interface RSVPModalProps {
   };
 }
 
+// Validation schema
+const rsvpSchema = z.object({
+  name: z.string().min(2, "Name must be at least 2 characters").max(100, "Name too long").trim(),
+  email: z.string().email("Invalid email format").max(254, "Email too long"),
+  whatsapp: z.string().regex(/^\+?[1-9]\d{1,14}$/, "Invalid phone number format").max(20, "Phone number too long"),
+});
+
 interface RSVPData {
   name: string;
   email: string;
@@ -28,6 +36,20 @@ interface RSVPData {
   eventTitle: string;
   timestamp: string;
 }
+
+// Sanitize input to prevent XSS
+const sanitizeInput = (input: string): string => {
+  return input.replace(/[<>\"'&]/g, (match) => {
+    const entities: Record<string, string> = {
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#x27;',
+      '&': '&amp;'
+    };
+    return entities[match] || match;
+  }).trim();
+};
 
 const RSVPModal = ({ isOpen, onClose, event }: RSVPModalProps) => {
   const [formData, setFormData] = useState({
@@ -40,8 +62,29 @@ const RSVPModal = ({ isOpen, onClose, event }: RSVPModalProps) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Validate form
-    if (!formData.name || !formData.email || !formData.whatsapp) {
+    // Sanitize inputs
+    const sanitizedData = {
+      name: sanitizeInput(formData.name),
+      email: sanitizeInput(formData.email),
+      whatsapp: sanitizeInput(formData.whatsapp)
+    };
+
+    // Validate with Zod schema
+    try {
+      rsvpSchema.parse(sanitizedData);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        toast({
+          title: "Invalid Information",
+          description: error.errors[0].message,
+          variant: "destructive"
+        });
+        return;
+      }
+    }
+
+    // Additional validation
+    if (!sanitizedData.name || !sanitizedData.email || !sanitizedData.whatsapp) {
       toast({
         title: "Missing Information",
         description: "Please fill in all fields to secure your spot!",
@@ -50,33 +93,58 @@ const RSVPModal = ({ isOpen, onClose, event }: RSVPModalProps) => {
       return;
     }
 
-    // Create RSVP data
+    // Create RSVP data with sanitized inputs
     const rsvpData: RSVPData = {
-      ...formData,
+      ...sanitizedData,
       eventId: event.id,
-      eventTitle: event.title,
+      eventTitle: sanitizeInput(event.title),
       timestamp: new Date().toISOString()
     };
 
-    // Get existing RSVPs from localStorage
-    const existingRSVPs = localStorage.getItem(`rsvp_${event.id}`);
-    const rsvpList = existingRSVPs ? JSON.parse(existingRSVPs) : [];
-    
-    // Add new RSVP
-    rsvpList.push(rsvpData);
-    
-    // Save back to localStorage
-    localStorage.setItem(`rsvp_${event.id}`, JSON.stringify(rsvpList));
+    try {
+      // Get existing RSVPs from localStorage with validation
+      const existingRSVPs = localStorage.getItem(`rsvp_${event.id}`);
+      let rsvpList: RSVPData[] = [];
+      
+      if (existingRSVPs) {
+        try {
+          rsvpList = JSON.parse(existingRSVPs);
+          // Validate it's an array
+          if (!Array.isArray(rsvpList)) {
+            rsvpList = [];
+          }
+        } catch {
+          rsvpList = [];
+        }
+      }
+      
+      // Limit to prevent storage overflow (max 100 RSVPs per event)
+      if (rsvpList.length >= 100) {
+        rsvpList = rsvpList.slice(-99);
+      }
+      
+      // Add new RSVP
+      rsvpList.push(rsvpData);
+      
+      // Save back to localStorage
+      localStorage.setItem(`rsvp_${event.id}`, JSON.stringify(rsvpList));
 
-    // Show success message
-    toast({
-      title: "🎉 You're On The List!",
-      description: `RSVP confirmed for ${event.title}. We'll contact you on WhatsApp soon!`,
-    });
+      // Show success message
+      toast({
+        title: "🎉 You're On The List!",
+        description: `RSVP confirmed for ${sanitizeInput(event.title)}. We'll contact you on WhatsApp soon!`,
+      });
 
-    // Reset form and close modal
-    setFormData({ name: '', email: '', whatsapp: '' });
-    onClose();
+      // Reset form and close modal
+      setFormData({ name: '', email: '', whatsapp: '' });
+      onClose();
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to save RSVP. Please try again.",
+        variant: "destructive"
+      });
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -110,6 +178,7 @@ const RSVPModal = ({ isOpen, onClose, event }: RSVPModalProps) => {
               value={formData.name}
               onChange={handleChange}
               placeholder="Your full name"
+              maxLength={100}
               required
             />
           </div>
@@ -123,6 +192,7 @@ const RSVPModal = ({ isOpen, onClose, event }: RSVPModalProps) => {
               value={formData.email}
               onChange={handleChange}
               placeholder="your@email.com"
+              maxLength={254}
               required
             />
           </div>
@@ -135,6 +205,9 @@ const RSVPModal = ({ isOpen, onClose, event }: RSVPModalProps) => {
               value={formData.whatsapp}
               onChange={handleChange}
               placeholder="+1 (555) 123-4567"
+              maxLength={20}
+              pattern="^\+?[1-9]\d{1,14}$"
+              title="Please enter a valid phone number (e.g., +1234567890)"
               required
             />
           </div>

@@ -13,6 +13,28 @@ import { Send, CheckCircle, Calendar as CalendarIcon } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { format } from 'date-fns';
 import { cn } from '@/lib/utils';
+import { z } from 'zod';
+
+// Validation schemas
+const contactSchema = z.object({
+  whatsapp: z.string().regex(/^\+?[1-9]\d{1,14}$/, "Invalid phone number format").max(20),
+  email: z.string().email("Invalid email format").max(254),
+  instagram: z.string().min(1, "Instagram handle required").max(30).regex(/^@?[a-zA-Z0-9._]+$/, "Invalid Instagram handle"),
+});
+
+// Sanitize input to prevent XSS
+const sanitizeInput = (input: string): string => {
+  return input.replace(/[<>\"'&]/g, (match) => {
+    const entities: Record<string, string> = {
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#x27;',
+      '&': '&amp;'
+    };
+    return entities[match] || match;
+  }).trim();
+};
 
 const IntakeForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -102,8 +124,12 @@ const IntakeForm = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
+    // Sanitize inputs
+    const sanitizedContactInfo = sanitizeInput(formData.contactInfo);
+    const sanitizedAdditionalInfo = sanitizeInput(formData.additionalInfo);
+    
     // Basic validation
-    if (!formData.tripType || !formData.groupSize || !formData.budget || !formData.contactMethod || !formData.contactInfo) {
+    if (!formData.tripType || !formData.groupSize || !formData.budget || !formData.contactMethod || !sanitizedContactInfo) {
       toast({
         title: "Missing information",
         description: "Please fill in all required fields marked with *",
@@ -112,7 +138,32 @@ const IntakeForm = () => {
       return;
     }
 
-    console.log('Form submitted:', formData);
+    // Validate contact information based on method
+    try {
+      if (formData.contactMethod && sanitizedContactInfo) {
+        const validation = contactSchema.shape[formData.contactMethod as keyof typeof contactSchema.shape];
+        validation.parse(sanitizedContactInfo);
+      }
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        toast({
+          title: "Invalid contact information",
+          description: error.errors[0].message,
+          variant: "destructive"
+        });
+        return;
+      }
+    }
+
+    // Create sanitized form data
+    const sanitizedFormData = {
+      ...formData,
+      contactInfo: sanitizedContactInfo,
+      additionalInfo: sanitizedAdditionalInfo.slice(0, 2000), // Limit to 2000 chars
+      services: formData.services.slice(0, 10) // Limit services to prevent abuse
+    };
+
+    console.log('Form submitted:', sanitizedFormData);
     
     toast({
       title: "Trip request submitted! 🔥",
@@ -416,6 +467,17 @@ const IntakeForm = () => {
                     placeholder={getContactPlaceholder()}
                     value={formData.contactInfo}
                     onChange={(e) => setFormData(prev => ({ ...prev, contactInfo: e.target.value }))}
+                    maxLength={formData.contactMethod === 'email' ? 254 : formData.contactMethod === 'instagram' ? 30 : 20}
+                    pattern={
+                      formData.contactMethod === 'whatsapp' ? '^\\+?[1-9]\\d{1,14}$' :
+                      formData.contactMethod === 'email' ? '^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$' :
+                      formData.contactMethod === 'instagram' ? '^@?[a-zA-Z0-9._]+$' : undefined
+                    }
+                    title={
+                      formData.contactMethod === 'whatsapp' ? 'Please enter a valid phone number (e.g., +1234567890)' :
+                      formData.contactMethod === 'email' ? 'Please enter a valid email address' :
+                      formData.contactMethod === 'instagram' ? 'Please enter a valid Instagram handle' : undefined
+                    }
                     required
                   />
                 </div>
@@ -430,9 +492,13 @@ const IntakeForm = () => {
                   id="additionalInfo"
                   placeholder="Any special requests, themes, or ideas you have in mind? The more details, the better we can customize your experience!"
                   rows={4}
+                  maxLength={2000}
                   value={formData.additionalInfo}
                   onChange={(e) => setFormData(prev => ({ ...prev, additionalInfo: e.target.value }))}
                 />
+                <p className="text-xs text-gray-500 mt-1">
+                  {formData.additionalInfo.length}/2000 characters
+                </p>
               </div>
 
               {/* Submit Button */}
