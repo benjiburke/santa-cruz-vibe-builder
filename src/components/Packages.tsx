@@ -112,7 +112,7 @@ const packages: Package[] = [
     title: 'Pure Custom VIP',
     emoji: '💎',
     description: 'Sky\'s the limit — your wildest dreams, our execution',
-    features: ['Unlimited customization', 'Private jet coordination', 'Celebrity connections', '24/7 concierge army', 'Impossible made possible'],
+    features: ['Unlimited customization', 'Exclusive venue access', 'Personal luxury concierge', '24/7 dedicated support', 'Bespoke experiences'],
     price: 'By consultation',
     duration: 'Your call',
     groupSize: 'Any size',
@@ -179,7 +179,7 @@ const getTierInfo = (tier: string) => {
       return {
         icon: '👑',
         label: 'VIP Exclusive',
-        description: 'Private jets, celebrity access, unlimited luxury',
+        description: 'Exclusive venues, personal concierge, white-glove service',
         color: 'gray',
         cardClass: 'border-gray-700 bg-gradient-to-br from-gray-50 to-gray-100 hover:shadow-xl ring-1 ring-gray-300',
         badgeClass: 'bg-gray-900 text-white border border-gray-900',
@@ -408,7 +408,7 @@ const Packages = () => {
             Need Something Completely Custom?
           </h3>
           <p className="text-lg mb-6 text-gray-300 font-light">
-            Private jets, exclusive venues, celebrity connections, impossible requests - we specialize in making the extraordinary happen. No limits, just possibilities.
+            Exclusive venues, personal concierge, bespoke experiences - we specialize in creating unforgettable luxury moments. Your vision, our expertise.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
