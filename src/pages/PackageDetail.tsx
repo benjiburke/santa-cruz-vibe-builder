@@ -166,37 +166,39 @@ const PackageDetail = () => {
     <div className="min-h-screen bg-white">
       <Navigation />
       
-      {/* Floating Back Button */}
-      <Button 
-        className="fixed top-20 left-4 z-50 bg-white/90 backdrop-blur-sm border border-gray-200 text-gray-700 hover:bg-white hover:text-gray-900 shadow-lg"
-        size="sm"
-        onClick={handleGoBack}
-      >
-        <ArrowLeft className="h-4 w-4" />
-      </Button>
-
-      {/* Floating Currency Selector */}
-      <div className="fixed top-20 right-4 z-50 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-lg shadow-lg p-2">
-        <div className="flex items-center gap-2">
-          <DollarSign className="h-4 w-4 text-gray-600" />
-          <Select value={currency} onValueChange={(value: 'USD' | 'EUR' | 'GBP' | 'JPY' | 'CNY') => setCurrency(value)}>
-            <SelectTrigger className="w-32 h-8 text-xs">
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              {Object.entries(currencyNames).map(([code, name]) => (
-                <SelectItem key={code} value={code} className="text-xs">
-                  {code} - {name}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
-      </div>
-
-      {/* Breadcrumb */}
-      <div className="py-3 px-4 bg-gray-50 border-b border-gray-200">
-        <div className="max-w-4xl mx-auto">
+      {/* Header with Back Button and Currency Selector */}
+      <div className="bg-gray-50 border-b border-gray-200">
+        <div className="max-w-4xl mx-auto px-4 py-3">
+          <div className="flex items-center justify-between mb-3">
+            <Button 
+              className="bg-white hover:bg-gray-100 border border-gray-200 text-gray-700 hover:text-gray-900 shadow-sm"
+              size="sm"
+              onClick={handleGoBack}
+            >
+              <ArrowLeft className="h-4 w-4 mr-1" />
+              Back
+            </Button>
+            
+            <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-2">
+              <div className="flex items-center gap-2">
+                <DollarSign className="h-4 w-4 text-gray-600" />
+                <Select value={currency} onValueChange={(value: 'USD' | 'EUR' | 'GBP' | 'JPY' | 'CNY') => setCurrency(value)}>
+                  <SelectTrigger className="w-32 h-8 text-xs border-0 shadow-none">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {Object.entries(currencyNames).map(([code, name]) => (
+                      <SelectItem key={code} value={code} className="text-xs">
+                        {code} - {name}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
+          </div>
+          
+          {/* Breadcrumb */}
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem>
