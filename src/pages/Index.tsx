@@ -15,6 +15,55 @@ const Index = () => {
     <div className="min-h-screen bg-white">
       <Navigation />
       <Hero />
+      
+      {/* What Sets Us Apart Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-light text-gray-900 mb-4">
+              What Sets Us <span className="text-gray-700">Apart</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto font-light">
+              We don't just book trips — we curate complete experiences
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="text-3xl mb-4">✈️</div>
+              <h3 className="text-lg font-medium text-gray-900 mb-2">Global Flight Assistance</h3>
+              <p className="text-sm text-gray-600 font-light">
+                From NYC to Dubai to São Paulo — we handle your airfare coordination seamlessly
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="text-3xl mb-4">🏡</div>
+              <h3 className="text-lg font-medium text-gray-900 mb-2">Full-Service Packages</h3>
+              <p className="text-sm text-gray-600 font-light">
+                Accommodation, activities, and coordination — everything handled before you arrive
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="text-3xl mb-4">🤝</div>
+              <h3 className="text-lg font-medium text-gray-900 mb-2">Local Insider Access</h3>
+              <p className="text-sm text-gray-600 font-light">
+                Exclusive venues, VIP reservations, and experiences tourists never see
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="text-3xl mb-4">🛡️</div>
+              <h3 className="text-lg font-medium text-gray-900 mb-2">Discreet & Personalized</h3>
+              <p className="text-sm text-gray-600 font-light">
+                White-glove service tailored to your preferences — no crowds, no compromises
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="vibes">
         <VibeSelector />
       </section>
