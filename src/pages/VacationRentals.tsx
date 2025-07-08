@@ -1,10 +1,10 @@
 import Navigation from '@/components/Navigation';
 import BackToTop from '@/components/BackToTop';
+import CurrencySwitch from '@/components/CurrencySwitch';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Diamond, Car, Plane, MapPin, Calendar, Users, Wifi, Coffee, Shield, Star, ArrowRight, DollarSign } from 'lucide-react';
+import { Diamond, Car, Plane, MapPin, Calendar, Users, Wifi, Coffee, Shield, Star, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
@@ -24,13 +24,6 @@ const currencySymbols = {
   CNY: '¥'
 };
 
-const currencyNames = {
-  USD: 'US Dollar',
-  EUR: 'Euro',
-  GBP: 'British Pound',
-  JPY: 'Japanese Yen',
-  CNY: 'Chinese Yuan'
-};
 
 const VacationRentals = () => {
   const [currency, setCurrency] = useState<'USD' | 'EUR' | 'GBP' | 'JPY' | 'CNY'>('USD');
@@ -105,25 +98,8 @@ const VacationRentals = () => {
       {/* Hero Section */}
       <section className="relative py-20 px-4">
         <div className="max-w-3xl mx-auto">
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center justify-center mb-6">
             <Diamond className="w-8 h-8 text-gray-700" />
-            <div className="bg-gray-50 border border-gray-200 rounded-lg shadow-sm p-2">
-              <div className="flex items-center gap-2">
-                <DollarSign className="h-4 w-4 text-gray-600" />
-                <Select value={currency} onValueChange={(value: 'USD' | 'EUR' | 'GBP' | 'JPY' | 'CNY') => setCurrency(value)}>
-                  <SelectTrigger className="w-32 h-8 text-xs border-0 shadow-none">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {Object.entries(currencyNames).map(([code, name]) => (
-                      <SelectItem key={code} value={code} className="text-xs">
-                        {code} - {name}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-            </div>
           </div>
           
           <div className="text-center">
@@ -284,6 +260,7 @@ const VacationRentals = () => {
         </div>
       </section>
       
+      <CurrencySwitch currency={currency} onCurrencyChange={setCurrency} />
       <BackToTop />
     </div>
   );
