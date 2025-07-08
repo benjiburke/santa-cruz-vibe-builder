@@ -30,6 +30,36 @@ This feature helps future guests explore the **vibe and style** of our curated o
 
 Coming soon: An opt-in form where past guests can submit photos, tag their socials (optional), and join our **Diamond Guest Wall** experience.
 
+## 🎬 Brand Ambassador Program – Now Hiring
+
+We're seeking a **sophisticated, charismatic spokesperson** to become the voice and face of Diamond Santa Cruz. This role involves creating compelling video content that showcases our vision, experiences, and the authentic luxury of Santa Cruz de la Sierra.
+
+### What We're Looking For
+
+* **Natural on-camera presence** with excellent communication skills
+* Understanding of luxury travel and hospitality
+* Bilingual capabilities (English/Spanish preferred)
+* Social media savvy with content creation experience
+* Authentic passion for travel, culture, and exclusive experiences
+
+### Content Creation Focus
+
+* **Vision videos**: Articulating the Diamond Santa Cruz mission and values
+* **Experience showcases**: Walking through our curated offerings
+* **Client testimonials**: Interviewing satisfied guests
+* **Behind-the-scenes**: Authentic glimpses into Santa Cruz culture
+* **Social media content**: TikTok, Instagram, and YouTube shorts
+
+### Compensation & Benefits
+
+* Competitive salary + performance bonuses
+* Exclusive access to all Diamond Santa Cruz experiences
+* Content creation budget and professional support
+* Social media growth assistance and cross-promotion
+* Potential equity participation based on performance
+
+**Interested?** Send your portfolio, demo reel, and brief introduction to [contact email]. Include links to your social media profiles and any travel/hospitality content you've created.
+
 ---
 
 ## Project info
