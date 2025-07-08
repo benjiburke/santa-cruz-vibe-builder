@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface Vibe {
   id: string;
@@ -13,43 +14,45 @@ interface Vibe {
   intensity: string;
 }
 
-const vibes: Vibe[] = [
+const getVibes = (t: (key: string) => string): Vibe[] => [
   {
     id: 'party',
     emoji: '',
-    title: 'Vibrant',
-    description: 'Sophisticated nightlife experiences with VIP access and curated social events.',
+    title: t('vibe.vibrant'),
+    description: t('vibe.vibrantDesc'),
     packages: ['Weekend Bender', 'La Vida Loca', 'Santa Cruz Sampler'],
-    intensity: 'High Energy'
+    intensity: t('vibe.highEnergy')
   },
   {
     id: 'relax',
     emoji: '',
-    title: 'Tranquil',
-    description: 'Peaceful luxury experiences with spa treatments and private relaxation.',
+    title: t('vibe.tranquil'),
+    description: t('vibe.tranquilDesc'),
     packages: ['Romance & Roses', 'Chill & Grill', 'Content Creator'],
-    intensity: 'Peaceful'
+    intensity: t('vibe.peaceful')
   },
   {
     id: 'explore',
     emoji: '',
-    title: 'Discovery',
-    description: 'Cultural immersion and authentic local experiences with luxury comfort.',
+    title: t('vibe.discovery'),
+    description: t('vibe.discoveryDesc'),
     packages: ['Samaipata Sessions', 'Santa Cruz Sampler', 'Pure Custom VIP'],
-    intensity: 'Adventure'
+    intensity: t('vibe.adventure')
   },
   {
     id: 'vip',
     emoji: '',
-    title: 'Exclusive',
-    description: 'Ultimate luxury with full concierge service and unlimited customization.',
+    title: t('vibe.exclusive'),
+    description: t('vibe.exclusiveDesc'),
     packages: ['Pure Custom VIP', 'La Vida Loca', 'Content Creator'],
-    intensity: 'Premium'
+    intensity: t('vibe.premium')
   }
 ];
 
 const VibeSelector = () => {
   const [selectedVibe, setSelectedVibe] = useState<string>('party');
+  const { t } = useTranslation();
+  const vibes = getVibes(t);
 
   const activeVibe = vibes.find(vibe => vibe.id === selectedVibe) || vibes[0];
 
@@ -72,10 +75,10 @@ const VibeSelector = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl sm:text-5xl font-light text-gray-900 mb-4">
-            Choose Your <span className="text-gray-700">Experience</span>
+            {t('vibe.title')} <span className="text-gray-700">{t('vibe.titleSpan')}</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light">
-            Every journey is unique. Tell us your preference and we'll craft the perfect experience.
+            {t('vibe.subtitle')}
           </p>
         </div>
 
@@ -103,7 +106,7 @@ const VibeSelector = () => {
           <CardContent className="p-8">
             <div className="text-center mb-8">
               <h3 className="text-3xl font-light text-gray-900 mb-4">
-                {activeVibe.title} Experiences
+                {activeVibe.title} {t('vibe.titleSpan')}
               </h3>
               <div className="text-sm mb-4 text-gray-600 bg-gray-50 inline-block px-3 py-1 border border-gray-200">
                 {activeVibe.intensity}
@@ -116,7 +119,7 @@ const VibeSelector = () => {
                   size="lg"
                   className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-3 font-normal text-sm"
                 >
-                  Explore {activeVibe.title} Options
+                  {t('vibe.explore')} {activeVibe.title} {t('vibe.options')}
                 </Button>
               </Link>
             </div>
@@ -131,7 +134,7 @@ const VibeSelector = () => {
                     {packageName}
                   </h4>
                   <p className="text-gray-600 text-sm mb-4 font-light">
-                    Perfect for your {activeVibe.title.toLowerCase()} experience
+                    {t('vibe.perfectFor')} {activeVibe.title.toLowerCase()} {t('vibe.experience')}
                   </p>
                   <Button 
                     variant="outline" 
@@ -139,7 +142,7 @@ const VibeSelector = () => {
                     className="w-full border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 font-normal text-xs"
                     onClick={() => document.getElementById('packages')?.scrollIntoView({ behavior: 'smooth' })}
                   >
-                    View Details
+                    {t('vibe.viewDetails')}
                   </Button>
                 </div>
               ))}

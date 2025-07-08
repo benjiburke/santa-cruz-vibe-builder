@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Menu, X, Globe } from 'lucide-react';
 import { useState } from 'react';
+import { useTranslation } from '@/hooks/useTranslation';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,7 +13,7 @@ import {
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [currentLanguage, setCurrentLanguage] = useState('EN');
+  const { language, setLanguage, t } = useTranslation();
 
   const languages = [
     { code: 'EN', label: 'English', flag: '🇺🇸' },
@@ -22,14 +23,14 @@ const Navigation = () => {
   ];
 
   const navLinks = [
-    { to: '/', label: 'Home' },
-    { to: '/party-vibes', label: 'Party Vibes' },
-    { to: '/curated-experiences', label: 'Curated Experiences' },
-    { to: '/vacation-rentals', label: 'Vacation Rentals' },
-    { to: '/real-estate-services', label: 'Real Estate Services' },
-    { to: '/vip', label: 'VIP Experience' },
-    { to: '/why-us', label: 'Why Us' },
-    { to: '/about', label: 'About' }
+    { to: '/', label: t('nav.home') },
+    { to: '/party-vibes', label: t('nav.partyVibes') },
+    { to: '/curated-experiences', label: t('nav.curatedExperiences') },
+    { to: '/vacation-rentals', label: t('nav.vacationRentals') },
+    { to: '/real-estate-services', label: t('nav.realEstateServices') },
+    { to: '/vip', label: t('nav.vip') },
+    { to: '/why-us', label: t('nav.whyUs') },
+    { to: '/about', label: t('nav.about') }
   ];
 
   // Get current page name for mobile display
@@ -75,14 +76,14 @@ const Navigation = () => {
                   className="h-8 px-3 text-gray-700 hover:text-gray-900 hover:bg-gray-100"
                 >
                   <Globe className="h-4 w-4 mr-1" />
-                  {currentLanguage}
+                  {language}
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-40 bg-white border border-gray-200 shadow-lg">
                 {languages.map((lang) => (
                   <DropdownMenuItem
                     key={lang.code}
-                    onClick={() => setCurrentLanguage(lang.code)}
+                    onClick={() => setLanguage(lang.code)}
                     className="cursor-pointer hover:bg-gray-50 px-3 py-2"
                   >
                     <span className="mr-2">{lang.flag}</span>
@@ -97,7 +98,7 @@ const Navigation = () => {
               className="bg-gray-900 hover:bg-gray-800 text-white text-sm font-normal px-4 py-2"
               onClick={() => window.open('https://wa.me/1234567890', '_blank')}
             >
-              WhatsApp
+              {t('nav.whatsapp')}
             </Button>
           </div>
 
@@ -140,11 +141,11 @@ const Navigation = () => {
                     <button
                       key={lang.code}
                       onClick={() => {
-                        setCurrentLanguage(lang.code);
+                        setLanguage(lang.code);
                         setIsOpen(false);
                       }}
                       className={`flex items-center gap-2 px-3 py-2 text-sm rounded transition-colors ${
-                        currentLanguage === lang.code 
+                        language === lang.code 
                           ? 'bg-gray-100 text-gray-900' 
                           : 'text-gray-700 hover:bg-gray-50'
                       }`}
@@ -164,7 +165,7 @@ const Navigation = () => {
                   setIsOpen(false);
                 }}
               >
-                WhatsApp
+                {t('nav.whatsapp')}
               </Button>
             </div>
           </div>

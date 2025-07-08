@@ -2,9 +2,11 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { MessageCircle, MapPin, Calendar, Diamond } from 'lucide-react';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const Hero = () => {
   const [currentVideo, setCurrentVideo] = useState(0);
+  const { t } = useTranslation();
   
   const videos = [
     { src: '/api/placeholder/1200/800', alt: 'Santa Cruz nightlife drone view' },
@@ -42,14 +44,13 @@ const Hero = () => {
           <Diamond className="w-12 h-12 text-gray-700 mx-auto mb-8" />
           
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-light text-gray-900 mb-8 leading-tight tracking-wide">
-            Sophisticated Santa Cruz
+            {t('hero.title1')}
             <br />
-            <span className="text-gray-700">Experiences</span>
+            <span className="text-gray-700">{t('hero.title2')}</span>
           </h1>
           
           <p className="text-xl sm:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
-            Curated luxury stays and exclusive experiences in Bolivia's most vibrant city. 
-            Crafted for the discerning traveler.
+            {t('hero.subtitle')}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
@@ -59,7 +60,7 @@ const Hero = () => {
               onClick={() => scrollToSection('intake-form')}
             >
               <Calendar className="mr-2 h-5 w-5" />
-              Plan Your Experience
+              {t('hero.planExperience')}
             </Button>
             
             <Button 
@@ -69,7 +70,7 @@ const Hero = () => {
               onClick={openWhatsApp}
             >
               <MessageCircle className="mr-2 h-5 w-5" />
-              Consultation
+              {t('hero.consultation')}
             </Button>
             
             <Button 
@@ -79,7 +80,7 @@ const Hero = () => {
               onClick={() => scrollToSection('packages')}
             >
               <MapPin className="mr-2 h-5 w-5" />
-              Explore Packages
+              {t('hero.explorePackages')}
             </Button>
           </div>
         </div>
