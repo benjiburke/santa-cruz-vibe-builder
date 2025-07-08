@@ -65,7 +65,7 @@ const FloatingSectionNav = () => {
                 className={`w-14 h-14 md:w-12 md:h-12 rounded-xl md:rounded-full text-xs font-light transition-all duration-300 ${
                   activeSection === section.id 
                     ? 'bg-gray-900 text-white shadow-md' 
-                    : 'text-gray-400 md:text-gray-300 hover:text-gray-900 hover:bg-gray-100 md:group-hover:text-gray-600'
+                    : 'text-gray-600 md:text-gray-600 hover:text-gray-900 hover:bg-gray-100 md:group-hover:text-gray-800 md:hover:bg-white/80'
                 }`}
                 onClick={() => scrollToSection(section.id)}
                 title={section.label}
