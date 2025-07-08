@@ -10,6 +10,18 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Star, Users, MapPin, Calendar, Check, X, ArrowLeft, DollarSign, Wifi, Coffee, Shield, Car, Plane, Diamond } from 'lucide-react';
 
+// Import generated images
+import privateGarden1 from '@/assets/private-garden-1.jpg';
+import privateGarden2 from '@/assets/private-garden-2.jpg';
+import bbqArea1 from '@/assets/bbq-area-1.jpg';
+import bbqArea2 from '@/assets/bbq-area-2.jpg';
+import parking1 from '@/assets/parking-1.jpg';
+import gameRoom1 from '@/assets/game-room-1.jpg';
+import gameRoom2 from '@/assets/game-room-2.jpg';
+import officeSpace1 from '@/assets/office-space-1.jpg';
+import privatePool1 from '@/assets/private-pool-1.jpg';
+import privatePool2 from '@/assets/private-pool-2.jpg';
+
 const rentalData = {
   '1': {
     id: '1',
@@ -24,14 +36,14 @@ const rentalData = {
     location: "Las Palmas District",
     description: "Experience luxury living in this stunning villa featuring a private pool, lush garden views, and premium amenities. Perfect for families or groups seeking comfort and elegance.",
     amenities: [
-      { name: "Private Pool", icon: "🏊‍♂️", available: true, images: ["/api/placeholder/400/300", "/api/placeholder/400/300"] },
-      { name: "WiFi", icon: "📶", available: true, images: ["/api/placeholder/400/300"] },
+      { name: "Private Pool", icon: "🏊‍♂️", available: true, images: [privatePool1, privatePool2] },
+      { name: "WiFi", icon: "📶", available: true, images: [] },
       { name: "Kitchen", icon: "🍳", available: true, images: ["/api/placeholder/400/300", "/api/placeholder/400/300"] },
-      { name: "Air Conditioning", icon: "❄️", available: true, images: ["/api/placeholder/400/300"] },
-      { name: "Security", icon: "🔒", available: true, images: ["/api/placeholder/400/300"] },
-      { name: "Parking", icon: "🚗", available: true, images: ["/api/placeholder/400/300"] },
-      { name: "Housekeeping", icon: "🧹", available: true, images: ["/api/placeholder/400/300"] },
-      { name: "Garden View", icon: "🌳", available: true, images: ["/api/placeholder/400/300", "/api/placeholder/400/300"] }
+      { name: "Air Conditioning", icon: "❄️", available: true, images: [] },
+      { name: "Security", icon: "🔒", available: true, images: [] },
+      { name: "Parking", icon: "🚗", available: true, images: [parking1] },
+      { name: "Housekeeping", icon: "🧹", available: true, images: [] },
+      { name: "Garden View", icon: "🌳", available: true, images: [privateGarden1, privateGarden2] }
     ],
     images: ["/api/placeholder/600/400", "/api/placeholder/600/400", "/api/placeholder/600/400", "/api/placeholder/600/400"]
   },
@@ -70,12 +82,12 @@ const rentalData = {
     location: "Equipetrol District",
     description: "Spacious modern residence perfect for large groups with extensive outdoor areas and entertainment facilities. Premium location in exclusive neighborhood.",
     amenities: [
-      { name: "Private Garden", icon: "🌳", available: true, images: ["/api/placeholder/400/300", "/api/placeholder/400/300"] },
-      { name: "BBQ Area", icon: "🔥", available: true, images: ["/api/placeholder/400/300", "/api/placeholder/400/300"] },
-      { name: "WiFi", icon: "📶", available: true, images: ["/api/placeholder/400/300"] },
-      { name: "Parking", icon: "🚗", available: true, images: ["/api/placeholder/400/300"] },
-      { name: "Game Room", icon: "🎮", available: true, images: ["/api/placeholder/400/300", "/api/placeholder/400/300"] },
-      { name: "Office Space", icon: "💼", available: true, images: ["/api/placeholder/400/300"] }
+      { name: "Private Garden", icon: "🌳", available: true, images: [privateGarden1, privateGarden2] },
+      { name: "BBQ Area", icon: "🔥", available: true, images: [bbqArea1, bbqArea2] },
+      { name: "WiFi", icon: "📶", available: true, images: [] },
+      { name: "Parking", icon: "🚗", available: true, images: [parking1] },
+      { name: "Game Room", icon: "🎮", available: true, images: [gameRoom1, gameRoom2] },
+      { name: "Office Space", icon: "💼", available: true, images: [officeSpace1] }
     ],
     images: ["/api/placeholder/600/400", "/api/placeholder/600/400", "/api/placeholder/600/400", "/api/placeholder/600/400", "/api/placeholder/600/400"]
   }
@@ -267,7 +279,7 @@ const VacationRentalDetail = () => {
                 <h3 className="text-lg font-medium text-gray-900 mb-4">Spaces & Areas</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                   {rental.amenities
-                    .filter(amenity => !['WiFi'].includes(amenity.name))
+                    .filter(amenity => !['WiFi', 'Air Conditioning', 'Security', 'Housekeeping'].includes(amenity.name) && amenity.images.length > 0)
                     .map((amenity, index) => (
                     <Dialog key={index}>
                       <DialogTrigger asChild>
@@ -307,7 +319,7 @@ const VacationRentalDetail = () => {
                 <h3 className="text-lg font-medium text-gray-900 mb-3">Included Services</h3>
                 <div className="flex flex-wrap gap-2">
                   {rental.amenities
-                    .filter(amenity => ['WiFi'].includes(amenity.name))
+                    .filter(amenity => ['WiFi', 'Air Conditioning', 'Security', 'Housekeeping'].includes(amenity.name) || amenity.images.length === 0)
                     .map((amenity, index) => (
                     <Badge key={index} variant="secondary" className="bg-gray-100 text-gray-700 px-3 py-1">
                       <span className="mr-1">{amenity.icon}</span>
