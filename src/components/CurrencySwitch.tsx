@@ -16,6 +16,14 @@ const currencyNames = {
   CNY: 'Chinese Yuan'
 };
 
+const currencySymbols = {
+  USD: '$',
+  EUR: '€',
+  GBP: '£',
+  JPY: '¥',
+  CNY: '¥'
+};
+
 const CurrencySwitch: React.FC<CurrencySwitchProps> = ({ currency, onCurrencyChange }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -25,10 +33,10 @@ const CurrencySwitch: React.FC<CurrencySwitchProps> = ({ currency, onCurrencyCha
         <Button
           variant="ghost"
           size="sm"
-          className="p-3 h-auto"
+          className="p-3 h-auto font-medium text-base"
           onClick={() => setIsExpanded(true)}
         >
-          <DollarSign className="h-5 w-5 text-gray-600" />
+          {currencySymbols[currency]}
         </Button>
       ) : (
         <div className="p-2">
