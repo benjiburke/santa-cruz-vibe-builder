@@ -21,7 +21,7 @@ const Index = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-light text-gray-900 mb-4">
-              What Sets Us <span className="text-gray-700">Apart</span>
+              Why Diamond <span className="text-gray-700">Santa Cruz</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto font-light">
               We don't just book trips — we curate complete experiences
