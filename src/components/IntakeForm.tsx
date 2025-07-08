@@ -1,19 +1,19 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Checkbox } from '@/components/ui/checkbox';
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
-import { Calendar } from '@/components/ui/calendar';
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
-import { Send, CheckCircle, Calendar as CalendarIcon } from 'lucide-react';
+import { Send, CheckCircle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
-import { format } from 'date-fns';
-import { cn } from '@/lib/utils';
 import { z } from 'zod';
+
+// Import form components
+import { TripTypeSelector } from './intake-form/TripTypeSelector';
+import { PackageSelector } from './intake-form/PackageSelector';
+import { GroupSizeBudgetInputs } from './intake-form/GroupSizeBudgetInputs';
+import { DateSelector } from './intake-form/DateSelector';
+import { PackageTypeSelector } from './intake-form/PackageTypeSelector';
+import { ServicesSelector } from './intake-form/ServicesSelector';
+import { ContactMethodInput } from './intake-form/ContactMethodInput';
+import { AdditionalInfoInput } from './intake-form/AdditionalInfoInput';
 
 // Validation schemas
 const contactSchema = z.object({
@@ -54,33 +54,6 @@ const IntakeForm = () => {
   });
   const { toast } = useToast();
 
-  const tripTypes = [
-    { value: 'party', label: 'Party 🎉' },
-    { value: 'chill', label: 'Chill 🌴' },
-    { value: 'explore', label: 'Explore 🌄' },
-    { value: 'vip', label: 'VIP 💎' },
-    { value: 'other', label: 'Other' }
-  ];
-
-  const availablePackages = [
-    { value: 'weekend-bender', label: 'Weekend Bender - $450/person', category: 'Party' },
-    { value: 'la-vida-loca', label: 'La Vida Loca - $650/person', category: 'Party' },
-    { value: 'santa-cruz-sampler', label: 'The Santa Cruz Sampler - $380/person', category: 'Explorer' },
-    { value: 'romantic-escape', label: 'Romantic Escape - $420/couple', category: 'Curated' },
-    { value: 'chill-grill', label: 'Chill & Grill - $350/person', category: 'Curated' },
-    { value: 'influencer-escape', label: 'Influencer Escape - $580/person', category: 'Curated' },
-    { value: 'explorers-route', label: 'Explorer\'s Route - $480/person', category: 'Explorer' },
-    { value: 'custom-vip', label: 'Custom VIP Experience - Contact for pricing', category: 'VIP' },
-    { value: 'not-sure', label: 'Not sure yet - help me choose!', category: 'Other' }
-  ];
-
-  const services = [
-    'DJ', 'Chef', 'Spa', 'Massage', 'Club Night', 
-    'Pool Setup', 'Photography', 'Adventure Trips', 
-    'Airport Pickup', 'Flight Help', 'Security', 
-    'Transportation', 'Tour Guide', 'Equipment Rental'
-  ];
-
   const handleServiceChange = (service: string, checked: boolean) => {
     if (checked) {
       setFormData(prev => ({
@@ -92,32 +65,6 @@ const IntakeForm = () => {
         ...prev,
         services: prev.services.filter(s => s !== service)
       }));
-    }
-  };
-
-  const getContactPlaceholder = () => {
-    switch (formData.contactMethod) {
-      case 'whatsapp':
-        return '+1 555 123 4567';
-      case 'email':
-        return 'your.email@example.com';
-      case 'instagram':
-        return '@yourusername';
-      default:
-        return 'Your contact information';
-    }
-  };
-
-  const getContactLabel = () => {
-    switch (formData.contactMethod) {
-      case 'whatsapp':
-        return 'WhatsApp Number *';
-      case 'email':
-        return 'Email Address *';
-      case 'instagram':
-        return 'Instagram Handle *';
-      default:
-        return 'Contact Information *';
     }
   };
 
@@ -226,280 +173,60 @@ const IntakeForm = () => {
           <CardContent className="p-8">
             <form onSubmit={handleSubmit} className="space-y-8">
               {/* Trip Type */}
-              <div className="space-y-3">
-                <Label className="text-lg font-semibold text-jungle-800">
-                  What kind of trip is this? *
-                </Label>
-                <RadioGroup 
-                  value={formData.tripType} 
-                  onValueChange={(value) => setFormData(prev => ({ ...prev, tripType: value }))}
-                  className="flex flex-wrap gap-4"
-                >
-                  {tripTypes.map((type) => (
-                    <div key={type.value} className="flex items-center space-x-2">
-                      <RadioGroupItem value={type.value} id={type.value} />
-                      <Label htmlFor={type.value} className="cursor-pointer">
-                        {type.label}
-                      </Label>
-                    </div>
-                  ))}
-                </RadioGroup>
-              </div>
+              <TripTypeSelector
+                value={formData.tripType}
+                onChange={(value) => setFormData(prev => ({ ...prev, tripType: value }))}
+              />
 
               {/* Package Selection */}
-              <div className="space-y-3">
-                <Label htmlFor="selectedPackage" className="text-lg font-semibold text-jungle-800">
-                  Interested in a specific package?
-                </Label>
-                <Select onValueChange={(value) => setFormData(prev => ({ ...prev, selectedPackage: value }))}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select a package or skip if not sure" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {availablePackages.map((pkg) => (
-                      <SelectItem key={pkg.value} value={pkg.value}>
-                        {pkg.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                <p className="text-sm text-jungle-500">
-                  Don't worry if you're not sure - we can help you choose the perfect package!
-                </p>
-              </div>
+              <PackageSelector
+                value={formData.selectedPackage}
+                onChange={(value) => setFormData(prev => ({ ...prev, selectedPackage: value }))}
+              />
 
               {/* Group Size and Budget */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-3">
-                  <Label htmlFor="groupSize" className="text-lg font-semibold text-jungle-800">
-                    How many people? *
-                  </Label>
-                  <Select onValueChange={(value) => setFormData(prev => ({ ...prev, groupSize: value }))}>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select group size" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="1-2">1-2 people</SelectItem>
-                      <SelectItem value="3-4">3-4 people</SelectItem>
-                      <SelectItem value="5-8">5-8 people</SelectItem>
-                      <SelectItem value="9-12">9-12 people</SelectItem>
-                      <SelectItem value="12+">12+ people</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div className="space-y-3">
-                  <Label htmlFor="budget" className="text-lg font-semibold text-jungle-800">
-                    Budget per person (USD) *
-                  </Label>
-                  <Select onValueChange={(value) => setFormData(prev => ({ ...prev, budget: value }))}>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select budget range" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="300-500">$300-500</SelectItem>
-                      <SelectItem value="500-750">$500-750</SelectItem>
-                      <SelectItem value="750-1000">$750-1000</SelectItem>
-                      <SelectItem value="1000+">$1000+</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-              </div>
+              <GroupSizeBudgetInputs
+                groupSize={formData.groupSize}
+                budget={formData.budget}
+                onGroupSizeChange={(value) => setFormData(prev => ({ ...prev, groupSize: value }))}
+                onBudgetChange={(value) => setFormData(prev => ({ ...prev, budget: value }))}
+              />
 
               {/* Dates with Calendar */}
-              <div className="space-y-3">
-                <Label className="text-lg font-semibold text-jungle-800">
-                  Preferred dates
-                </Label>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {/* Start Date */}
-                  <div className="space-y-2">
-                    <Label className="text-sm text-jungle-600">Start Date</Label>
-                    <Popover>
-                      <PopoverTrigger asChild>
-                        <Button
-                          variant="outline"
-                          className={cn(
-                            "w-full justify-start text-left font-normal",
-                            !formData.startDate && "text-muted-foreground"
-                          )}
-                        >
-                          <CalendarIcon className="mr-2 h-4 w-4" />
-                          {formData.startDate ? format(formData.startDate, "PPP") : <span>Pick start date</span>}
-                        </Button>
-                      </PopoverTrigger>
-                      <PopoverContent className="w-auto p-0" align="start">
-                        <Calendar
-                          mode="single"
-                          selected={formData.startDate}
-                          onSelect={(date) => setFormData(prev => ({ ...prev, startDate: date }))}
-                          disabled={(date) => date < new Date()}
-                          initialFocus
-                          className="pointer-events-auto"
-                        />
-                      </PopoverContent>
-                    </Popover>
-                  </div>
-
-                  {/* End Date */}
-                  <div className="space-y-2">
-                    <Label className="text-sm text-jungle-600">End Date</Label>
-                    <Popover>
-                      <PopoverTrigger asChild>
-                        <Button
-                          variant="outline"
-                          className={cn(
-                            "w-full justify-start text-left font-normal",
-                            !formData.endDate && "text-muted-foreground"
-                          )}
-                        >
-                          <CalendarIcon className="mr-2 h-4 w-4" />
-                          {formData.endDate ? format(formData.endDate, "PPP") : <span>Pick end date</span>}
-                        </Button>
-                      </PopoverTrigger>
-                      <PopoverContent className="w-auto p-0" align="start">
-                        <Calendar
-                          mode="single"
-                          selected={formData.endDate}
-                          onSelect={(date) => setFormData(prev => ({ ...prev, endDate: date }))}
-                          disabled={(date) => 
-                            date < new Date() || 
-                            (formData.startDate && date < formData.startDate)
-                          }
-                          initialFocus
-                          className="pointer-events-auto"
-                        />
-                      </PopoverContent>
-                    </Popover>
-                  </div>
-                </div>
-                
-                <div className="flex items-center space-x-2 mt-3">
-                  <Checkbox 
-                    id="flexibility"
-                    checked={formData.flexibility}
-                    onCheckedChange={(checked) => setFormData(prev => ({ ...prev, flexibility: !!checked }))}
-                  />
-                  <Label htmlFor="flexibility" className="text-sm text-jungle-600">
-                    I'm flexible with dates
-                  </Label>
-                </div>
-              </div>
+              <DateSelector
+                startDate={formData.startDate}
+                endDate={formData.endDate}
+                flexibility={formData.flexibility}
+                onStartDateChange={(date) => setFormData(prev => ({ ...prev, startDate: date }))}
+                onEndDateChange={(date) => setFormData(prev => ({ ...prev, endDate: date }))}
+                onFlexibilityChange={(checked) => setFormData(prev => ({ ...prev, flexibility: checked }))}
+              />
 
               {/* Package Type */}
-              <div className="space-y-3">
-                <Label className="text-lg font-semibold text-jungle-800">
-                  Package preference *
-                </Label>
-                <RadioGroup 
-                  value={formData.packageType} 
-                  onValueChange={(value) => setFormData(prev => ({ ...prev, packageType: value }))}
-                >
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="pre-built" id="pre-built" />
-                    <Label htmlFor="pre-built">Choose from pre-built packages</Label>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="custom" id="custom" />
-                    <Label htmlFor="custom">Fully custom experience</Label>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="hybrid" id="hybrid" />
-                    <Label htmlFor="hybrid">Mix of both</Label>
-                  </div>
-                </RadioGroup>
-              </div>
+              <PackageTypeSelector
+                value={formData.packageType}
+                onChange={(value) => setFormData(prev => ({ ...prev, packageType: value }))}
+              />
 
               {/* Services */}
-              <div className="space-y-3">
-                <Label className="text-lg font-semibold text-jungle-800">
-                  Interested services (select all that apply)
-                </Label>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-                  {services.map((service) => (
-                    <div key={service} className="flex items-center space-x-2">
-                      <Checkbox 
-                        id={service}
-                        checked={formData.services.includes(service)}
-                        onCheckedChange={(checked) => handleServiceChange(service, !!checked)}
-                      />
-                      <Label htmlFor={service} className="text-sm cursor-pointer">
-                        {service}
-                      </Label>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <ServicesSelector
+                selectedServices={formData.services}
+                onServiceChange={handleServiceChange}
+              />
 
-              {/* Contact Method */}
-              <div className="space-y-3">
-                <Label htmlFor="contact" className="text-lg font-semibold text-jungle-800">
-                  Preferred contact method *
-                </Label>
-                <RadioGroup 
-                  value={formData.contactMethod} 
-                  onValueChange={(value) => setFormData(prev => ({ ...prev, contactMethod: value, contactInfo: '' }))}
-                  className="flex flex-wrap gap-6"
-                >
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="whatsapp" id="whatsapp" />
-                    <Label htmlFor="whatsapp">WhatsApp</Label>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="email" id="email" />
-                    <Label htmlFor="email">Email</Label>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="instagram" id="instagram" />
-                    <Label htmlFor="instagram">Instagram</Label>
-                  </div>
-                </RadioGroup>
-              </div>
-
-              {/* Contact Information Input */}
-              {formData.contactMethod && (
-                <div className="space-y-3">
-                  <Label htmlFor="contactInfo" className="text-lg font-semibold text-jungle-800">
-                    {getContactLabel()}
-                  </Label>
-                  <Input
-                    id="contactInfo"
-                    placeholder={getContactPlaceholder()}
-                    value={formData.contactInfo}
-                    onChange={(e) => setFormData(prev => ({ ...prev, contactInfo: e.target.value }))}
-                    maxLength={formData.contactMethod === 'email' ? 254 : formData.contactMethod === 'instagram' ? 30 : 20}
-                    pattern={
-                      formData.contactMethod === 'whatsapp' ? '^\\+?[1-9]\\d{1,14}$' :
-                      formData.contactMethod === 'email' ? '^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$' :
-                      formData.contactMethod === 'instagram' ? '^@?[a-zA-Z0-9._]+$' : undefined
-                    }
-                    title={
-                      formData.contactMethod === 'whatsapp' ? 'Please enter a valid phone number (e.g., +1234567890)' :
-                      formData.contactMethod === 'email' ? 'Please enter a valid email address' :
-                      formData.contactMethod === 'instagram' ? 'Please enter a valid Instagram handle' : undefined
-                    }
-                    required
-                  />
-                </div>
-              )}
+              {/* Contact Method and Info */}
+              <ContactMethodInput
+                contactMethod={formData.contactMethod}
+                contactInfo={formData.contactInfo}
+                onContactMethodChange={(value) => setFormData(prev => ({ ...prev, contactMethod: value, contactInfo: '' }))}
+                onContactInfoChange={(value) => setFormData(prev => ({ ...prev, contactInfo: value }))}
+              />
 
               {/* Additional Info */}
-              <div className="space-y-3">
-                <Label htmlFor="additionalInfo" className="text-lg font-semibold text-jungle-800">
-                  Tell us more about your vision
-                </Label>
-                <Textarea
-                  id="additionalInfo"
-                  placeholder="Any special requests, themes, or ideas you have in mind? The more details, the better we can customize your experience!"
-                  rows={4}
-                  maxLength={2000}
-                  value={formData.additionalInfo}
-                  onChange={(e) => setFormData(prev => ({ ...prev, additionalInfo: e.target.value }))}
-                />
-                <p className="text-xs text-gray-500 mt-1">
-                  {formData.additionalInfo.length}/2000 characters
-                </p>
-              </div>
+              <AdditionalInfoInput
+                value={formData.additionalInfo}
+                onChange={(value) => setFormData(prev => ({ ...prev, additionalInfo: value }))}
+              />
 
               {/* Submit Button */}
               <div className="text-center pt-6">

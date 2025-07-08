@@ -1,0 +1,55 @@
+import { Label } from '@/components/ui/label';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+
+interface GroupSizeBudgetInputsProps {
+  groupSize: string;
+  budget: string;
+  onGroupSizeChange: (value: string) => void;
+  onBudgetChange: (value: string) => void;
+}
+
+export const GroupSizeBudgetInputs = ({ 
+  groupSize, 
+  budget, 
+  onGroupSizeChange, 
+  onBudgetChange 
+}: GroupSizeBudgetInputsProps) => {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="space-y-3">
+        <Label htmlFor="groupSize" className="text-lg font-semibold text-jungle-800">
+          How many people? *
+        </Label>
+        <Select onValueChange={onGroupSizeChange}>
+          <SelectTrigger>
+            <SelectValue placeholder="Select group size" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="1-2">1-2 people</SelectItem>
+            <SelectItem value="3-4">3-4 people</SelectItem>
+            <SelectItem value="5-8">5-8 people</SelectItem>
+            <SelectItem value="9-12">9-12 people</SelectItem>
+            <SelectItem value="12+">12+ people</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+
+      <div className="space-y-3">
+        <Label htmlFor="budget" className="text-lg font-semibold text-jungle-800">
+          Budget per person (USD) *
+        </Label>
+        <Select onValueChange={onBudgetChange}>
+          <SelectTrigger>
+            <SelectValue placeholder="Select budget range" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="300-500">$300-500</SelectItem>
+            <SelectItem value="500-750">$500-750</SelectItem>
+            <SelectItem value="750-1000">$750-1000</SelectItem>
+            <SelectItem value="1000+">$1000+</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+    </div>
+  );
+};
