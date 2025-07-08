@@ -53,7 +53,7 @@ const FloatingSectionNav = () => {
 
   return (
     <div className="fixed right-4 md:right-6 top-1/2 transform -translate-y-1/2 z-40 animate-fade-in group">
-      <div className="bg-white/60 md:bg-white/5 backdrop-blur-sm border border-gray-200/50 md:border-gray-200/20 rounded-2xl shadow-lg md:shadow-none p-3 md:p-2 transition-all duration-300 md:hover:bg-white/95 md:hover:border-gray-200 md:hover:shadow-xl">
+      <div className="bg-white/60 md:bg-white/5 border border-gray-200/50 md:border-gray-200/20 rounded-2xl shadow-lg md:shadow-none p-3 md:p-2 transition-all duration-300 md:hover:bg-white/95 md:hover:border-gray-200 md:hover:shadow-xl">
         <div className="flex flex-col space-y-2 md:space-y-1">
           {sections.map((section) => {
             const IconComponent = section.icon;
