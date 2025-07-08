@@ -262,22 +262,15 @@ const CuratedExperiences = () => {
           <p className="text-base mb-6 opacity-90 font-light">
             Let us curate the perfect experience tailored to your interests and desires.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <div className="flex justify-center">
             <Link to="/intake-form">
               <Button 
                 size="lg" 
-                className="bg-white hover:bg-gray-100 text-primary border border-white font-normal"
+                className="bg-white hover:bg-gray-100 text-primary border border-white font-normal px-8 py-3"
               >
                 Design Your Experience
               </Button>
             </Link>
-            <Button 
-              size="lg" 
-              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary font-normal transition-colors duration-200"
-              onClick={handleWhatsAppInquiry}
-            >
-              Speak With Us
-            </Button>
           </div>
         </div>
       </section>
