@@ -26,10 +26,11 @@ const Navigation = () => {
     { to: '/', label: t('nav.home') },
     { to: '/party-vibes', label: t('nav.partyVibes') },
     { to: '/curated-experiences', label: t('nav.curatedExperiences') },
+    { to: '/diamond-spa', label: 'Diamond Spa' },
     { to: '/vacation-rentals', label: t('nav.vacationRentals') },
     { to: '/real-estate-services', label: t('nav.realEstateServices') },
     { to: '/vip', label: t('nav.vip') },
-    { to: '/why-us', label: t('nav.whyUs') },
+    { to: '/contact', label: 'Contact' },
     { to: '/about', label: t('nav.about') }
   ];
 

@@ -28,8 +28,8 @@ const Index = () => {
             <Diamond className="w-8 h-8 text-gray-700 mx-auto mb-6" />
             <h3 className="text-2xl font-light mb-6 text-white">Diamond Santa Cruz</h3>
             <p className="text-gray-300 mb-8 font-light leading-relaxed max-w-2xl mx-auto">
-              Sophisticated Santa Cruz experiences crafted for the discerning traveler. 
-              Where luxury meets authentic Bolivian culture.
+              Your gateway to Bolivia's most exclusive experiences. From luxury accommodations 
+              and wellness retreats to investment opportunities and permanent relocation support.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 

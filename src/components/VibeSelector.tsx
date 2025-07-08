@@ -20,7 +20,7 @@ const getVibes = (t: (key: string) => string): Vibe[] => [
     emoji: '',
     title: t('vibe.vibrant'),
     description: t('vibe.vibrantDesc'),
-    packages: ['Weekend Bender', 'La Vida Loca', 'Santa Cruz Sampler'],
+    packages: ['Poolside BBQ Experience', 'VIP Nightlife Access', 'Private Party Planning'],
     intensity: t('vibe.highEnergy')
   },
   {
@@ -28,7 +28,7 @@ const getVibes = (t: (key: string) => string): Vibe[] => [
     emoji: '',
     title: t('vibe.tranquil'),
     description: t('vibe.tranquilDesc'),
-    packages: ['Romance & Roses', 'Chill & Grill', 'Content Creator'],
+    packages: ['Diamond Spa Retreat', 'Wellness Sanctuary', 'Romantic Escape'],
     intensity: t('vibe.peaceful')
   },
   {
@@ -36,7 +36,7 @@ const getVibes = (t: (key: string) => string): Vibe[] => [
     emoji: '',
     title: t('vibe.discovery'),
     description: t('vibe.discoveryDesc'),
-    packages: ['Samaipata Sessions', 'Santa Cruz Sampler', 'Pure Custom VIP'],
+    packages: ['Helicopter Tour Experience', 'Cultural Immersion', 'Salt Flats Adventure'],
     intensity: t('vibe.adventure')
   },
   {
@@ -44,7 +44,7 @@ const getVibes = (t: (key: string) => string): Vibe[] => [
     emoji: '',
     title: t('vibe.exclusive'),
     description: t('vibe.exclusiveDesc'),
-    packages: ['Pure Custom VIP', 'La Vida Loca', 'Content Creator'],
+    packages: ['Private Salt Flats Dinner', 'Executive Concierge', 'Luxury Estate Tours'],
     intensity: t('vibe.premium')
   }
 ];

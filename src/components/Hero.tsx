@@ -50,7 +50,8 @@ const Hero = () => {
           </h1>
           
           <p className="text-xl sm:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
-            {t('hero.subtitle')}
+            Where international luxury meets authentic Bolivian culture. Complete concierge services 
+            for the sophisticated traveler seeking extraordinary experiences.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
