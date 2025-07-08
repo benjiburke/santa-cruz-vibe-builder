@@ -133,10 +133,13 @@ const PackageDetail = () => {
   };
 
   const handleGoBack = () => {
-    console.log('Back button clicked');
-    // Try to go back in history, but if there's no history, go to home
-    if (window.history.length > 1) {
-      navigate(-1);
+    console.log('Back button clicked, package category:', pkg?.category);
+    
+    // Determine the correct page based on package category
+    if (pkg?.category === 'party') {
+      navigate('/party-vibes');
+    } else if (pkg?.category === 'curated') {
+      navigate('/curated-experiences');
     } else {
       navigate('/');
     }
