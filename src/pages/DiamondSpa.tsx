@@ -65,8 +65,8 @@ const DiamondSpa = () => {
             Diamond <span className="text-gray-700">Spa</span>
           </h1>
           <p className="text-xl sm:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
-            Where world-class wellness meets authentic Bolivian traditions. 
-            A sanctuary of tranquility in the heart of Santa Cruz.
+            Experience the premium wellness services at Diamond SCZ. 
+            Your premier spa destination in the heart of Santa Cruz.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button 
