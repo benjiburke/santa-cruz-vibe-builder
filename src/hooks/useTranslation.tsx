@@ -170,6 +170,8 @@ const translations = {
     'event.badgeMonthly': 'Monthly',
     'event.badgeSecret': 'Secret',
     'event.badgeExclusive': 'Exclusive',
+    'event.from': 'From',
+    'event.person': '/person',
     
     // Flight assistance
     'flight.title': 'Global Flight Assistance',
@@ -271,7 +273,48 @@ const translations = {
     'footer.consultation': 'Consulta Privada',
     'footer.curate': 'Crear Experiencia',
     'footer.copyright': '© 2024 Diamond Santa Cruz. Experiencias excepcionales en Bolivia.',
-    'footer.tagline': 'Sofisticado. Discreto. Inolvidable.'
+    'footer.tagline': 'Sofisticado. Discreto. Inolvidable.',
+    
+    // Form content
+    'form.missing': 'Información faltante',
+    'form.fillRequired': 'Por favor complete todos los campos requeridos marcados con *',
+    'form.invalid': 'Información de contacto inválida',
+    'form.submitted': '¡Solicitud de viaje enviada! 🔥',
+    'form.planning': 'Ya estamos planeando algo increíble. Espera una respuesta en 24 horas.',
+    'form.onIt': '¡Estamos en ello! 🔥',
+    'form.crafting': 'Tu solicitud de viaje ha sido enviada. Nuestro equipo ya está creando algo increíble para ti.',
+    'form.expectResponse': 'Espera una respuesta personalizada vía',
+    'form.within24': 'en 24 horas.',
+    'form.submitAnother': 'Enviar Otra Solicitud',
+    
+    // Event cards
+    'event.tropicalTech': 'Noches Tecnológicas Tropicales',
+    'event.tropicalTechDesc': 'Fiestas mensuales en azoteas con DJs internacionales',
+    'event.secretRave': 'Serie de Raves Secretos',
+    'event.secretRaveDesc': 'Raves exclusivos en ubicaciones ocultas - solo con RSVP',
+    'event.girlboss': 'Retiros Girlboss',
+    'event.girlbossDesc': 'Fines de semana exclusivos para creadoras',
+    'event.every3rd': 'Cada 3er sábado',
+    'event.newLocation': 'Nueva ubicación mensual',
+    'event.monthly': 'Mensual',
+    'event.badgeMonthly': 'Mensual',
+    'event.badgeSecret': 'Secreto',
+    'event.badgeExclusive': 'Exclusivo',
+    'event.from': 'Desde',
+    'event.person': '/persona',
+    
+    // Flight assistance section
+    'flight.title': 'Asistencia Global de Vuelos',
+    'flight.optional': '(Beneficio Opcional)',
+    'flight.subtitle': '¿Viajando desde Nueva York? ¿Dubái? ¿São Paulo? Te tenemos cubierto.',
+    'flight.desc1': 'Proporcionamos ayuda discreta y personalizada para encontrar y reservar las mejores tarifas aéreas a Santa Cruz, sin importar de dónde vengas. Ya sea que viajes desde EE.UU., Europa, Asia o Medio Oriente, te guiaremos a las rutas ideales, mejores aerolíneas y conexiones más suaves.',
+    'flight.desc2': 'Puedes reservar tú mismo, o déjanos manejarlo completamente — solo di la palabra. No marcamos los vuelos — simplemente nos aseguramos de que llegues aquí relajado y listo.',
+    'flight.perk': 'Este beneficio está incluido con todas las reservas de experiencia completa. Porque el lujo no comienza cuando llegas — comienza cuando abordas.',
+    
+    // Custom VIP banner
+    'custom.title': '¿Necesitas Algo Completamente Personalizado?',
+    'custom.subtitle': '¿Más allá de nuestros paquetes? Creamos experiencias a medida para grupos con visiones específicas.',
+    'custom.consultation': 'Consulta Gratuita'
   },
   ZH: {
     // Navigation

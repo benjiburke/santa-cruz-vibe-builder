@@ -385,22 +385,22 @@ const Packages = () => {
             <div className="text-center mb-6">
               <div className="text-3xl mb-4">✈️</div>
               <h3 className="text-2xl font-light text-gray-900 mb-4">
-                Global Flight Assistance <span className="text-sm font-normal text-gray-500">(Optional Perk)</span>
+                {t('flight.title')} <span className="text-sm font-normal text-gray-500">{t('flight.optional')}</span>
               </h3>
               <p className="text-lg font-medium text-gray-700 mb-4">
-                Flying in from New York? Dubai? São Paulo? We've got you.
+                {t('flight.subtitle')}
               </p>
             </div>
             
             <div className="max-w-3xl mx-auto text-gray-700 space-y-4 font-light">
               <p>
-                We provide discreet, personalized help finding and booking the best airfare to Santa Cruz — no matter where you're coming from. Whether you're traveling from the U.S., Europe, Asia, or the Middle East, we'll guide you to the ideal routes, best airlines, and smoothest connections.
+                {t('flight.desc1')}
               </p>
               <p>
-                You can book it yourself, or let us handle it completely — just say the word. We don't mark up flights — we simply make sure you land here relaxed and ready.
+                {t('flight.desc2')}
               </p>
               <div className="bg-white border-l-4 border-gray-400 p-4 italic text-gray-600 text-center">
-                This perk is included with all full-experience bookings. Because luxury doesn't start when you arrive — it starts when you board.
+                {t('flight.perk')}
               </div>
             </div>
           </div>
@@ -434,10 +434,10 @@ const Packages = () => {
         {/* Enhanced Custom VIP Banner */}
         <div className="bg-gray-900 p-8 text-center text-white shadow-sm">
           <h3 className="text-3xl font-light mb-4 text-white">
-            Need Something Completely Custom?
+            {t('custom.title')}
           </h3>
           <p className="text-lg mb-6 text-gray-300 font-light">
-            Exclusive venues, personal concierge, bespoke experiences - we specialize in creating unforgettable luxury moments. Your vision, our expertise.
+            {t('custom.subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
@@ -445,7 +445,7 @@ const Packages = () => {
               className="bg-white hover:bg-gray-100 text-gray-900 font-normal px-8 py-3"
               onClick={() => window.open('https://wa.me/1234567890?text=Hi! I want to plan something completely custom in Santa Cruz', '_blank')}
             >
-              Contact Us
+              {t('custom.consultation')}
             </Button>
             <Button 
               size="lg" 
@@ -453,7 +453,7 @@ const Packages = () => {
               className="border-white text-white hover:bg-white/10 hover:border-white px-8 py-3 font-normal"
               onClick={scrollToForm}
             >
-              Start Planning
+              {t('hero.planExperience')}
             </Button>
           </div>
         </div>

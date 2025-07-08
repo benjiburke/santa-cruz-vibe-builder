@@ -6,38 +6,38 @@ import { Badge } from '@/components/ui/badge';
 import { Calendar, MapPin, Users, ArrowRight } from 'lucide-react';
 import { useTranslation } from '@/hooks/useTranslation';
 
-const featuredEvents = [
-  {
-    id: 'tropical-tech-nights',
-    title: 'Tropical Tech Nights',
-    emoji: '🎧',
-    description: 'Monthly rooftop parties with international DJs',
-    date: 'Every 3rd Saturday',
-    price: 'From $80/person',
-    badge: 'Monthly'
-  },
-  {
-    id: 'secret-rave-series',
-    title: 'Secret Rave Series',
-    emoji: '🎭',
-    description: 'Exclusive raves in hidden locations - RSVP only',
-    date: 'New location monthly',
-    price: 'From $120/person',
-    badge: 'Secret'
-  },
-  {
-    id: 'girlboss-retreats',
-    title: 'Girlboss Retreats',
-    emoji: '👑',
-    description: 'Exclusive weekends for female creators',
-    date: 'Monthly',
-    price: 'From $650/person',
-    badge: 'Exclusive'
-  }
-];
-
 const EventsPreview = () => {
   const { t } = useTranslation();
+
+  const featuredEvents = [
+    {
+      id: 'tropical-tech-nights',
+      title: t('event.tropicalTech'),
+      emoji: '🎧',
+      description: t('event.tropicalTechDesc'),
+      date: t('event.every3rd'),
+      price: `${t('event.from')} $80${t('event.person')}`,
+      badge: t('event.badgeMonthly')
+    },
+    {
+      id: 'secret-rave-series',
+      title: t('event.secretRave'),
+      emoji: '🎭',
+      description: t('event.secretRaveDesc'),
+      date: t('event.newLocation'),
+      price: `${t('event.from')} $120${t('event.person')}`,
+      badge: t('event.badgeSecret')
+    },
+    {
+      id: 'girlboss-retreats',
+      title: t('event.girlboss'),
+      emoji: '👑',
+      description: t('event.girlbossDesc'),
+      date: t('event.monthly'),
+      price: `${t('event.from')} $650${t('event.person')}`,
+      badge: t('event.badgeExclusive')
+    }
+  ];
 
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-white">
