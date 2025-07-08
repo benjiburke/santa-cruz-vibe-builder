@@ -49,7 +49,48 @@ const translations = {
     'vibe.options': 'Options',
     'vibe.perfectFor': 'Perfect for your',
     'vibe.experience': 'experience',
-    'vibe.viewDetails': 'View Details'
+    'vibe.viewDetails': 'View Details',
+    
+    // Why Diamond Santa Cruz section
+    'why.title': 'Why Diamond',
+    'why.titleSpan': 'Santa Cruz',
+    'why.subtitle': 'We don\'t just book trips — we curate complete experiences',
+    'why.flightTitle': 'Global Flight Assistance',
+    'why.flightDesc': 'From NYC to Dubai to São Paulo — we handle your airfare coordination seamlessly',
+    'why.packageTitle': 'Full-Service Packages',
+    'why.packageDesc': 'Accommodation, activities, and coordination — everything handled before you arrive',
+    'why.insiderTitle': 'Local Insider Access',
+    'why.insiderDesc': 'Exclusive venues, VIP reservations, and experiences tourists never see',
+    'why.discreteTitle': 'Discreet & Personalized',
+    'why.discreteDesc': 'White-glove service tailored to your preferences — no crowds, no compromises',
+    
+    // Packages section
+    'packages.title': 'Experience',
+    'packages.titleSpan': 'Packages',
+    'packages.subtitle': 'Full-service packages include accommodation, activities, and coordination. These are complete trips, not just activities.',
+    'packages.lookingFor': 'Looking for individual activities only? Check out our',
+    'packages.curatedLink': 'Curated Day Experiences',
+    
+    // Events section
+    'events.title': 'Exclusive Events & Recurring Experiences',
+    'events.subtitle': 'From monthly tech nights to secret raves - join Santa Cruz\'s most exclusive community events.',
+    'events.joinWaitlist': 'Join Waitlist',
+    'events.viewAll': 'View All Events',
+    
+    // Intake Form
+    'form.title': 'Let\'s Plan Your Trip',
+    'form.subtitle': 'Tell us your vibe. We\'ll take it from there.',
+    'form.formTitle': 'Trip Planning Form',
+    'form.submit': 'Submit Trip Request',
+    'form.response': 'We\'ll respond within 24 hours with a custom proposal',
+    
+    // Footer
+    'footer.title': 'Diamond Santa Cruz',
+    'footer.description': 'Your gateway to Bolivia\'s most exclusive experiences. From luxury accommodations and wellness retreats to investment opportunities and permanent relocation support.',
+    'footer.consultation': 'Private Consultation',
+    'footer.curate': 'Curate Experience',
+    'footer.copyright': '© 2024 Diamond Santa Cruz. Exceptional experiences in Bolivia.',
+    'footer.tagline': 'Sophisticated. Discrete. Unforgettable.'
   },
   ES: {
     // Navigation
@@ -91,7 +132,48 @@ const translations = {
     'vibe.options': 'Opciones',
     'vibe.perfectFor': 'Perfecto para tu experiencia',
     'vibe.experience': '',
-    'vibe.viewDetails': 'Ver Detalles'
+    'vibe.viewDetails': 'Ver Detalles',
+    
+    // Why Diamond Santa Cruz section
+    'why.title': 'Por Qué Diamond',
+    'why.titleSpan': 'Santa Cruz',
+    'why.subtitle': 'No solo reservamos viajes — creamos experiencias completas',
+    'why.flightTitle': 'Asistencia Global de Vuelos',
+    'why.flightDesc': 'Desde NYC hasta Dubái y São Paulo — manejamos tu coordinación de vuelos sin problemas',
+    'why.packageTitle': 'Paquetes de Servicio Completo',
+    'why.packageDesc': 'Alojamiento, actividades y coordinación — todo manejado antes de que llegues',
+    'why.insiderTitle': 'Acceso Exclusivo Local',
+    'why.insiderDesc': 'Lugares exclusivos, reservas VIP y experiencias que los turistas nunca ven',
+    'why.discreteTitle': 'Discreto y Personalizado',
+    'why.discreteDesc': 'Servicio de guante blanco adaptado a tus preferencias — sin multitudes, sin compromisos',
+    
+    // Packages section
+    'packages.title': 'Paquetes de',
+    'packages.titleSpan': 'Experiencia',
+    'packages.subtitle': 'Los paquetes de servicio completo incluyen alojamiento, actividades y coordinación. Estos son viajes completos, no solo actividades.',
+    'packages.lookingFor': '¿Buscas solo actividades individuales? Revisa nuestras',
+    'packages.curatedLink': 'Experiencias Curadas del Día',
+    
+    // Events section
+    'events.title': 'Eventos Exclusivos y Experiencias Recurrentes',
+    'events.subtitle': 'Desde noches tecnológicas mensuales hasta raves secretos - únete a los eventos comunitarios más exclusivos de Santa Cruz.',
+    'events.joinWaitlist': 'Unirse a Lista de Espera',
+    'events.viewAll': 'Ver Todos los Eventos',
+    
+    // Intake Form
+    'form.title': 'Planifiquemos Tu Viaje',
+    'form.subtitle': 'Cuéntanos tu ambiente. Nosotros nos encargamos del resto.',
+    'form.formTitle': 'Formulario de Planificación de Viaje',
+    'form.submit': 'Enviar Solicitud de Viaje',
+    'form.response': 'Responderemos en 24 horas con una propuesta personalizada',
+    
+    // Footer
+    'footer.title': 'Diamond Santa Cruz',
+    'footer.description': 'Tu puerta de entrada a las experiencias más exclusivas de Bolivia. Desde alojamientos de lujo y retiros de bienestar hasta oportunidades de inversión y apoyo para reubicación permanente.',
+    'footer.consultation': 'Consulta Privada',
+    'footer.curate': 'Crear Experiencia',
+    'footer.copyright': '© 2024 Diamond Santa Cruz. Experiencias excepcionales en Bolivia.',
+    'footer.tagline': 'Sofisticado. Discreto. Inolvidable.'
   },
   ZH: {
     // Navigation
@@ -133,7 +215,48 @@ const translations = {
     'vibe.options': '选项',
     'vibe.perfectFor': '完美适合您的',
     'vibe.experience': '体验',
-    'vibe.viewDetails': '查看详情'
+    'vibe.viewDetails': '查看详情',
+    
+    // Why Diamond Santa Cruz section
+    'why.title': '为什么选择Diamond',
+    'why.titleSpan': 'Santa Cruz',
+    'why.subtitle': '我们不只是预订旅行——我们策划完整体验',
+    'why.flightTitle': '全球航班协助',
+    'why.flightDesc': '从纽约到迪拜到圣保罗——我们无缝处理您的机票协调',
+    'why.packageTitle': '全套服务包',
+    'why.packageDesc': '住宿、活动和协调——在您到达之前一切都已安排妥当',
+    'why.insiderTitle': '本地内幕访问',
+    'why.insiderDesc': '独家场所、VIP预订和游客从未见过的体验',
+    'why.discreteTitle': '谨慎且个性化',
+    'why.discreteDesc': '根据您的喜好量身定制的白手套服务——没有人群，没有妥协',
+    
+    // Packages section
+    'packages.title': '体验',
+    'packages.titleSpan': '套餐',
+    'packages.subtitle': '全套服务包包括住宿、活动和协调。这些是完整的旅行，不仅仅是活动。',
+    'packages.lookingFor': '只寻找个人活动？查看我们的',
+    'packages.curatedLink': '精选日间体验',
+    
+    // Events section
+    'events.title': '独家活动和定期体验',
+    'events.subtitle': '从每月科技之夜到秘密狂欢——加入圣克鲁斯最独家的社区活动。',
+    'events.joinWaitlist': '加入等候名单',
+    'events.viewAll': '查看所有活动',
+    
+    // Intake Form
+    'form.title': '让我们规划您的旅行',
+    'form.subtitle': '告诉我们您的氛围。我们来处理其余的。',
+    'form.formTitle': '旅行规划表单',
+    'form.submit': '提交旅行请求',
+    'form.response': '我们将在24小时内回复定制提案',
+    
+    // Footer
+    'footer.title': 'Diamond Santa Cruz',
+    'footer.description': '您通往玻利维亚最独家体验的门户。从豪华住宿和健康度假到投资机会和永久搬迁支持。',
+    'footer.consultation': '私人咨询',
+    'footer.curate': '策划体验',
+    'footer.copyright': '© 2024 Diamond Santa Cruz. 玻利维亚的卓越体验。',
+    'footer.tagline': '精致。谨慎。难忘。'
   },
   PT: {
     // Navigation
@@ -175,7 +298,48 @@ const translations = {
     'vibe.options': 'Opções',
     'vibe.perfectFor': 'Perfeito para sua experiência',
     'vibe.experience': '',
-    'vibe.viewDetails': 'Ver Detalhes'
+    'vibe.viewDetails': 'Ver Detalhes',
+    
+    // Why Diamond Santa Cruz section
+    'why.title': 'Por Que Diamond',
+    'why.titleSpan': 'Santa Cruz',
+    'why.subtitle': 'Não apenas reservamos viagens — criamos experiências completas',
+    'why.flightTitle': 'Assistência Global de Voos',
+    'why.flightDesc': 'De NYC a Dubai a São Paulo — cuidamos da coordenação de suas passagens aéreas perfeitamente',
+    'why.packageTitle': 'Pacotes de Serviço Completo',
+    'why.packageDesc': 'Acomodação, atividades e coordenação — tudo cuidado antes de você chegar',
+    'why.insiderTitle': 'Acesso Interno Local',
+    'why.insiderDesc': 'Locais exclusivos, reservas VIP e experiências que turistas nunca veem',
+    'why.discreteTitle': 'Discreto e Personalizado',
+    'why.discreteDesc': 'Serviço de luva branca adaptado às suas preferências — sem multidões, sem compromissos',
+    
+    // Packages section
+    'packages.title': 'Pacotes de',
+    'packages.titleSpan': 'Experiência',
+    'packages.subtitle': 'Pacotes de serviço completo incluem acomodação, atividades e coordenação. Estas são viagens completas, não apenas atividades.',
+    'packages.lookingFor': 'Procurando apenas atividades individuais? Confira nossas',
+    'packages.curatedLink': 'Experiências Diárias Selecionadas',
+    
+    // Events section
+    'events.title': 'Eventos Exclusivos e Experiências Recorrentes',
+    'events.subtitle': 'De noites de tecnologia mensais a raves secretas - junte-se aos eventos comunitários mais exclusivos de Santa Cruz.',
+    'events.joinWaitlist': 'Entrar na Lista de Espera',
+    'events.viewAll': 'Ver Todos os Eventos',
+    
+    // Intake Form
+    'form.title': 'Vamos Planejar Sua Viagem',
+    'form.subtitle': 'Nos conte seu estilo. Nós cuidamos do resto.',
+    'form.formTitle': 'Formulário de Planejamento de Viagem',
+    'form.submit': 'Enviar Solicitação de Viagem',
+    'form.response': 'Responderemos em 24 horas com uma proposta personalizada',
+    
+    // Footer
+    'footer.title': 'Diamond Santa Cruz',
+    'footer.description': 'Seu portal para as experiências mais exclusivas da Bolívia. De acomodações de luxo e retiros de bem-estar a oportunidades de investimento e apoio à realocação permanente.',
+    'footer.consultation': 'Consulta Privada',
+    'footer.curate': 'Criar Experiência',
+    'footer.copyright': '© 2024 Diamond Santa Cruz. Experiências excepcionais na Bolívia.',
+    'footer.tagline': 'Sofisticado. Discreto. Inesquecível.'
   }
 };
 
