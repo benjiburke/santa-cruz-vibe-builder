@@ -11,38 +11,38 @@ const DiamondSpa = () => {
 
   const services = [
     {
-      title: 'Signature Diamond Facial',
-      duration: '90 minutes',
-      description: 'Exclusive diamond-infused treatment combining European techniques with Bolivian botanical extracts',
-      price: 'From $280'
+      title: 'Relaxing Massage',
+      duration: 'Flexible timing',
+      description: 'Professional massage therapy in private, comfortable suites',
+      price: 'Prices available on site'
     },
     {
-      title: 'Andean Stone Therapy',
-      duration: '120 minutes', 
-      description: 'Traditional hot stone massage using authentic stones from the Bolivian highlands',
-      price: 'From $320'
+      title: 'Tantric Massage',
+      duration: 'Flexible timing',
+      description: 'Specialized therapeutic massage services by experienced professionals',
+      price: 'Prices available on site'
     },
     {
-      title: 'Couple\'s Sanctuary',
-      duration: '180 minutes',
-      description: 'Private suite experience with champagne service and personalized treatments',
-      price: 'From $650'
+      title: 'VIP Experience',
+      duration: 'Extended sessions',
+      description: 'Premium private services with dedicated attention and luxury amenities',
+      price: 'Prices available on site'
     },
     {
-      title: 'Executive Wellness',
-      duration: '240 minutes',
-      description: 'Complete wellness journey including massage, facial, and private dining',
-      price: 'From $850'
+      title: 'Group Sessions',
+      duration: 'Customizable',
+      description: 'Private group experiences with multiple professionals for special occasions',
+      price: 'Prices available on site'
     }
   ];
 
   const amenities = [
     'Private treatment suites',
-    'Himalayan salt relaxation room',
-    'Temperature-controlled infinity pool',
-    'Steam therapy with eucalyptus',
-    'Meditation garden terrace',
-    'Premium wellness products'
+    'Secure parking with private garage',
+    'Climate-controlled spa environment',
+    'VIP private transportation service',
+    'Event spaces and party areas',
+    'Complete discretion and privacy'
   ];
 
   return (
@@ -121,9 +121,9 @@ const DiamondSpa = () => {
                       variant="outline" 
                       size="sm"
                       className="border-gray-300 text-gray-700 hover:bg-gray-50 font-normal"
-                      onClick={() => window.open('https://wa.me/1234567890?text=I\'d like to book: ' + service.title, '_blank')}
+                      onClick={() => window.open('https://diamondscz.com/servicios', '_blank')}
                     >
-                      Book Now
+                      View Details
                     </Button>
                   </div>
                 </CardContent>
