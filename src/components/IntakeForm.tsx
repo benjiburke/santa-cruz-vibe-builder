@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Send, CheckCircle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { z } from 'zod';
+import { useTranslation } from '@/hooks/useTranslation';
 
 // Import form components
 import { TripTypeSelector } from './intake-form/TripTypeSelector';
@@ -53,6 +54,7 @@ const IntakeForm = () => {
     additionalInfo: ''
   });
   const { toast } = useToast();
+  const { t } = useTranslation();
 
   const handleServiceChange = (service: string, checked: boolean) => {
     if (checked) {
@@ -155,10 +157,10 @@ const IntakeForm = () => {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl sm:text-5xl font-bold text-jungle-800 mb-4">
-            Let's Plan Your Trip
+            {t('form.title')}
           </h2>
           <p className="text-xl text-jungle-600">
-            Tell us your vibe. We'll take it from there.
+            {t('form.subtitle')}
           </p>
         </div>
 
@@ -166,7 +168,7 @@ const IntakeForm = () => {
           <CardHeader className="text-center pb-6">
             <div className="text-4xl mb-2">✈️</div>
             <h3 className="text-2xl font-bold text-jungle-800">
-              Trip Planning Form
+              {t('form.formTitle')}
             </h3>
           </CardHeader>
           
@@ -236,10 +238,10 @@ const IntakeForm = () => {
                   className="bg-gradient-to-r from-jungle-600 to-sunset-500 hover:from-jungle-700 hover:to-sunset-600 text-white px-12 py-6 text-lg rounded-full shadow-xl transition-all duration-300 transform hover:scale-105"
                 >
                   <Send className="mr-2 h-5 w-5" />
-                  Submit Trip Request
+                  {t('form.submit')}
                 </Button>
                 <p className="text-sm text-jungle-500 mt-4">
-                  We'll respond within 24 hours with a custom proposal
+                  {t('form.response')}
                 </p>
               </div>
             </form>

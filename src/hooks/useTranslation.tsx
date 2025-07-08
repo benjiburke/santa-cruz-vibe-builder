@@ -203,6 +203,12 @@ const translations = {
     'hero.planExperience': 'Planifica Tu Experiencia',
     'hero.consultation': 'Consulta',
     'hero.explorePackages': 'Explorar Paquetes',
+    'hero.tagline': 'Donde el lujo internacional se encuentra con la auténtica cultura boliviana. Servicios completos de conserjería para el viajero sofisticado que busca experiencias extraordinarias.',
+    'hero.quickNav': 'Navegación Rápida',
+    'hero.vibes': 'Ambientes',
+    'hero.packages': 'Paquetes',
+    'hero.events': 'Eventos',
+    'hero.bookTrip': 'Reservar Viaje',
     
     // Vibe Selector
     'vibe.title': 'Elige Tu',
@@ -286,6 +292,12 @@ const translations = {
     'hero.planExperience': '规划您的体验',
     'hero.consultation': '咨询',
     'hero.explorePackages': '探索套餐',
+    'hero.tagline': '国际奢华与正宗玻利维亚文化的完美结合。为寻求非凡体验的精致旅行者提供完整的礼宾服务。',
+    'hero.quickNav': '快速导航',
+    'hero.vibes': '氛围',
+    'hero.packages': '套餐',
+    'hero.events': '活动',
+    'hero.bookTrip': '预订旅行',
     
     // Vibe Selector
     'vibe.title': '选择您的',
@@ -369,6 +381,12 @@ const translations = {
     'hero.planExperience': 'Planeje Sua Experiência',
     'hero.consultation': 'Consulta',
     'hero.explorePackages': 'Explorar Pacotes',
+    'hero.tagline': 'Onde o luxo internacional encontra a autêntica cultura boliviana. Serviços completos de concierge para o viajante sofisticado em busca de experiências extraordinárias.',
+    'hero.quickNav': 'Navegação Rápida',
+    'hero.vibes': 'Ambientes',
+    'hero.packages': 'Pacotes',
+    'hero.events': 'Eventos',
+    'hero.bookTrip': 'Reservar Viagem',
     
     // Vibe Selector
     'vibe.title': 'Escolha Sua',
