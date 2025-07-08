@@ -20,7 +20,7 @@ export const TripTypeSelector = ({ value, onChange }: TripTypeSelectorProps) => 
   ];
   return (
     <div className="space-y-3">
-      <Label className="text-lg font-semibold text-jungle-800">
+      <Label className="text-lg font-semibold text-primary">
         {t('form.tripType')} *
       </Label>
       <RadioGroup 

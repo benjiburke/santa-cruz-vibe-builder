@@ -19,7 +19,7 @@ export const GroupSizeBudgetInputs = ({
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       <div className="space-y-3">
-        <Label htmlFor="groupSize" className="text-lg font-semibold text-jungle-800">
+        <Label htmlFor="groupSize" className="text-lg font-semibold text-primary">
           {t('form.groupSize')} *
         </Label>
         <Select onValueChange={onGroupSizeChange}>
@@ -37,7 +37,7 @@ export const GroupSizeBudgetInputs = ({
       </div>
 
       <div className="space-y-3">
-        <Label htmlFor="budget" className="text-lg font-semibold text-jungle-800">
+        <Label htmlFor="budget" className="text-lg font-semibold text-primary">
           {t('form.budget')} *
         </Label>
         <Select onValueChange={onBudgetChange}>

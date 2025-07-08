@@ -124,24 +124,24 @@ const IntakeForm = () => {
 
   if (isSubmitted) {
     return (
-      <section id="intake-form" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-jungle-50 to-sunset-50">
+      <section id="intake-form" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/5 to-secondary/5">
         <div className="max-w-2xl mx-auto text-center">
-          <Card className="bg-white shadow-2xl border-0">
+          <Card className="bg-card shadow-2xl border-0">
             <CardContent className="p-12">
-              <CheckCircle className="h-16 w-16 text-jungle-600 mx-auto mb-6" />
-              <h3 className="text-3xl font-bold text-jungle-800 mb-4">
+              <CheckCircle className="h-16 w-16 text-primary mx-auto mb-6" />
+              <h3 className="text-3xl font-bold text-primary mb-4">
                 We're on it! 🔥
               </h3>
-              <p className="text-lg text-jungle-600 mb-6">
+              <p className="text-lg text-muted-foreground mb-6">
                 Your trip request has been submitted. Our team is already crafting something incredible for you.
               </p>
-              <p className="text-jungle-500 mb-8">
+              <p className="text-muted-foreground mb-8">
                 Expect a personalized response via {formData.contactMethod === 'whatsapp' ? 'WhatsApp' : formData.contactMethod === 'instagram' ? 'Instagram' : 'email'} within 24 hours.
               </p>
               <Button 
                 onClick={() => setIsSubmitted(false)}
                 variant="outline"
-                className="border-jungle-300 text-jungle-700 hover:bg-jungle-600 hover:text-white"
+                className="border-border text-foreground hover:bg-accent"
               >
                 Submit Another Request
               </Button>
@@ -153,21 +153,21 @@ const IntakeForm = () => {
   }
 
   return (
-    <section id="intake-form" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-jungle-50 to-sunset-50">
+    <section id="intake-form" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/5 to-secondary/5">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl font-bold text-jungle-800 mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-primary mb-4">
             {t('form.title')}
           </h2>
-          <p className="text-xl text-jungle-600">
+          <p className="text-xl text-muted-foreground">
             {t('form.subtitle')}
           </p>
         </div>
 
-        <Card className="bg-white/90 backdrop-blur-sm shadow-2xl border-0">
+        <Card className="bg-card/90 backdrop-blur-sm shadow-2xl border-0">
           <CardHeader className="text-center pb-6">
             <div className="text-4xl mb-2">✈️</div>
-            <h3 className="text-2xl font-bold text-jungle-800">
+            <h3 className="text-2xl font-bold text-card-foreground">
               {t('form.formTitle')}
             </h3>
           </CardHeader>
@@ -235,12 +235,12 @@ const IntakeForm = () => {
                 <Button 
                   type="submit" 
                   size="lg"
-                  className="bg-gradient-to-r from-jungle-600 to-sunset-500 hover:from-jungle-700 hover:to-sunset-600 text-white px-12 py-6 text-lg rounded-full shadow-xl transition-all duration-300 transform hover:scale-105"
+                  className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-primary-foreground px-12 py-6 text-lg rounded-full shadow-xl transition-all duration-300 transform hover:scale-105"
                 >
                   <Send className="mr-2 h-5 w-5" />
                   {t('form.submit')}
                 </Button>
-                <p className="text-sm text-jungle-500 mt-4">
+                <p className="text-sm text-muted-foreground mt-4">
                   {t('form.response')}
                 </p>
               </div>

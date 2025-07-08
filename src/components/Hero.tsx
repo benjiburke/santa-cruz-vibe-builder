@@ -87,7 +87,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Button 
               size="lg" 
-              className="bg-gray-900 hover:bg-gray-800 text-white px-10 py-4 text-lg font-normal transition-all duration-300 shadow-sm"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-4 text-lg font-normal transition-all duration-300 shadow-sm"
               onClick={() => scrollToSection('book')}
             >
               <Calendar className="mr-2 h-5 w-5" />
@@ -97,7 +97,7 @@ const Hero = () => {
             <Button 
               size="lg" 
               variant="outline"
-              className="border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 px-10 py-4 text-lg font-normal transition-all duration-300"
+              className="border-border text-foreground hover:bg-accent hover:text-accent-foreground px-10 py-4 text-lg font-normal transition-all duration-300"
               onClick={openWhatsApp}
             >
               <MessageCircle className="mr-2 h-5 w-5" />
@@ -107,7 +107,7 @@ const Hero = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 px-10 py-4 text-lg font-normal transition-all duration-300"
+              className="border-border text-foreground hover:bg-accent hover:text-accent-foreground px-10 py-4 text-lg font-normal transition-all duration-300"
               onClick={() => scrollToSection('packages')}
             >
               <MapPin className="mr-2 h-5 w-5" />

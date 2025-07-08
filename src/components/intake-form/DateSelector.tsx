@@ -28,13 +28,13 @@ export const DateSelector = ({
   const { t } = useTranslation();
   return (
     <div className="space-y-3">
-      <Label className="text-lg font-semibold text-jungle-800">
+      <Label className="text-lg font-semibold text-primary">
         {t('form.travelDates')}
       </Label>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Start Date */}
         <div className="space-y-2">
-          <Label className="text-sm text-jungle-600">{t('form.startDate')}</Label>
+          <Label className="text-sm text-muted-foreground">{t('form.startDate')}</Label>
           <Popover>
             <PopoverTrigger asChild>
               <Button
@@ -63,7 +63,7 @@ export const DateSelector = ({
 
         {/* End Date */}
         <div className="space-y-2">
-          <Label className="text-sm text-jungle-600">{t('form.endDate')}</Label>
+          <Label className="text-sm text-muted-foreground">{t('form.endDate')}</Label>
           <Popover>
             <PopoverTrigger asChild>
               <Button
@@ -100,7 +100,7 @@ export const DateSelector = ({
           checked={flexibility}
           onCheckedChange={onFlexibilityChange}
         />
-        <Label htmlFor="flexibility" className="text-sm text-jungle-600">
+        <Label htmlFor="flexibility" className="text-sm text-muted-foreground">
           {t('form.flexible')}
         </Label>
       </div>

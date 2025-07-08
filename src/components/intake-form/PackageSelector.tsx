@@ -23,7 +23,7 @@ export const PackageSelector = ({ value, onChange }: PackageSelectorProps) => {
   ];
   return (
     <div className="space-y-3">
-      <Label htmlFor="selectedPackage" className="text-lg font-semibold text-jungle-800">
+      <Label htmlFor="selectedPackage" className="text-lg font-semibold text-primary">
         {t('form.selectPackage')}
       </Label>
       <Select onValueChange={onChange}>
@@ -38,7 +38,7 @@ export const PackageSelector = ({ value, onChange }: PackageSelectorProps) => {
           ))}
         </SelectContent>
       </Select>
-      <p className="text-sm text-jungle-500">
+      <p className="text-sm text-muted-foreground">
         {t('form.noPreference')}
       </p>
     </div>
