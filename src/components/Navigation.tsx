@@ -32,6 +32,13 @@ const Navigation = () => {
     { to: '/about', label: 'About' }
   ];
 
+  // Get current page name for mobile display
+  const getCurrentPageName = () => {
+    const currentPath = window.location.pathname;
+    const currentNavLink = navLinks.find(link => link.to === currentPath);
+    return currentNavLink ? currentNavLink.label : 'Home';
+  };
+
   return (
     <nav className="bg-white/95 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,6 +47,11 @@ const Navigation = () => {
           <Link to="/" className="text-xl font-medium text-gray-900 tracking-tight">
             Santa Cruz Experience
           </Link>
+
+          {/* Current Page Indicator for Mobile */}
+          <div className="md:hidden text-sm text-gray-600 font-light">
+            {getCurrentPageName()}
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">

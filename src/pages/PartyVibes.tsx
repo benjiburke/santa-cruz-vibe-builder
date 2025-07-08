@@ -66,7 +66,7 @@ const PartyVibes = () => {
         </div>
 
         <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
-          <div className="animate-fade-in">
+          <div className="animate-fade-in pt-20 md:pt-8">
             <Diamond className="w-8 h-8 text-white mx-auto mb-6" />
             <h1 className="text-4xl lg:text-5xl font-light text-white mb-4 leading-tight tracking-tight">
               Diamond
@@ -90,7 +90,7 @@ const PartyVibes = () => {
               <Button 
                 size="lg" 
                 variant="outline"
-                className="border-white/40 text-white hover:bg-white/10 hover:border-white px-6 py-2 text-sm font-normal"
+                className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 py-2 text-sm font-normal"
                 onClick={() => window.open('https://wa.me/1234567890?text=Diamond Santa Cruz inquiry', '_blank')}
               >
                 Contact
@@ -211,16 +211,14 @@ const PartyVibes = () => {
             <Link to="/intake-form">
               <Button 
                 size="lg" 
-                variant="outline" 
-                className="border-white/30 text-white hover:bg-white/10 hover:border-white text-sm font-normal"
+                className="bg-white hover:bg-gray-100 text-gray-900 border border-white text-sm font-normal"
               >
                 Design Your Experience
               </Button>
             </Link>
             <Button 
               size="lg" 
-              variant="ghost" 
-              className="text-white hover:bg-white/10 text-sm font-normal"
+              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 text-sm font-normal"
               onClick={() => window.open('https://wa.me/1234567890?text=Diamond Santa Cruz bespoke inquiry', '_blank')}
             >
               Speak With Us
