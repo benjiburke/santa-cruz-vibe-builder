@@ -1,20 +1,16 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-import { MapPin } from 'lucide-react';
 
 const SantaCruzMap = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
-  const [mapboxToken, setMapboxToken] = useState('');
-  const [showTokenInput, setShowTokenInput] = useState(true);
 
-  const initializeMap = (token: string) => {
-    if (!mapContainer.current || !token) return;
+  useEffect(() => {
+    if (!mapContainer.current) return;
 
-    mapboxgl.accessToken = token;
+    // Initialize map with the provided token
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYmVuYnVya2U5MyIsImEiOiJjbWN1NmY2dTAwZGcyMmtvaXg1NXphOTNtIn0.nsV1Rp_mlZShFkI9QpOv1A';
     
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
@@ -48,16 +44,8 @@ const SantaCruzMap = () => {
         duration: 3000
       });
     });
-  };
 
-  const handleTokenSubmit = () => {
-    if (mapboxToken.trim()) {
-      setShowTokenInput(false);
-      initializeMap(mapboxToken.trim());
-    }
-  };
-
-  useEffect(() => {
+    // Cleanup
     return () => {
       map.current?.remove();
     };
@@ -65,30 +53,6 @@ const SantaCruzMap = () => {
 
   return (
     <div className="relative w-full h-96 bg-gray-50 border border-gray-200 rounded-lg overflow-hidden">
-      {showTokenInput && (
-        <div className="absolute inset-0 bg-white/95 backdrop-blur-sm z-10 flex items-center justify-center p-6">
-          <div className="text-center max-w-md">
-            <MapPin className="w-8 h-8 text-gray-700 mx-auto mb-4" />
-            <h3 className="text-lg font-medium text-gray-900 mb-2">View Santa Cruz Location</h3>
-            <p className="text-sm text-gray-600 mb-4">
-              Enter your Mapbox public token to view our location in Santa Cruz, Bolivia.
-              Get your token at <a href="https://mapbox.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">mapbox.com</a>
-            </p>
-            <div className="flex gap-2">
-              <Input
-                type="text"
-                placeholder="pk.eyJ1..."
-                value={mapboxToken}
-                onChange={(e) => setMapboxToken(e.target.value)}
-                className="flex-1"
-              />
-              <Button onClick={handleTokenSubmit} size="sm">
-                Show Map
-              </Button>
-            </div>
-          </div>
-        </div>
-      )}
       <div ref={mapContainer} className="absolute inset-0" />
     </div>
   );
