@@ -20,7 +20,7 @@ const getVibes = (t: (key: string) => string): Vibe[] => [
     emoji: '',
     title: t('vibe.vibrant'),
     description: t('vibe.vibrantDesc'),
-    packages: ['Poolside BBQ Experience', 'VIP Nightlife Access', 'Private Party Planning'],
+    packages: [t('vibe.poolsideBBQ'), t('vibe.vipNightlife'), t('vibe.privateParty')],
     intensity: t('vibe.highEnergy')
   },
   {
@@ -28,7 +28,7 @@ const getVibes = (t: (key: string) => string): Vibe[] => [
     emoji: '',
     title: t('vibe.tranquil'),
     description: t('vibe.tranquilDesc'),
-    packages: ['Diamond Spa Retreat', 'Wellness Sanctuary', 'Romantic Escape'],
+    packages: [t('vibe.diamondSpa'), t('vibe.wellnessSanctuary'), t('vibe.romanticEscape')],
     intensity: t('vibe.peaceful')
   },
   {
@@ -36,7 +36,7 @@ const getVibes = (t: (key: string) => string): Vibe[] => [
     emoji: '',
     title: t('vibe.discovery'),
     description: t('vibe.discoveryDesc'),
-    packages: ['Helicopter Tour Experience', 'Cultural Immersion', 'Salt Flats Adventure'],
+    packages: [t('vibe.helicopterTour'), t('vibe.culturalImmersion'), t('vibe.saltFlatsAdventure')],
     intensity: t('vibe.adventure')
   },
   {
@@ -44,7 +44,7 @@ const getVibes = (t: (key: string) => string): Vibe[] => [
     emoji: '',
     title: t('vibe.exclusive'),
     description: t('vibe.exclusiveDesc'),
-    packages: ['Private Salt Flats Dinner', 'Executive Concierge', 'Luxury Estate Tours'],
+    packages: [t('vibe.privateSaltFlatsDinner'), t('vibe.executiveConcierge'), t('vibe.luxuryEstateTours')],
     intensity: t('vibe.premium')
   }
 ];

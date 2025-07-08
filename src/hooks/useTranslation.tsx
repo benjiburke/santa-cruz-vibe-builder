@@ -316,6 +316,20 @@ const translations = {
     'vibe.experience': '',
     'vibe.viewDetails': 'Ver Detalles',
     
+    // Vibe packages
+    'vibe.poolsideBBQ': 'Experiencia BBQ en Piscina',
+    'vibe.vipNightlife': 'Acceso VIP a Vida Nocturna',
+    'vibe.privateParty': 'Planificación de Fiesta Privada',
+    'vibe.diamondSpa': 'Retiro Diamond Spa',
+    'vibe.wellnessSanctuary': 'Santuario de Bienestar',
+    'vibe.romanticEscape': 'Escapada Romántica',
+    'vibe.helicopterTour': 'Experiencia de Tour en Helicóptero',
+    'vibe.culturalImmersion': 'Inmersión Cultural',
+    'vibe.saltFlatsAdventure': 'Aventura en Salar',
+    'vibe.privateSaltFlatsDinner': 'Cena Privada en Salar',
+    'vibe.executiveConcierge': 'Conserjería Ejecutiva',
+    'vibe.luxuryEstateTours': 'Tours de Propiedades de Lujo',
+    
     // Why Diamond Santa Cruz section
     'why.title': 'Por Qué Diamond',
     'why.titleSpan': 'Santa Cruz',
