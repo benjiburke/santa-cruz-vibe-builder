@@ -29,12 +29,12 @@ export const DateSelector = ({
   return (
     <div className="space-y-3">
       <Label className="text-lg font-semibold text-primary">
-        {t('form.travelDates')}
+        Fechas de Viaje
       </Label>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Start Date */}
         <div className="space-y-2">
-          <Label className="text-sm text-muted-foreground">{t('form.startDate')}</Label>
+          <Label className="text-sm text-muted-foreground">Fecha de Inicio</Label>
           <Popover>
             <PopoverTrigger asChild>
               <Button
@@ -63,7 +63,7 @@ export const DateSelector = ({
 
         {/* End Date */}
         <div className="space-y-2">
-          <Label className="text-sm text-muted-foreground">{t('form.endDate')}</Label>
+          <Label className="text-sm text-muted-foreground">Fecha de Fin</Label>
           <Popover>
             <PopoverTrigger asChild>
               <Button
@@ -101,7 +101,7 @@ export const DateSelector = ({
           onCheckedChange={onFlexibilityChange}
         />
         <Label htmlFor="flexibility" className="text-sm text-muted-foreground">
-          {t('form.flexible')}
+          Soy flexible con las fechas
         </Label>
       </div>
     </div>

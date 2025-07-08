@@ -11,12 +11,12 @@ export const AdditionalInfoInput = ({ value, onChange }: AdditionalInfoInputProp
   const { t } = useTranslation();
   return (
     <div className="space-y-3">
-      <Label htmlFor="additionalInfo" className="text-lg font-semibold text-jungle-800">
-        {t('form.additionalInfo')}
+      <Label htmlFor="additionalInfo" className="text-lg font-semibold text-primary">
+        ¿Algo más que deberíamos saber?
       </Label>
       <Textarea
         id="additionalInfo"
-        placeholder={t('form.additionalInfoPlaceholder')}
+        placeholder="Solicitudes especiales, preferencias, restricciones dietéticas, etc."
         rows={4}
         maxLength={2000}
         value={value}

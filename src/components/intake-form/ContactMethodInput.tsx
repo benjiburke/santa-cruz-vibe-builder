@@ -20,26 +20,26 @@ export const ContactMethodInput = ({
   const getContactPlaceholder = () => {
     switch (contactMethod) {
       case 'whatsapp':
-        return t('form.whatsappPlaceholder');
+        return '+1234567890';
       case 'email':
-        return t('form.emailPlaceholder');
+        return 'tu@email.com';
       case 'instagram':
-        return t('form.instagramPlaceholder');
+        return '@tuusuario';
       default:
-        return t('form.whatsappPlaceholder');
+        return '+1234567890';
     }
   };
 
   const getContactLabel = () => {
     switch (contactMethod) {
       case 'whatsapp':
-        return `${t('form.whatsapp')} *`;
+        return 'WhatsApp *';
       case 'email':
-        return `${t('form.email')} *`;
+        return 'Email *';
       case 'instagram':
-        return `${t('form.instagram')} *`;
+        return 'Instagram *';
       default:
-        return `${t('form.whatsapp')} *`;
+        return 'WhatsApp *';
     }
   };
 
@@ -47,8 +47,8 @@ export const ContactMethodInput = ({
     <>
       {/* Contact Method */}
       <div className="space-y-3">
-        <Label htmlFor="contact" className="text-lg font-semibold text-jungle-800">
-          {t('form.contactPreference')} *
+        <Label htmlFor="contact" className="text-lg font-semibold text-primary">
+          ¿Cómo deberíamos contactarte? *
         </Label>
         <RadioGroup 
           value={contactMethod} 
@@ -60,15 +60,15 @@ export const ContactMethodInput = ({
         >
           <div className="flex items-center space-x-2">
             <RadioGroupItem value="whatsapp" id="whatsapp" />
-            <Label htmlFor="whatsapp">{t('form.whatsapp')}</Label>
+            <Label htmlFor="whatsapp">WhatsApp</Label>
           </div>
           <div className="flex items-center space-x-2">
             <RadioGroupItem value="email" id="email" />
-            <Label htmlFor="email">{t('form.email')}</Label>
+            <Label htmlFor="email">Email</Label>
           </div>
           <div className="flex items-center space-x-2">
             <RadioGroupItem value="instagram" id="instagram" />
-            <Label htmlFor="instagram">{t('form.instagram')}</Label>
+            <Label htmlFor="instagram">Instagram</Label>
           </div>
         </RadioGroup>
       </div>
@@ -76,7 +76,7 @@ export const ContactMethodInput = ({
       {/* Contact Information Input */}
       {contactMethod && (
         <div className="space-y-3">
-          <Label htmlFor="contactInfo" className="text-lg font-semibold text-jungle-800">
+          <Label htmlFor="contactInfo" className="text-lg font-semibold text-primary">
             {getContactLabel()}
           </Label>
           <Input

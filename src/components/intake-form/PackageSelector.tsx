@@ -28,7 +28,7 @@ export const PackageSelector = ({ value, onChange }: PackageSelectorProps) => {
       </Label>
       <Select onValueChange={onChange}>
         <SelectTrigger>
-          <SelectValue placeholder={t('form.noPreference')} />
+          <SelectValue placeholder="Sin preferencia - sorpréndeme" />
         </SelectTrigger>
         <SelectContent>
           {availablePackages.map((pkg) => (
@@ -39,7 +39,7 @@ export const PackageSelector = ({ value, onChange }: PackageSelectorProps) => {
         </SelectContent>
       </Select>
       <p className="text-sm text-muted-foreground">
-        {t('form.noPreference')}
+        ¡No te preocupes si no estás seguro, podemos ayudarte a elegir el paquete perfecto!
       </p>
     </div>
   );

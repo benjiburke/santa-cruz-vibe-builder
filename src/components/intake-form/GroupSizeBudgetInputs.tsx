@@ -24,14 +24,14 @@ export const GroupSizeBudgetInputs = ({
         </Label>
         <Select onValueChange={onGroupSizeChange}>
           <SelectTrigger>
-            <SelectValue placeholder={t('form.groupSizePlaceholder')} />
+            <SelectValue placeholder="ej., 4 personas" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="1-2">1-2 people</SelectItem>
-            <SelectItem value="3-4">3-4 people</SelectItem>
-            <SelectItem value="5-8">5-8 people</SelectItem>
-            <SelectItem value="9-12">9-12 people</SelectItem>
-            <SelectItem value="12+">12+ people</SelectItem>
+            <SelectItem value="1-2">1-2 personas</SelectItem>
+            <SelectItem value="3-4">3-4 personas</SelectItem>
+            <SelectItem value="5-8">5-8 personas</SelectItem>
+            <SelectItem value="9-12">9-12 personas</SelectItem>
+            <SelectItem value="12+">12+ personas</SelectItem>
           </SelectContent>
         </Select>
       </div>
@@ -42,7 +42,7 @@ export const GroupSizeBudgetInputs = ({
         </Label>
         <Select onValueChange={onBudgetChange}>
           <SelectTrigger>
-            <SelectValue placeholder={t('form.budgetPlaceholder')} />
+            <SelectValue placeholder="ej., $800" />
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="300-500">$300-500</SelectItem>

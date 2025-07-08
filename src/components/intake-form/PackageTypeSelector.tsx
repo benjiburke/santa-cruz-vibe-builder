@@ -11,8 +11,8 @@ export const PackageTypeSelector = ({ value, onChange }: PackageTypeSelectorProp
   const { t } = useTranslation();
   return (
     <div className="space-y-3">
-      <Label className="text-lg font-semibold text-jungle-800">
-        {t('form.packageType')} *
+      <Label className="text-lg font-semibold text-primary">
+        Preferencia de Tipo de Paquete *
       </Label>
       <RadioGroup 
         value={value} 
@@ -20,19 +20,19 @@ export const PackageTypeSelector = ({ value, onChange }: PackageTypeSelectorProp
       >
         <div className="flex items-center space-x-2">
           <RadioGroupItem value="essential" id="essential" />
-          <Label htmlFor="essential">{t('form.essential')}</Label>
+          <Label htmlFor="essential">Esencial (Económico)</Label>
         </div>
         <div className="flex items-center space-x-2">
           <RadioGroupItem value="premium" id="premium" />
-          <Label htmlFor="premium">{t('form.premium')}</Label>
+          <Label htmlFor="premium">Premium (Mejorado)</Label>
         </div>
         <div className="flex items-center space-x-2">
           <RadioGroupItem value="luxury" id="luxury" />
-          <Label htmlFor="luxury">{t('form.luxury')}</Label>
+          <Label htmlFor="luxury">Lujo (Sofisticado)</Label>
         </div>
         <div className="flex items-center space-x-2">
           <RadioGroupItem value="vip" id="vip" />
-          <Label htmlFor="vip">{t('form.vipExclusive')}</Label>
+          <Label htmlFor="vip">VIP Exclusivo</Label>
         </div>
       </RadioGroup>
     </div>
