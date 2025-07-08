@@ -11,17 +11,17 @@ export const TripTypeSelector = ({ value, onChange }: TripTypeSelectorProps) => 
   const { t } = useTranslation();
   
   const tripTypes = [
-    { value: 'party', label: `${t('form.party')} 🎉` },
-    { value: 'romantic', label: `${t('form.romantic')} 💕` },
-    { value: 'business', label: `${t('form.business')} 💼` },
-    { value: 'cultural', label: `${t('form.cultural')} 🏛️` },
-    { value: 'wellness', label: `${t('form.wellness')} 🧘` },
-    { value: 'custom', label: `${t('form.custom')} ✨` }
+    { value: 'party', label: 'Fiesta / Social 🎉' },
+    { value: 'romantic', label: 'Escapada Romántica 💕' },
+    { value: 'business', label: 'Negocios / Networking 💼' },
+    { value: 'cultural', label: 'Cultural / Aventura 🏛️' },
+    { value: 'wellness', label: 'Bienestar / Spa 🧘' },
+    { value: 'custom', label: 'Visión Personalizada ✨' }
   ];
   return (
     <div className="space-y-3">
       <Label className="text-lg font-semibold text-primary">
-        {t('form.tripType')} *
+        ¿Qué tipo de viaje estás planeando? *
       </Label>
       <RadioGroup 
         value={value} 

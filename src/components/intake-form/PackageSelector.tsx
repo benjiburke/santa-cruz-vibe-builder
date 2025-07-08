@@ -11,20 +11,20 @@ export const PackageSelector = ({ value, onChange }: PackageSelectorProps) => {
   const { t } = useTranslation();
   
   const availablePackages = [
-    { value: 'weekend-bender', label: `${t('pkg.weekendBender')} - ${t('pkg.fromPrice')} $450${t('pkg.person')}` },
-    { value: 'santa-cruz-sampler', label: `${t('pkg.santaCruzSampler')} - ${t('pkg.fromPrice')} $380${t('pkg.person')}` },
-    { value: 'chill-grill', label: `${t('pkg.chillGrill')} - ${t('pkg.fromPrice')} $520${t('pkg.person')}` },
-    { value: 'romantic-escape', label: `${t('pkg.romance')} - ${t('pkg.fromPrice')} $680${t('pkg.couple')}` },
-    { value: 'samaipata-sessions', label: `${t('pkg.samaipata')} - ${t('pkg.fromPrice')} $750${t('pkg.person')}` },
-    { value: 'influencer-escape', label: `${t('pkg.influencer')} - ${t('pkg.fromPrice')} $890${t('pkg.person')}` },
-    { value: 'vida-loca', label: `${t('pkg.vidaLoca')} - ${t('pkg.fromPrice')} $1,250${t('pkg.person')}` },
-    { value: 'custom-vip', label: `${t('pkg.customVip')} - ${t('pkg.consultation')}` },
-    { value: 'not-sure', label: t('form.noPreference') }
+    { value: 'weekend-bender', label: 'Weekend Bender - Desde $450/persona' },
+    { value: 'santa-cruz-sampler', label: 'Santa Cruz Sampler - Desde $380/persona' },
+    { value: 'chill-grill', label: 'Chill & Grill - Desde $520/persona' },
+    { value: 'romantic-escape', label: 'Romance & Rosas - Desde $680/pareja' },
+    { value: 'samaipata-sessions', label: 'Sesiones Samaipata - Desde $750/persona' },
+    { value: 'influencer-escape', label: 'Creador de Contenido - Desde $890/persona' },
+    { value: 'vida-loca', label: 'La Vida Loca - Desde $1,250/persona' },
+    { value: 'custom-vip', label: 'VIP Personalizado Puro - Por consulta' },
+    { value: 'not-sure', label: 'Sin preferencia - sorpréndeme' }
   ];
   return (
     <div className="space-y-3">
       <Label htmlFor="selectedPackage" className="text-lg font-semibold text-primary">
-        {t('form.selectPackage')}
+        ¿Te interesa algún paquete específico?
       </Label>
       <Select onValueChange={onChange}>
         <SelectTrigger>
