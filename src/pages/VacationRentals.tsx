@@ -3,10 +3,44 @@ import BackToTop from '@/components/BackToTop';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Diamond, Car, Plane, MapPin, Calendar, Users, Wifi, Coffee, Shield, Star, ArrowRight } from 'lucide-react';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Diamond, Car, Plane, MapPin, Calendar, Users, Wifi, Coffee, Shield, Star, ArrowRight, DollarSign } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+
+const exchangeRates = {
+  USD: 1,
+  EUR: 0.85,
+  GBP: 0.73,
+  JPY: 110,
+  CNY: 6.45
+};
+
+const currencySymbols = {
+  USD: '$',
+  EUR: '€',
+  GBP: '£',
+  JPY: '¥',
+  CNY: '¥'
+};
+
+const currencyNames = {
+  USD: 'US Dollar',
+  EUR: 'Euro',
+  GBP: 'British Pound',
+  JPY: 'Japanese Yen',
+  CNY: 'Chinese Yuan'
+};
 
 const VacationRentals = () => {
+  const [currency, setCurrency] = useState<'USD' | 'EUR' | 'GBP' | 'JPY' | 'CNY'>('USD');
+
+  const convertPrice = (priceString: string) => {
+    const numericPrice = parseInt(priceString.replace(/[^\d]/g, ''));
+    const convertedPrice = Math.round(numericPrice * exchangeRates[currency]);
+    return `${currencySymbols[currency]}${convertedPrice}`;
+  };
+
   const rentalProperties = [
     {
       id: 1,
@@ -70,35 +104,57 @@ const VacationRentals = () => {
       
       {/* Hero Section */}
       <section className="relative py-20 px-4">
-        <div className="max-w-3xl mx-auto text-center">
-          <Diamond className="w-8 h-8 text-gray-700 mx-auto mb-6" />
-          <Badge className="mb-6 bg-gray-50 text-gray-700 border-gray-200 text-xs font-normal px-4 py-1">
-            Premium Accommodations
-          </Badge>
-          <h1 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 leading-tight tracking-tight">
-            Vacation Rentals
-            <br />
-            <span className="text-gray-700">& Transportation</span>
-          </h1>
-          <p className="text-base text-gray-600 mb-8 max-w-xl mx-auto font-light leading-relaxed">
-            Sophisticated accommodations paired with seamless transportation solutions for the discerning traveler.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button 
-              size="lg" 
-              className="bg-gray-900 hover:bg-gray-800 text-white px-6 py-2 font-normal text-sm"
-              onClick={() => document.getElementById('properties')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              View Properties
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 px-6 py-2 font-normal text-sm"
-              onClick={() => window.open('https://wa.me/1234567890', '_blank')}
-            >
-              Contact Us
-            </Button>
+        <div className="max-w-3xl mx-auto">
+          <div className="flex items-center justify-between mb-6">
+            <Diamond className="w-8 h-8 text-gray-700" />
+            <div className="bg-gray-50 border border-gray-200 rounded-lg shadow-sm p-2">
+              <div className="flex items-center gap-2">
+                <DollarSign className="h-4 w-4 text-gray-600" />
+                <Select value={currency} onValueChange={(value: 'USD' | 'EUR' | 'GBP' | 'JPY' | 'CNY') => setCurrency(value)}>
+                  <SelectTrigger className="w-32 h-8 text-xs border-0 shadow-none">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {Object.entries(currencyNames).map(([code, name]) => (
+                      <SelectItem key={code} value={code} className="text-xs">
+                        {code} - {name}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
+          </div>
+          
+          <div className="text-center">
+            <Badge className="mb-6 bg-gray-50 text-gray-700 border-gray-200 text-xs font-normal px-4 py-1">
+              Premium Accommodations
+            </Badge>
+            <h1 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 leading-tight tracking-tight">
+              Vacation Rentals
+              <br />
+              <span className="text-gray-700">& Transportation</span>
+            </h1>
+            <p className="text-base text-gray-600 mb-8 max-w-xl mx-auto font-light leading-relaxed">
+              Sophisticated accommodations paired with seamless transportation solutions for the discerning traveler.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Button 
+                size="lg" 
+                className="bg-gray-900 hover:bg-gray-800 text-white px-6 py-2 font-normal text-sm"
+                onClick={() => document.getElementById('properties')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                View Properties
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 px-6 py-2 font-normal text-sm"
+                onClick={() => window.open('https://wa.me/1234567890', '_blank')}
+              >
+                Contact Us
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -178,16 +234,27 @@ const VacationRentals = () => {
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-lg font-light text-gray-900">
-                      {property.price}
+                      {convertPrice(property.price)}
                       <span className="text-xs text-gray-500 font-light">/night</span>
                     </span>
-                    <Button 
-                      size="sm" 
-                      className="bg-gray-900 hover:bg-gray-800 text-white text-xs font-normal"
-                      onClick={() => window.open('https://wa.me/1234567890', '_blank')}
-                    >
-                      Inquire
-                    </Button>
+                    <div className="flex gap-2">
+                      <Link to={`/vacation-rental/${property.id}`} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                        <Button 
+                          size="sm" 
+                          variant="outline"
+                          className="border-gray-300 text-gray-700 hover:bg-gray-50 text-xs font-normal"
+                        >
+                          View Details
+                        </Button>
+                      </Link>
+                      <Button 
+                        size="sm" 
+                        className="bg-gray-900 hover:bg-gray-800 text-white text-xs font-normal"
+                        onClick={() => window.open('https://wa.me/1234567890', '_blank')}
+                      >
+                        Inquire
+                      </Button>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
@@ -196,63 +263,19 @@ const VacationRentals = () => {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-light text-gray-900 mb-6">
-            Comprehensive Services
-          </h2>
-          <p className="text-base text-gray-700 mb-8 font-light leading-relaxed">
-            Every detail managed with precision, from arrival to departure.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="text-center">
-              <Calendar className="w-6 h-6 text-gray-700 mx-auto mb-3" />
-              <h3 className="text-gray-900 font-medium mb-1 text-sm">Flexible Booking</h3>
-              <p className="text-gray-600 text-xs font-light">Accommodating your schedule</p>
-            </div>
-            <div className="text-center">
-              <Shield className="w-6 h-6 text-gray-700 mx-auto mb-3" />
-              <h3 className="text-gray-900 font-medium mb-1 text-sm">Secure & Private</h3>
-              <p className="text-gray-600 text-xs font-light">Discretion guaranteed</p>
-            </div>
-            <div className="text-center">
-              <Star className="w-6 h-6 text-gray-700 mx-auto mb-3" />
-              <h3 className="text-gray-900 font-medium mb-1 text-sm">Premium Quality</h3>
-              <p className="text-gray-600 text-xs font-light">Exceptional standards</p>
-            </div>
-            <div className="text-center">
-              <Coffee className="w-6 h-6 text-gray-700 mx-auto mb-3" />
-              <h3 className="text-gray-900 font-medium mb-1 text-sm">Concierge Service</h3>
-              <p className="text-gray-600 text-xs font-light">24/7 assistance</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-12 px-4 bg-gray-900">
         <div className="max-w-3xl mx-auto text-center text-white">
-          <h2 className="text-3xl font-light mb-6">
-            Experience Diamond Hospitality
-          </h2>
-          <p className="text-base mb-8 text-gray-300 font-light leading-relaxed">
-            Reserve your sophisticated Santa Cruz accommodation today.
+          <h3 className="text-2xl font-light mb-3 tracking-tight">
+            Ready to Book Your Stay?
+          </h3>
+          <p className="text-base mb-6 opacity-90 font-light">
+            Contact our team for personalized recommendations and exclusive rates.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Link to="/intake-form">
-              <Button 
-                size="lg" 
-                className="bg-white hover:bg-gray-100 text-gray-900 px-6 py-2 font-normal text-sm"
-              >
-                Book Now
-                <ArrowRight className="ml-2 h-3 w-3" />
-              </Button>
-            </Link>
             <Button 
               size="lg" 
-              variant="outline" 
-              className="border-white/30 text-white hover:bg-white/10 hover:border-white px-6 py-2 font-normal text-sm"
+              className="bg-white hover:bg-gray-100 text-gray-900 font-normal"
               onClick={() => window.open('https://wa.me/1234567890', '_blank')}
             >
               Contact Us

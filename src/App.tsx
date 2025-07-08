@@ -12,6 +12,7 @@ import Events from "./pages/Events";
 import About from "./pages/About";
 import WhyUs from "./pages/WhyUs";
 import VacationRentals from "./pages/VacationRentals";
+import VacationRentalDetail from "./pages/VacationRentalDetail";
 import RealEstateServices from "./pages/RealEstateServices";
 import VIPExperience from "./pages/VIPExperience";
 import NotFound from "./pages/NotFound";
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/curated-experiences" element={<CuratedExperiences />} />
           <Route path="/events" element={<Events />} />
           <Route path="/vacation-rentals" element={<VacationRentals />} />
+          <Route path="/vacation-rental/:rentalId" element={<VacationRentalDetail />} />
           <Route path="/real-estate-services" element={<RealEstateServices />} />
           <Route path="/vip" element={<VIPExperience />} />
           <Route path="/package/:packageId" element={<PackageDetail />} />
