@@ -89,8 +89,7 @@ const PartyVibes = () => {
               
               <Button 
                 size="lg" 
-                variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 py-2 text-sm font-normal"
+                className="bg-gray-900 hover:bg-gray-800 text-white px-6 py-2 text-sm font-normal"
                 onClick={() => window.open('https://wa.me/1234567890?text=Diamond Santa Cruz inquiry', '_blank')}
               >
                 Contact
@@ -185,7 +184,7 @@ const PartyVibes = () => {
                     <div className="text-base font-medium text-gray-900 mb-3">
                       {pkg.price}
                     </div>
-                    <Link to={`/package/${pkg.id}`}>
+                    <Link to={`/package/${pkg.id}`} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                       <Button className="w-full bg-gray-900 hover:bg-gray-800 text-white text-sm font-normal">
                         Learn More
                       </Button>
