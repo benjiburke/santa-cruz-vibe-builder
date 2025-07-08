@@ -50,37 +50,36 @@ const Hero = () => {
           </h1>
           
           <p className="text-xl sm:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
-            Where international luxury meets authentic Bolivian culture. Complete concierge services 
-            for the sophisticated traveler seeking extraordinary experiences.
+            {t('hero.tagline')}
           </p>
 
           {/* Quick Section Navigation */}
           <div className="mb-8">
-            <p className="text-sm text-gray-500 mb-4 font-light">Quick Navigation</p>
+            <p className="text-sm text-gray-500 mb-4 font-light">{t('hero.quickNav')}</p>
             <div className="flex flex-wrap gap-3 justify-center">
               <button 
                 onClick={() => scrollToSection('vibes')}
                 className="px-4 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-white/50 rounded-full transition-all duration-300 border border-gray-300 hover:border-gray-400"
               >
-                Vibes
+                {t('hero.vibes')}
               </button>
               <button 
                 onClick={() => scrollToSection('packages')}
                 className="px-4 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-white/50 rounded-full transition-all duration-300 border border-gray-300 hover:border-gray-400"
               >
-                Packages
+                {t('hero.packages')}
               </button>
               <button 
                 onClick={() => scrollToSection('events')}
                 className="px-4 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-white/50 rounded-full transition-all duration-300 border border-gray-300 hover:border-gray-400"
               >
-                Events
+                {t('hero.events')}
               </button>
               <button 
                 onClick={() => scrollToSection('book')}
                 className="px-4 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-white/50 rounded-full transition-all duration-300 border border-gray-300 hover:border-gray-400"
               >
-                Book Trip
+                {t('hero.bookTrip')}
               </button>
             </div>
           </div>

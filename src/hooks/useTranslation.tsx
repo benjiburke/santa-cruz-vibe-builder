@@ -28,6 +28,12 @@ const translations = {
     'hero.planExperience': 'Plan Your Experience',
     'hero.consultation': 'Consultation',
     'hero.explorePackages': 'Explore Packages',
+    'hero.tagline': 'Where international luxury meets authentic Bolivian culture. Complete concierge services for the sophisticated traveler seeking extraordinary experiences.',
+    'hero.quickNav': 'Quick Navigation',
+    'hero.vibes': 'Vibes',
+    'hero.packages': 'Packages',
+    'hero.events': 'Events',
+    'hero.bookTrip': 'Book Trip',
     
     // Vibe Selector
     'vibe.title': 'Choose Your',
