@@ -120,7 +120,7 @@ const CuratedExperiences = () => {
         </div>
 
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-          <div className="animate-fade-in">
+          <div className="animate-fade-in pt-16 md:pt-8">
             <Diamond className="w-8 h-8 text-white mx-auto mb-6" />
             <h1 className="text-5xl lg:text-6xl font-light text-white mb-4 tracking-tight leading-tight">
               Curated Experiences
