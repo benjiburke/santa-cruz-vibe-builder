@@ -1,11 +1,25 @@
 
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
 import { useState } from 'react';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [currentLanguage, setCurrentLanguage] = useState('EN');
+
+  const languages = [
+    { code: 'EN', label: 'English', flag: '🇺🇸' },
+    { code: 'ES', label: 'Español', flag: '🇪🇸' },
+    { code: 'ZH', label: '中文', flag: '🇨🇳' },
+    { code: 'PT', label: 'Português', flag: '🇧🇷' }
+  ];
 
   const navLinks = [
     { to: '/', label: 'Home' },
@@ -38,6 +52,33 @@ const Navigation = () => {
                 {link.label}
               </Link>
             ))}
+            
+            {/* Language Switcher */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button 
+                  variant="ghost" 
+                  size="sm"
+                  className="h-8 px-3 text-gray-700 hover:text-gray-900 hover:bg-gray-100"
+                >
+                  <Globe className="h-4 w-4 mr-1" />
+                  {currentLanguage}
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-40 bg-white border border-gray-200 shadow-lg">
+                {languages.map((lang) => (
+                  <DropdownMenuItem
+                    key={lang.code}
+                    onClick={() => setCurrentLanguage(lang.code)}
+                    className="cursor-pointer hover:bg-gray-50 px-3 py-2"
+                  >
+                    <span className="mr-2">{lang.flag}</span>
+                    <span className="text-sm">{lang.label}</span>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
             <Button 
               size="sm"
               className="bg-gray-900 hover:bg-gray-800 text-white text-sm font-normal px-4 py-2"
@@ -72,6 +113,33 @@ const Navigation = () => {
                   {link.label}
                 </Link>
               ))}
+              
+              {/* Mobile Language Switcher */}
+              <div className="border-t border-gray-100 pt-3 mt-3">
+                <div className="px-2 mb-2">
+                  <span className="text-xs text-gray-500 font-medium">Language</span>
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => {
+                        setCurrentLanguage(lang.code);
+                        setIsOpen(false);
+                      }}
+                      className={`flex items-center gap-2 px-3 py-2 text-sm rounded transition-colors ${
+                        currentLanguage === lang.code 
+                          ? 'bg-gray-100 text-gray-900' 
+                          : 'text-gray-700 hover:bg-gray-50'
+                      }`}
+                    >
+                      <span>{lang.flag}</span>
+                      <span>{lang.label}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
               <Button 
                 size="sm"
                 className="bg-gray-900 hover:bg-gray-800 text-white w-fit text-sm font-normal px-4 py-2 mt-2"
