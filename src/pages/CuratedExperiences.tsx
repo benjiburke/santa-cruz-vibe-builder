@@ -2,7 +2,7 @@
 import Navigation from '@/components/Navigation';
 import ServiceCard from '@/components/ServiceCard';
 import { Button } from '@/components/ui/button';
-import { Star, Users, MapPin, Calendar, Camera, Leaf, Coffee, Compass, Mountain, TreePine } from 'lucide-react';
+import { Star, Users, MapPin, Calendar, Camera, Leaf, Coffee, Compass, Mountain, TreePine, Diamond } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const curatedExperiences = [
@@ -121,7 +121,7 @@ const CuratedExperiences = () => {
 
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
           <div className="animate-fade-in">
-            <div className="text-4xl mb-4">💎</div>
+            <Diamond className="w-8 h-8 text-white mx-auto mb-6" />
             <h1 className="text-5xl lg:text-6xl font-light text-white mb-4 tracking-tight leading-tight">
               Curated Experiences
               <br />
