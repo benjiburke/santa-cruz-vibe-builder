@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Star, Users, MapPin, Calendar, Crown, Sparkles, Flame, Zap } from 'lucide-react';
 import { useState } from 'react';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface Package {
   id: string;
@@ -202,6 +203,7 @@ const getTierInfo = (tier: string) => {
 
 const Packages = () => {
   const [selectedTier, setSelectedTier] = useState<string | null>(null);
+  const { t } = useTranslation();
 
   const scrollToForm = () => {
     const element = document.getElementById('intake-form');
@@ -228,13 +230,13 @@ const Packages = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-light text-gray-900 mb-4">
-            Experience <span className="text-gray-700">Packages</span>
+            {t('packages.title')} <span className="text-gray-700">{t('packages.titleSpan')}</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-4 font-light">
-            Full-service packages include accommodation, activities, and coordination. These are complete trips, not just activities.
+            {t('packages.subtitle')}
           </p>
           <p className="text-sm text-gray-500 mb-8">
-            Looking for individual activities only? Check out our <a href="/curated-experiences" className="underline hover:text-gray-700">Curated Day Experiences</a>
+            {t('packages.lookingFor')} <a href="/curated-experiences" className="underline hover:text-gray-700">{t('packages.curatedLink')}</a>
           </p>
           
           {/* Enhanced Tier Legend with Filtering */}

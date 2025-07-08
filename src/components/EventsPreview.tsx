@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Calendar, MapPin, Users, ArrowRight } from 'lucide-react';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const featuredEvents = [
   {
@@ -36,15 +37,17 @@ const featuredEvents = [
 ];
 
 const EventsPreview = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-white">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-light text-gray-900 mb-6">
-            Exclusive Events & Recurring Experiences
+            {t('events.title')}
           </h2>
           <p className="text-gray-600 font-light leading-relaxed max-w-2xl mx-auto mb-8">
-            From monthly tech nights to secret raves - join Santa Cruz's most exclusive community events.
+            {t('events.subtitle')}
           </p>
         </div>
 
@@ -80,7 +83,7 @@ const EventsPreview = () => {
                   className="w-full bg-gray-900 hover:bg-gray-800 text-white text-xs font-normal"
                   onClick={() => window.open('https://wa.me/1234567890', '_blank')}
                 >
-                  Join Waitlist
+                  {t('events.joinWaitlist')}
                 </Button>
               </CardContent>
             </Card>
@@ -93,7 +96,7 @@ const EventsPreview = () => {
               size="lg" 
               className="bg-gold-600 hover:bg-gold-700 text-white font-normal group"
             >
-              View All Events
+              {t('events.viewAll')}
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>

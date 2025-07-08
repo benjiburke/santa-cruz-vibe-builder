@@ -90,7 +90,93 @@ const translations = {
     'footer.consultation': 'Private Consultation',
     'footer.curate': 'Curate Experience',
     'footer.copyright': '© 2024 Diamond Santa Cruz. Exceptional experiences in Bolivia.',
-    'footer.tagline': 'Sophisticated. Discrete. Unforgettable.'
+    'footer.tagline': 'Sophisticated. Discrete. Unforgettable.',
+    
+    // Package cards
+    'pkg.weekendBender': 'Weekend Bender',
+    'pkg.weekendBenderDesc': 'Pool villa madness with DJ, VIP access, and non-stop vibes',
+    'pkg.santaCruzSampler': 'Santa Cruz Sampler',
+    'pkg.santaCruzSamplerDesc': 'Taste the city — food, culture, and nightlife in one epic trip',
+    'pkg.chillGrill': 'Chill & Grill',
+    'pkg.chillGrillDesc': 'Laid-back luxury with private chef, massages, and good vibes',
+    'pkg.romance': 'Romance & Roses',
+    'pkg.romanceDesc': 'Couple\'s paradise with candlelit dinners and spa luxury',
+    'pkg.samaipata': 'Samaipata Sessions',
+    'pkg.samaipataDesc': 'Nature meets luxury — guided adventures with 5-star comfort',
+    'pkg.influencer': 'Content Creator',
+    'pkg.influencerDesc': 'Instagram-perfect setups with professional content creation',
+    'pkg.vidaLoca': 'La Vida Loca',
+    'pkg.vidaLocaDesc': 'Maximum chaos — pool raves, VIP everything, zero limits',
+    'pkg.customVip': 'Pure Custom VIP',
+    'pkg.customVipDesc': 'Sky\'s the limit — your wildest dreams, our execution',
+    'pkg.fromPrice': 'From',
+    'pkg.person': '/person',
+    'pkg.couple': '/couple',
+    'pkg.consultation': 'By consultation',
+    'pkg.yourCall': 'Your call',
+    'pkg.anySize': 'Any size',
+    'pkg.nights': 'nights',
+    'pkg.people': 'people',
+    'pkg.popular': 'Popular',
+    'pkg.legendary': 'LEGENDARY',
+    'pkg.bespoke': 'BESPOKE',
+    
+    // Package tiers
+    'tier.essential': 'Essential',
+    'tier.essentialDesc': 'Quality experiences, smart value',
+    'tier.premium': 'Premium',
+    'tier.premiumDesc': 'Enhanced amenities & service',
+    'tier.luxury': 'Luxury',
+    'tier.luxuryDesc': 'Sophisticated experiences',
+    'tier.vip': 'VIP Exclusive',
+    'tier.vipDesc': 'Exclusive venues, personal concierge, white-glove service',
+    
+    // Package actions
+    'pkg.planCustom': 'Plan Custom Experience',
+    'pkg.reserve': 'Reserve This Experience',
+    'pkg.bookPopular': 'Book Popular Choice',
+    'pkg.customize': 'Customize Package',
+    'pkg.showAll': 'Show All Packages',
+    'pkg.showing': 'Showing',
+    'pkg.package': 'package',
+    'pkg.packages': 'packages',
+    
+    // Testimonials
+    'testimonial.andrew': 'We did La Vida Loca and it was 🔥🔥🔥! DJ was fire, house was perfect, and Benny\'s team had everything stocked before we arrived.',
+    'testimonial.andrewAuthor': 'Andrew, NYC',
+    'testimonial.maria': 'Romance & Roses package exceeded all expectations. The penthouse was stunning and our private chef was incredible!',
+    'testimonial.mariaAuthor': 'Maria & Carlos, Miami',
+    'testimonial.jake': 'Santa Cruz Sampler was the perfect intro to the city. Hit all the best spots without any planning stress.',
+    'testimonial.jakeAuthor': 'Jake, LA',
+    'testimonials.title': 'Client',
+    'testimonials.titleSpan': 'Testimonials',
+    
+    // Events
+    'event.tropicalTech': 'Tropical Tech Nights',
+    'event.tropicalTechDesc': 'Monthly rooftop parties with international DJs',
+    'event.secretRave': 'Secret Rave Series',
+    'event.secretRaveDesc': 'Exclusive raves in hidden locations - RSVP only',
+    'event.girlboss': 'Girlboss Retreats',
+    'event.girlbossDesc': 'Exclusive weekends for female creators',
+    'event.every3rd': 'Every 3rd Saturday',
+    'event.newLocation': 'New location monthly',
+    'event.monthly': 'Monthly',
+    'event.badgeMonthly': 'Monthly',
+    'event.badgeSecret': 'Secret',
+    'event.badgeExclusive': 'Exclusive',
+    
+    // Flight assistance
+    'flight.title': 'Global Flight Assistance',
+    'flight.optional': '(Optional Perk)',
+    'flight.subtitle': 'Flying in from New York? Dubai? São Paulo? We\'ve got you.',
+    'flight.desc1': 'We provide discreet, personalized help finding and booking the best airfare to Santa Cruz — no matter where you\'re coming from. Whether you\'re traveling from the U.S., Europe, Asia, or the Middle East, we\'ll guide you to the ideal routes, best airlines, and smoothest connections.',
+    'flight.desc2': 'You can book it yourself, or let us handle it completely — just say the word. We don\'t mark up flights — we simply make sure you land here relaxed and ready.',
+    'flight.perk': 'This perk is included with all full-experience bookings. Because luxury doesn\'t start when you arrive — it starts when you board.',
+    
+    // Custom VIP banner
+    'custom.title': 'Need Something Completely Custom?',
+    'custom.subtitle': 'Beyond our packages? We create bespoke experiences for groups with specific visions.',
+    'custom.consultation': 'Free Consultation'
   },
   ES: {
     // Navigation
