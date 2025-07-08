@@ -121,7 +121,7 @@ const CuratedExperiences = () => {
 
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
           <div className="animate-fade-in">
-            <div className="text-4xl mb-4">✨</div>
+            <div className="text-4xl mb-4">💎</div>
             <h1 className="text-5xl lg:text-6xl font-light text-white mb-4 tracking-tight leading-tight">
               Curated Experiences
               <br />
@@ -144,7 +144,7 @@ const CuratedExperiences = () => {
               
               <Button 
                 size="lg" 
-                className="bg-transparent border border-primary/60 text-primary/80 hover:bg-primary/20 hover:text-primary px-6 py-3 text-base font-normal transition-colors duration-200"
+                className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 py-3 text-base font-normal transition-colors duration-200"
                 onClick={handleWhatsAppInquiry}
               >
                 <Leaf className="mr-2 h-4 w-4" />
