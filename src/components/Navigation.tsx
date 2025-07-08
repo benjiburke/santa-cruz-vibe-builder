@@ -48,6 +48,7 @@ const Navigation = () => {
                 key={link.to}
                 to={link.to}
                 className="text-gray-700 hover:text-gray-900 transition-colors font-normal text-sm"
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               >
                 {link.label}
               </Link>
@@ -108,7 +109,10 @@ const Navigation = () => {
                   key={link.to}
                   to={link.to}
                   className="text-gray-700 hover:text-gray-900 transition-colors font-normal text-sm px-2 py-1"
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    setIsOpen(false);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
                 >
                   {link.label}
                 </Link>

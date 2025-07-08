@@ -1,6 +1,7 @@
 
 import Navigation from '@/components/Navigation';
 import ServiceCard from '@/components/ServiceCard';
+import BackToTop from '@/components/BackToTop';
 import { Button } from '@/components/ui/button';
 import { Star, Users, MapPin, Calendar, Camera, Leaf, Coffee, Compass, Mountain, TreePine, Diamond } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -120,12 +121,12 @@ const CuratedExperiences = () => {
         </div>
 
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-          <div className="animate-fade-in pt-16 md:pt-8">
+          <div className="animate-fade-in pt-20 md:pt-8">
             <Diamond className="w-8 h-8 text-white mx-auto mb-6" />
             <h1 className="text-5xl lg:text-6xl font-light text-white mb-4 tracking-tight leading-tight">
               Curated Experiences
               <br />
-              <span className="font-normal text-primary/80">Unforgettable Adventures</span>
+              <span className="font-normal text-blue-200">Unforgettable Adventures</span>
             </h1>
             
             <p className="text-lg text-gray-200 mb-8 max-w-2xl mx-auto font-light leading-relaxed">
@@ -144,11 +145,11 @@ const CuratedExperiences = () => {
               
               <Button 
                 size="lg" 
-                className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 py-3 text-base font-normal transition-colors duration-200"
+                className="bg-transparent border-2 border-blue-200 text-blue-200 hover:bg-blue-200 hover:text-gray-900 px-6 py-3 text-base font-normal transition-colors duration-200"
                 onClick={handleWhatsAppInquiry}
               >
                 <Leaf className="mr-2 h-4 w-4" />
-                Plan My Adventure
+                Contact Us
               </Button>
             </div>
 
@@ -216,21 +217,23 @@ const CuratedExperiences = () => {
             <Link to="/intake-form">
               <Button 
                 size="lg" 
-                className="bg-primary-foreground hover:bg-secondary text-primary border border-primary-foreground font-normal"
+                className="bg-white hover:bg-gray-100 text-primary border border-white font-normal"
               >
-                Plan My Experience
+                Design Your Experience
               </Button>
             </Link>
             <Button 
               size="lg" 
-              className="bg-transparent border border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary font-normal transition-colors duration-200"
+              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary font-normal transition-colors duration-200"
               onClick={handleWhatsAppInquiry}
             >
-              WhatsApp Concierge
+              Speak With Us
             </Button>
           </div>
         </div>
       </section>
+      
+      <BackToTop />
     </div>
   );
 };

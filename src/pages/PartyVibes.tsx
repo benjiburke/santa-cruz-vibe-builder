@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Star, Users, MapPin, Calendar, Music, Zap, Diamond } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
+import BackToTop from '@/components/BackToTop';
 
 const partyPackages = [
   {
@@ -227,6 +228,8 @@ const PartyVibes = () => {
           </div>
         </div>
       </section>
+      
+      <BackToTop />
     </div>
   );
 };

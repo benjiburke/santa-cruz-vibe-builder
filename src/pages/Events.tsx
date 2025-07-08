@@ -1,5 +1,6 @@
 
 import Navigation from '@/components/Navigation';
+import BackToTop from '@/components/BackToTop';
 import RSVPModal from '@/components/RSVPModal';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -209,6 +210,8 @@ const Events = () => {
           event={selectedEvent}
         />
       )}
+      
+      <BackToTop />
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import Navigation from '@/components/Navigation';
+import BackToTop from '@/components/BackToTop';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -230,7 +231,7 @@ const WhyUs = () => {
           </div>
         </div>
       </section>
-
+      <BackToTop />
       <WhatsAppButton />
     </div>
   );
