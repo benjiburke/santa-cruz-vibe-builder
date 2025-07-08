@@ -22,22 +22,28 @@ const Navigation = () => {
     { code: 'PT', label: 'Português', flag: '🇧🇷' }
   ];
 
-  const navLinks = [
-    { to: '/', label: t('nav.home') },
+  const mainNavLinks = [
+    { to: '/', label: t('nav.home') }
+  ];
+
+  const experiencesLinks = [
     { to: '/party-vibes', label: t('nav.partyVibes') },
     { to: '/curated-experiences', label: t('nav.curatedExperiences') },
+    { to: '/vip', label: t('nav.vip') }
+  ];
+
+  const servicesLinks = [
     { to: '/diamond-spa', label: 'Diamond Spa' },
     { to: '/vacation-rentals', label: t('nav.vacationRentals') },
-    { to: '/real-estate-services', label: t('nav.realEstateServices') },
-    { to: '/vip', label: t('nav.vip') },
-    { to: '/contact', label: 'Contact' },
-    { to: '/about', label: t('nav.about') }
+    { to: '/real-estate-services', label: t('nav.realEstateServices') }
   ];
 
   // Get current page name for mobile display
   const getCurrentPageName = () => {
     const currentPath = window.location.pathname;
-    const currentNavLink = navLinks.find(link => link.to === currentPath);
+    const allLinks = [...mainNavLinks, ...experiencesLinks, ...servicesLinks, 
+      { to: '/contact', label: 'Contact' }, { to: '/about', label: t('nav.about') }];
+    const currentNavLink = allLinks.find(link => link.to === currentPath);
     return currentNavLink ? currentNavLink.label : 'Home';
   };
 
@@ -56,17 +62,85 @@ const Navigation = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                className="text-gray-700 hover:text-gray-900 transition-colors font-normal text-sm"
-                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              >
-                {link.label}
-              </Link>
-            ))}
+          <div className="hidden md:flex items-center space-x-8">
+            {/* Home */}
+            <Link
+              to="/"
+              className="text-gray-700 hover:text-gray-900 transition-colors font-normal text-sm"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
+              {t('nav.home')}
+            </Link>
+
+            {/* Experiences Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button 
+                  variant="ghost" 
+                  size="sm"
+                  className="h-auto px-0 text-gray-700 hover:text-gray-900 hover:bg-transparent font-normal text-sm"
+                >
+                  Experiences
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-56 bg-white border border-gray-200 shadow-lg">
+                {experiencesLinks.map((link) => (
+                  <DropdownMenuItem key={link.to} className="p-0">
+                    <Link
+                      to={link.to}
+                      className="w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 block"
+                      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                    >
+                      {link.label}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Services Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button 
+                  variant="ghost" 
+                  size="sm"
+                  className="h-auto px-0 text-gray-700 hover:text-gray-900 hover:bg-transparent font-normal text-sm"
+                >
+                  Services
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-56 bg-white border border-gray-200 shadow-lg">
+                {servicesLinks.map((link) => (
+                  <DropdownMenuItem key={link.to} className="p-0">
+                    <Link
+                      to={link.to}
+                      className="w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 block"
+                      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                    >
+                      {link.label}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* About */}
+            <Link
+              to="/about"
+              className="text-gray-700 hover:text-gray-900 transition-colors font-normal text-sm"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
+              {t('nav.about')}
+            </Link>
+
+            {/* Contact */}
+            <Link
+              to="/contact"
+              className="text-gray-700 hover:text-gray-900 transition-colors font-normal text-sm"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
+              Contact
+            </Link>
             
             {/* Language Switcher */}
             <DropdownMenu>
@@ -118,24 +192,86 @@ const Navigation = () => {
         {isOpen && (
           <div className="md:hidden border-t border-gray-100 py-3">
             <div className="flex flex-col space-y-3">
-              {navLinks.map((link) => (
+              {/* Home */}
+              <Link
+                to="/"
+                className="text-gray-700 hover:text-gray-900 transition-colors font-normal text-sm px-2 py-1"
+                onClick={() => {
+                  setIsOpen(false);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+              >
+                {t('nav.home')}
+              </Link>
+
+              {/* Experiences Section */}
+              <div className="border-t border-gray-100 pt-3">
+                <div className="px-2 mb-2">
+                  <span className="text-xs text-gray-500 font-medium">EXPERIENCES</span>
+                </div>
+                {experiencesLinks.map((link) => (
+                  <Link
+                    key={link.to}
+                    to={link.to}
+                    className="text-gray-700 hover:text-gray-900 transition-colors font-normal text-sm px-2 py-1 block"
+                    onClick={() => {
+                      setIsOpen(false);
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+
+              {/* Services Section */}
+              <div className="border-t border-gray-100 pt-3">
+                <div className="px-2 mb-2">
+                  <span className="text-xs text-gray-500 font-medium">SERVICES</span>
+                </div>
+                {servicesLinks.map((link) => (
+                  <Link
+                    key={link.to}
+                    to={link.to}
+                    className="text-gray-700 hover:text-gray-900 transition-colors font-normal text-sm px-2 py-1 block"
+                    onClick={() => {
+                      setIsOpen(false);
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+
+              {/* About & Contact */}
+              <div className="border-t border-gray-100 pt-3">
                 <Link
-                  key={link.to}
-                  to={link.to}
-                  className="text-gray-700 hover:text-gray-900 transition-colors font-normal text-sm px-2 py-1"
+                  to="/about"
+                  className="text-gray-700 hover:text-gray-900 transition-colors font-normal text-sm px-2 py-1 block"
                   onClick={() => {
                     setIsOpen(false);
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
                 >
-                  {link.label}
+                  {t('nav.about')}
                 </Link>
-              ))}
+                <Link
+                  to="/contact"
+                  className="text-gray-700 hover:text-gray-900 transition-colors font-normal text-sm px-2 py-1 block"
+                  onClick={() => {
+                    setIsOpen(false);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                >
+                  Contact
+                </Link>
+              </div>
               
               {/* Mobile Language Switcher */}
               <div className="border-t border-gray-100 pt-3 mt-3">
                 <div className="px-2 mb-2">
-                  <span className="text-xs text-gray-500 font-medium">Language</span>
+                  <span className="text-xs text-gray-500 font-medium">LANGUAGE</span>
                 </div>
                 <div className="grid grid-cols-2 gap-2">
                   {languages.map((lang) => (
