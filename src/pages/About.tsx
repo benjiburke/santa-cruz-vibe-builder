@@ -116,7 +116,7 @@ const About = () => {
               While everyone flocks to Peru or Brazil, Santa Cruz remains South America's best-kept secret. This rapidly growing metropolis pulses with authentic energy - vibrant nightlife, incredible food, warm people, and a culture that hasn't been packaged for tourists.
             </p>
             <p className="text-base text-gray-700 font-light leading-relaxed max-w-2xl mx-auto">
-              As the world's 14th fastest-growing city, Santa Cruz offers luxury at local prices with none of the altitude issues of La Paz. It's where Bolivia's elite live and where international business gets done - all while maintaining that raw, authentic charm you can't find anywhere else.
+              As the world's 14th fastest-growing city, Santa Cruz offers luxury at local prices with none of the altitude issues of La Paz. It's where international business thrives and sophisticated experiences are within reach - all while maintaining that raw, authentic charm you can't find anywhere else.
             </p>
           </div>
         </div>
