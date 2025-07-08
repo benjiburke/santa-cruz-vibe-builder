@@ -67,7 +67,7 @@ const translations = {
     'why.packageDesc': 'Accommodation, activities, and coordination — everything handled before you arrive',
     'why.insiderTitle': 'Local Insider Access',
     'why.insiderDesc': 'Exclusive venues, VIP reservations, and experiences tourists never see',
-    'why.discreteTitle': 'Discreet & Personalized',
+    'why.discreteTitle': 'Personalized & Private',
     'why.discreteDesc': 'White-glove service tailored to your preferences — no crowds, no compromises',
     
     // Packages section
@@ -177,7 +177,7 @@ const translations = {
     'flight.title': 'Global Flight Assistance',
     'flight.optional': '(Optional Perk)',
     'flight.subtitle': 'Flying in from New York? Dubai? São Paulo? We\'ve got you.',
-    'flight.desc1': 'We provide discreet, personalized help finding and booking the best airfare to Santa Cruz — no matter where you\'re coming from. Whether you\'re traveling from the U.S., Europe, Asia, or the Middle East, we\'ll guide you to the ideal routes, best airlines, and smoothest connections.',
+    'flight.desc1': 'We provide personalized help finding and booking the best airfare to Santa Cruz — no matter where you\'re coming from. Whether you\'re traveling from the U.S., Europe, Asia, or the Middle East, we\'ll guide you to the ideal routes, best airlines, and smoothest connections.',
     'flight.desc2': 'You can book it yourself, or let us handle it completely — just say the word. We don\'t mark up flights — we simply make sure you land here relaxed and ready.',
     'flight.perk': 'This perk is included with all full-experience bookings. Because luxury doesn\'t start when you arrive — it starts when you board.',
     

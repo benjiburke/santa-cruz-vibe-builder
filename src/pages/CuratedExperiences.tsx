@@ -167,7 +167,7 @@ const CuratedExperiences = () => {
               </div>
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-4 text-white">
                 <MapPin className="h-6 w-6 text-primary/80 mb-2 mx-auto" />
-                <h3 className="text-base font-medium mb-1">Discreet + Personalized</h3>
+                <h3 className="text-base font-medium mb-1">Private + Personalized</h3>
                 <p className="text-sm opacity-90 font-light">Local team focused on experience quality</p>
               </div>
             </div>

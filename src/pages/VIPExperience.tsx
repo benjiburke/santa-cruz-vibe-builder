@@ -53,7 +53,7 @@ const VIPExperience = () => {
               { icon: Star, title: "Spa & Excursions", desc: "Guided tours & wellness treatments" },
               { icon: Star, title: "VIP Nightlife", desc: "Exclusive access & reservations" },
               { icon: User, title: "Personal Concierge", desc: "Dedicated host team" },
-              { icon: Shield, title: "Security", desc: "Discreet protection & safety" },
+              { icon: Shield, title: "Security", desc: "Professional protection & safety" },
               { icon: Clock, title: "24/7 Support", desc: "WhatsApp assistance anytime" }
             ].map((item, idx) => (
               <div key={idx} className="bg-white/5 backdrop-blur-sm border border-gold-400/20 p-6 rounded-lg text-center hover:bg-white/10 transition-all duration-300">
