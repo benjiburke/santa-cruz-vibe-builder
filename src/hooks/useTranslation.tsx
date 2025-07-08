@@ -67,7 +67,7 @@ const translations = {
     'why.packageDesc': 'Accommodation, activities, and coordination — everything handled before you arrive',
     'why.insiderTitle': 'Local Insider Access',
     'why.insiderDesc': 'Exclusive venues, VIP reservations, and experiences tourists never see',
-    'why.discreteTitle': 'Personalized & Private',
+    'why.discreteTitle': 'Personalized & Professional',
     'why.discreteDesc': 'White-glove service tailored to your preferences — no crowds, no compromises',
     
     // Packages section
