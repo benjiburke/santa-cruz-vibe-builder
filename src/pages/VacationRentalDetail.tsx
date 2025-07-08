@@ -262,35 +262,59 @@ const VacationRentalDetail = () => {
 
               <p className="text-gray-600 leading-relaxed mb-6">{rental.description}</p>
 
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                {rental.amenities.map((amenity, index) => (
-                  <Dialog key={index}>
-                    <DialogTrigger asChild>
-                      <div className="flex items-center gap-2 p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors">
-                        <span className="text-lg">{amenity.icon}</span>
-                        <span className="text-sm text-gray-700">{amenity.name}</span>
-                      </div>
-                    </DialogTrigger>
-                    <DialogContent className="max-w-3xl">
-                      <DialogHeader>
-                        <DialogTitle className="flex items-center gap-2 text-lg">
+              {/* Visual Amenities with Photo Galleries */}
+              <div className="mb-6">
+                <h3 className="text-lg font-medium text-gray-900 mb-4">Spaces & Areas</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {rental.amenities
+                    .filter(amenity => !['WiFi'].includes(amenity.name))
+                    .map((amenity, index) => (
+                    <Dialog key={index}>
+                      <DialogTrigger asChild>
+                        <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors border border-gray-200">
                           <span className="text-xl">{amenity.icon}</span>
-                          {amenity.name}
-                        </DialogTitle>
-                      </DialogHeader>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-                        {amenity.images?.map((image, imgIndex) => (
-                          <img
-                            key={imgIndex}
-                            src={image}
-                            alt={`${amenity.name} ${imgIndex + 1}`}
-                            className="w-full h-64 object-cover rounded-lg"
-                          />
-                        ))}
-                      </div>
-                    </DialogContent>
-                  </Dialog>
-                ))}
+                          <div>
+                            <span className="text-sm font-medium text-gray-900">{amenity.name}</span>
+                            <p className="text-xs text-gray-500">View photos</p>
+                          </div>
+                        </div>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-4xl">
+                        <DialogHeader>
+                          <DialogTitle className="flex items-center gap-2 text-lg">
+                            <span className="text-xl">{amenity.icon}</span>
+                            {amenity.name}
+                          </DialogTitle>
+                        </DialogHeader>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                          {amenity.images?.map((image, imgIndex) => (
+                            <img
+                              key={imgIndex}
+                              src={image}
+                              alt={`${amenity.name} ${imgIndex + 1}`}
+                              className="w-full h-64 object-cover rounded-lg"
+                            />
+                          ))}
+                        </div>
+                      </DialogContent>
+                    </Dialog>
+                  ))}
+                </div>
+              </div>
+
+              {/* Basic Services */}
+              <div className="mb-6">
+                <h3 className="text-lg font-medium text-gray-900 mb-3">Included Services</h3>
+                <div className="flex flex-wrap gap-2">
+                  {rental.amenities
+                    .filter(amenity => ['WiFi'].includes(amenity.name))
+                    .map((amenity, index) => (
+                    <Badge key={index} variant="secondary" className="bg-gray-100 text-gray-700 px-3 py-1">
+                      <span className="mr-1">{amenity.icon}</span>
+                      {amenity.name}
+                    </Badge>
+                  ))}
+                </div>
               </div>
 
               <div className="flex gap-3">
