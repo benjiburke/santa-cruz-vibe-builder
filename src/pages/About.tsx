@@ -1,10 +1,11 @@
 
 import Navigation from '@/components/Navigation';
 import BackToTop from '@/components/BackToTop';
+import SantaCruzMap from '@/components/SantaCruzMap';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Diamond, Shield, Users, Globe, Award, ArrowRight } from 'lucide-react';
+import { Diamond, Shield, Users, Globe, Award, ArrowRight, MapPin, Palmtree, Mountain } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const About = () => {
@@ -24,9 +25,13 @@ const About = () => {
             <br />
             <span className="text-gray-700">Diamond Santa Cruz</span>
           </h1>
-          <p className="text-base text-gray-600 mb-8 max-w-xl mx-auto font-light leading-relaxed">
-            Sophisticated experiences crafted for those who appreciate exceptional quality and discrete luxury.
+          <p className="text-base text-gray-600 mb-4 max-w-xl mx-auto font-light leading-relaxed">
+            Sophisticated experiences in the heart of Bolivia's most dynamic city.
           </p>
+          <div className="flex items-center justify-center gap-2 text-sm text-gray-500 mb-8">
+            <MapPin className="w-4 h-4" />
+            <span>Santa Cruz de la Sierra, Bolivia</span>
+          </div>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button 
               size="lg" 
@@ -47,35 +52,67 @@ const About = () => {
         </div>
       </section>
 
-      {/* Our Story */}
+      {/* Why Santa Cruz */}
       <section id="our-story" className="py-16 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-light text-gray-900 mb-4">
-              Our Philosophy
+              Why Santa Cruz, Bolivia
             </h2>
             <p className="text-base text-gray-600 max-w-xl mx-auto font-light leading-relaxed">
-              Excellence is not a destination but a standard we maintain in every interaction.
+              Where modern sophistication meets authentic South American culture.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <p className="text-base text-gray-700 mb-4 font-light leading-relaxed">
-                Diamond Santa Cruz emerged from a simple recognition: exceptional experiences require exceptional attention to detail. We don't follow trends—we set standards.
-              </p>
-              <p className="text-base text-gray-700 font-light leading-relaxed">
-                Our approach combines local expertise with international sophistication, creating experiences that resonate long after your visit concludes.
-              </p>
-            </div>
-            <div className="relative">
-              <div className="bg-white p-4 border border-gray-200">
-                <img
-                  src="/api/placeholder/600/400"
-                  alt="Diamond Standard"
-                  className="w-full h-64 object-cover"
-                />
-              </div>
-            </div>
+          
+          <div className="mb-12">
+            <SantaCruzMap />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <Card className="bg-white border border-gray-200">
+              <CardHeader className="text-center pb-3">
+                <Palmtree className="h-6 w-6 text-gray-700 mx-auto mb-3" />
+                <h3 className="text-base font-medium text-gray-900">Tropical Gateway</h3>
+              </CardHeader>
+              <CardContent className="text-center pt-0">
+                <p className="text-gray-600 font-light leading-relaxed text-sm">
+                  Perfect year-round climate with access to both Amazon rainforest and Andean highlands.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="bg-white border border-gray-200">
+              <CardHeader className="text-center pb-3">
+                <Globe className="h-6 w-6 text-gray-700 mx-auto mb-3" />
+                <h3 className="text-base font-medium text-gray-900">Cultural Hub</h3>
+              </CardHeader>
+              <CardContent className="text-center pt-0">
+                <p className="text-gray-600 font-light leading-relaxed text-sm">
+                  Bolivia's economic capital blending indigenous traditions with modern luxury and international connectivity.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="bg-white border border-gray-200">
+              <CardHeader className="text-center pb-3">
+                <Mountain className="h-6 w-6 text-gray-700 mx-auto mb-3" />
+                <h3 className="text-base font-medium text-gray-900">Adventure Access</h3>
+              </CardHeader>
+              <CardContent className="text-center pt-0">
+                <p className="text-gray-600 font-light leading-relaxed text-sm">
+                  Gateway to Uyuni Salt Flats, Amazon expeditions, and exclusive experiences unavailable elsewhere.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center">
+            <p className="text-base text-gray-700 mb-4 font-light leading-relaxed max-w-2xl mx-auto">
+              Santa Cruz de la Sierra offers something truly unique: a sophisticated urban environment in one of South America's most naturally diverse regions. While other destinations focus on either luxury or adventure, Santa Cruz delivers both with authentic Bolivian warmth and hospitality.
+            </p>
+            <p className="text-base text-gray-700 font-light leading-relaxed max-w-2xl mx-auto">
+              Our deep local connections and international standards create experiences that showcase the best of Bolivia while maintaining the discretion and sophistication our clients expect.
+            </p>
           </div>
         </div>
       </section>
