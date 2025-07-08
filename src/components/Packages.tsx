@@ -21,16 +21,16 @@ interface Package {
   image?: string;
 }
 
-const packages: Package[] = [
+const getPackages = (t: any): Package[] => [
   {
     id: 'weekend-bender',
     title: 'pkg.weekendBender',
     emoji: '🥳',
     description: 'pkg.weekendBenderDesc',
     features: ['feature.vipClub', 'feature.liveDJ', 'feature.poolVilla', 'feature.airportVIP', 'feature.bottleService'],
-    price: 'From $450/person',
-    duration: '2 nights',
-    groupSize: '4-8 people',
+    price: `${t('pkg.fromPrice')} $450${t('pkg.person')}`,
+    duration: `2 ${t('pkg.nights')}`,
+    groupSize: `4-8 ${t('pkg.people')}`,
     popular: true,
     tier: 'budget',
     vibeRating: '🔥🔥🔥'
@@ -41,9 +41,9 @@ const packages: Package[] = [
     emoji: '🌆',
     description: 'pkg.santaCruzSamplerDesc',
     features: ['feature.boutiqueHotel', 'feature.foodTour', 'feature.nightlifeVIP', 'feature.culturalExp', 'feature.insiderGuide'],
-    price: 'From $380/person',
-    duration: '2 nights',
-    groupSize: '2-8 people',
+    price: `${t('pkg.fromPrice')} $380${t('pkg.person')}`,
+    duration: `2 ${t('pkg.nights')}`,
+    groupSize: `2-8 ${t('pkg.people')}`,
     tier: 'budget',
     vibeRating: '🔥🔥'
   },
@@ -53,9 +53,9 @@ const packages: Package[] = [
     emoji: '🍃',
     description: 'pkg.chillGrillDesc',
     features: ['feature.luxuryHouse', 'feature.bbqChef', 'feature.massageTherapy', 'feature.gameSetup', 'feature.cocktailService'],
-    price: 'From $520/person',
-    duration: '2 nights',
-    groupSize: '4-6 people',
+    price: `${t('pkg.fromPrice')} $520${t('pkg.person')}`,
+    duration: `2 ${t('pkg.nights')}`,
+    groupSize: `4-6 ${t('pkg.people')}`,
     tier: 'premium',
     vibeRating: '🔥🔥'
   },
@@ -65,9 +65,9 @@ const packages: Package[] = [
     emoji: '💘',
     description: 'pkg.romanceDesc',
     features: ['feature.penthouseSuite', 'feature.privateChef', 'feature.couplesSpa', 'feature.romanticTour', 'feature.champagneRoses'],
-    price: 'From $680/couple',
-    duration: '3 nights',
-    groupSize: '2 people',
+    price: `${t('pkg.fromPrice')} $680${t('pkg.couple')}`,
+    duration: `3 ${t('pkg.nights')}`,
+    groupSize: `2 ${t('pkg.people')}`,
     tier: 'premium',
     vibeRating: '🔥🔥'
   },
@@ -77,9 +77,9 @@ const packages: Package[] = [
     emoji: '🧭',
     description: 'pkg.samaipataDesc',
     features: ['feature.ecoLodge', 'feature.natureGuides', 'feature.ruinsTour', 'feature.adventureActivities', 'feature.trailMeals'],
-    price: 'From $750/person',
-    duration: '3 nights',
-    groupSize: '2-6 people',
+    price: `${t('pkg.fromPrice')} $750${t('pkg.person')}`,
+    duration: `3 ${t('pkg.nights')}`,
+    groupSize: `2-6 ${t('pkg.people')}`,
     tier: 'luxury',
     vibeRating: '🔥🔥🔥'
   },
@@ -89,9 +89,9 @@ const packages: Package[] = [
     emoji: '📸',
     description: 'pkg.influencerDesc',
     features: ['feature.aestheticVilla', 'feature.photographer', 'feature.droneVideo', 'feature.contentStyling', 'feature.socialPackage'],
-    price: 'From $890/person',
-    duration: '2 nights',
-    groupSize: '2-4 people',
+    price: `${t('pkg.fromPrice')} $890${t('pkg.person')}`,
+    duration: `2 ${t('pkg.nights')}`,
+    groupSize: `2-4 ${t('pkg.people')}`,
     tier: 'luxury',
     vibeRating: '🔥🔥🔥'
   },
@@ -101,10 +101,10 @@ const packages: Package[] = [
     emoji: '🎶',
     description: 'pkg.vidaLocaDesc',
     features: ['feature.mansionTakeover', 'feature.poolRave', 'feature.celebrityPhoto', 'feature.premiumBottles', 'feature.conciergeTeam'],
-    price: 'From $1,250/person',
-    duration: '3 nights',
-    groupSize: '6-12 people',
-    badge: 'LEGENDARY',
+    price: `${t('pkg.fromPrice')} $1,250${t('pkg.person')}`,
+    duration: `3 ${t('pkg.nights')}`,
+    groupSize: `6-12 ${t('pkg.people')}`,
+    badge: t('pkg.legendary'),
     tier: 'vip',
     vibeRating: '🔥🔥🔥🔥'
   },
@@ -114,10 +114,10 @@ const packages: Package[] = [
     emoji: '💎',
     description: 'pkg.customVipDesc',
     features: ['feature.unlimitedCustom', 'feature.exclusiveVenue', 'feature.luxuryConcierge', 'feature.dedicatedSupport', 'feature.bespokeExp'],
-    price: 'By consultation',
-    duration: 'Your call',
-    groupSize: 'Any size',
-    badge: 'BESPOKE',
+    price: t('pkg.consultation'),
+    duration: t('pkg.yourCall'),
+    groupSize: t('pkg.anySize'),
+    badge: t('pkg.bespoke'),
     tier: 'vip',
     vibeRating: '🔥🔥🔥🔥🔥'
   }
@@ -204,6 +204,7 @@ const getTierInfo = (tier: string) => {
 const Packages = () => {
   const [selectedTier, setSelectedTier] = useState<string | null>(null);
   const { t } = useTranslation();
+  const packages = getPackages(t);
 
   const scrollToForm = () => {
     const element = document.getElementById('intake-form');
