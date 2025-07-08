@@ -124,13 +124,13 @@ const CuratedExperiences = () => {
           <div className="animate-fade-in pt-20 md:pt-8">
             <Diamond className="w-8 h-8 text-white mx-auto mb-6" />
             <h1 className="text-5xl lg:text-6xl font-light text-white mb-4 tracking-tight leading-tight">
-              Curated Experiences
+              Diamond Santa Cruz
               <br />
-              <span className="font-normal text-blue-200">Unforgettable Adventures</span>
+              <span className="font-normal text-blue-200">Vibe Builder</span>
             </h1>
             
             <p className="text-lg text-gray-200 mb-8 max-w-2xl mx-auto font-light leading-relaxed">
-              Discover Bolivia's hidden treasures through expertly crafted experiences that showcase the authentic beauty of Santa Cruz.
+              Luxury escapes in Santa Cruz, Bolivia — tailored for private groups. From curated nightlife to wild nature, we handle the details. You just show up.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-12">
@@ -156,19 +156,19 @@ const CuratedExperiences = () => {
             {/* Experience Features */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-4 text-white">
-                <Camera className="h-6 w-6 text-primary/80 mb-2 mx-auto" />
-                <h3 className="text-base font-medium mb-1">Expert Guides</h3>
-                <p className="text-sm opacity-90 font-light">Local specialists with deep cultural knowledge</p>
+                <Users className="h-6 w-6 text-primary/80 mb-2 mx-auto" />
+                <h3 className="text-base font-medium mb-1">Full-Service Stays</h3>
+                <p className="text-sm opacity-90 font-light">High-end accommodations, airport pickup, local support</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-4 text-white">
                 <Coffee className="h-6 w-6 text-primary/80 mb-2 mx-auto" />
-                <h3 className="text-base font-medium mb-1">Authentic Experiences</h3>
-                <p className="text-sm opacity-90 font-light">Genuine cultural immersion and local traditions</p>
+                <h3 className="text-base font-medium mb-1">Nightlife Access</h3>
+                <p className="text-sm opacity-90 font-light">Private tables, top venues, local know-how</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-4 text-white">
                 <MapPin className="h-6 w-6 text-primary/80 mb-2 mx-auto" />
-                <h3 className="text-base font-medium mb-1">Exclusive Access</h3>
-                <p className="text-sm opacity-90 font-light">Private locations and experiences unavailable elsewhere</p>
+                <h3 className="text-base font-medium mb-1">Discreet + Personalized</h3>
+                <p className="text-sm opacity-90 font-light">Local team focused on experience quality</p>
               </div>
             </div>
           </div>
