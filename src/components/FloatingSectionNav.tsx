@@ -52,8 +52,8 @@ const FloatingSectionNav = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed right-4 md:right-6 top-1/2 transform -translate-y-1/2 z-40 animate-fade-in">
-      <div className="bg-white/95 backdrop-blur-sm border border-gray-200 rounded-2xl shadow-lg p-3 md:p-2">
+    <div className="fixed right-4 md:right-6 top-1/2 transform -translate-y-1/2 z-40 animate-fade-in group">
+      <div className="bg-white/40 md:bg-white/20 backdrop-blur-sm border border-gray-200/50 md:border-gray-200/30 rounded-2xl shadow-lg p-3 md:p-2 transition-all duration-300 md:hover:bg-white/95 md:hover:border-gray-200 md:hover:shadow-xl">
         <div className="flex flex-col space-y-2 md:space-y-1">
           {sections.map((section) => {
             const IconComponent = section.icon;
@@ -65,7 +65,7 @@ const FloatingSectionNav = () => {
                 className={`w-14 h-14 md:w-12 md:h-12 rounded-xl md:rounded-full text-xs font-light transition-all duration-300 ${
                   activeSection === section.id 
                     ? 'bg-gray-900 text-white shadow-md' 
-                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+                    : 'text-gray-400 md:text-gray-300 hover:text-gray-900 hover:bg-gray-100 md:group-hover:text-gray-600'
                 }`}
                 onClick={() => scrollToSection(section.id)}
                 title={section.label}
@@ -77,11 +77,11 @@ const FloatingSectionNav = () => {
         </div>
         
         {/* Quick scroll to top/bottom */}
-        <div className="border-t border-gray-200 mt-3 md:mt-2 pt-3 md:pt-2 flex flex-col space-y-2 md:space-y-1">
+        <div className="border-t border-gray-200/50 md:border-gray-200/30 mt-3 md:mt-2 pt-3 md:pt-2 flex flex-col space-y-2 md:space-y-1">
           <Button
             size="sm"
             variant="ghost"
-            className="w-14 h-10 md:w-12 md:h-8 rounded-xl md:rounded-full text-gray-500 hover:text-gray-700 hover:bg-gray-100"
+            className="w-14 h-10 md:w-12 md:h-8 rounded-xl md:rounded-full text-gray-400 md:text-gray-300 hover:text-gray-700 hover:bg-gray-100 md:group-hover:text-gray-500"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             title="Back to top"
           >
@@ -90,7 +90,7 @@ const FloatingSectionNav = () => {
           <Button
             size="sm"
             variant="ghost"
-            className="w-14 h-10 md:w-12 md:h-8 rounded-xl md:rounded-full text-gray-500 hover:text-gray-700 hover:bg-gray-100"
+            className="w-14 h-10 md:w-12 md:h-8 rounded-xl md:rounded-full text-gray-400 md:text-gray-300 hover:text-gray-700 hover:bg-gray-100 md:group-hover:text-gray-500"
             onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })}
             title="Go to bottom"
           >
