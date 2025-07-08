@@ -54,11 +54,42 @@ const Hero = () => {
             for the sophisticated traveler seeking extraordinary experiences.
           </p>
 
+          {/* Quick Section Navigation */}
+          <div className="mb-8">
+            <p className="text-sm text-gray-500 mb-4 font-light">Quick Navigation</p>
+            <div className="flex flex-wrap gap-3 justify-center">
+              <button 
+                onClick={() => scrollToSection('vibes')}
+                className="px-4 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-white/50 rounded-full transition-all duration-300 border border-gray-300 hover:border-gray-400"
+              >
+                Vibes
+              </button>
+              <button 
+                onClick={() => scrollToSection('packages')}
+                className="px-4 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-white/50 rounded-full transition-all duration-300 border border-gray-300 hover:border-gray-400"
+              >
+                Packages
+              </button>
+              <button 
+                onClick={() => scrollToSection('events')}
+                className="px-4 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-white/50 rounded-full transition-all duration-300 border border-gray-300 hover:border-gray-400"
+              >
+                Events
+              </button>
+              <button 
+                onClick={() => scrollToSection('book')}
+                className="px-4 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-white/50 rounded-full transition-all duration-300 border border-gray-300 hover:border-gray-400"
+              >
+                Book Trip
+              </button>
+            </div>
+          </div>
+
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Button 
               size="lg" 
               className="bg-gray-900 hover:bg-gray-800 text-white px-10 py-4 text-lg font-normal transition-all duration-300 shadow-sm"
-              onClick={() => scrollToSection('intake-form')}
+              onClick={() => scrollToSection('book')}
             >
               <Calendar className="mr-2 h-5 w-5" />
               {t('hero.planExperience')}
