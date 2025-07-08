@@ -125,7 +125,7 @@ const CuratedExperiences = () => {
             <h1 className="text-5xl lg:text-6xl font-light text-white mb-4 tracking-tight leading-tight">
               Curated Experiences
               <br />
-              <span className="font-normal text-amber-200">Unforgettable Adventures</span>
+              <span className="font-normal text-primary/80">Unforgettable Adventures</span>
             </h1>
             
             <p className="text-lg text-gray-200 mb-8 max-w-2xl mx-auto font-light leading-relaxed">
@@ -135,7 +135,7 @@ const CuratedExperiences = () => {
             <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-12">
               <Button 
                 size="lg" 
-                className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 text-base font-normal transition-colors duration-200"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 text-base font-normal transition-colors duration-200"
                 onClick={scrollToExperiences}
               >
                 <Camera className="mr-2 h-4 w-4" />
@@ -144,7 +144,7 @@ const CuratedExperiences = () => {
               
               <Button 
                 size="lg" 
-                className="bg-transparent border border-amber-200 text-amber-200 hover:bg-amber-200 hover:text-gray-900 px-6 py-3 text-base font-normal transition-colors duration-200"
+                className="bg-transparent border border-primary/60 text-primary/80 hover:bg-primary/20 hover:text-primary px-6 py-3 text-base font-normal transition-colors duration-200"
                 onClick={handleWhatsAppInquiry}
               >
                 <Leaf className="mr-2 h-4 w-4" />
@@ -155,17 +155,17 @@ const CuratedExperiences = () => {
             {/* Experience Features */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-4 text-white">
-                <Camera className="h-6 w-6 text-amber-200 mb-2 mx-auto" />
+                <Camera className="h-6 w-6 text-primary/80 mb-2 mx-auto" />
                 <h3 className="text-base font-medium mb-1">Expert Guides</h3>
                 <p className="text-sm opacity-90 font-light">Local specialists with deep cultural knowledge</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-4 text-white">
-                <Coffee className="h-6 w-6 text-amber-200 mb-2 mx-auto" />
+                <Coffee className="h-6 w-6 text-primary/80 mb-2 mx-auto" />
                 <h3 className="text-base font-medium mb-1">Authentic Experiences</h3>
                 <p className="text-sm opacity-90 font-light">Genuine cultural immersion and local traditions</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-4 text-white">
-                <MapPin className="h-6 w-6 text-amber-200 mb-2 mx-auto" />
+                <MapPin className="h-6 w-6 text-primary/80 mb-2 mx-auto" />
                 <h3 className="text-base font-medium mb-1">Exclusive Access</h3>
                 <p className="text-sm opacity-90 font-light">Private locations and experiences unavailable elsewhere</p>
               </div>
@@ -179,7 +179,7 @@ const CuratedExperiences = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-light text-gray-900 mb-3 tracking-tight">
-              Curated <span className="text-amber-600">Experiences</span>
+              Curated <span className="text-primary">Experiences</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto font-light leading-relaxed">
               Hand-selected adventures designed to create extraordinary memories in Bolivia's most captivating destinations.
@@ -204,8 +204,8 @@ const CuratedExperiences = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 px-6 bg-amber-600">
-        <div className="max-w-3xl mx-auto text-center text-white">
+      <section className="py-12 px-6 bg-primary">
+        <div className="max-w-3xl mx-auto text-center text-primary-foreground">
           <h3 className="text-2xl font-light mb-3 tracking-tight">
             Ready for Your Next Adventure?
           </h3>
@@ -216,14 +216,14 @@ const CuratedExperiences = () => {
             <Link to="/intake-form">
               <Button 
                 size="lg" 
-                className="bg-white hover:bg-gray-100 text-amber-600 border border-white font-normal"
+                className="bg-primary-foreground hover:bg-secondary text-primary border border-primary-foreground font-normal"
               >
                 Plan My Experience
               </Button>
             </Link>
             <Button 
               size="lg" 
-              className="bg-transparent border border-white text-white hover:bg-white hover:text-amber-600 font-normal transition-colors duration-200"
+              className="bg-transparent border border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary font-normal transition-colors duration-200"
               onClick={handleWhatsAppInquiry}
             >
               WhatsApp Concierge
