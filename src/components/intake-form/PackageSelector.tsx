@@ -18,7 +18,7 @@ export const PackageSelector = ({ value, onChange }: PackageSelectorProps) => {
     { value: 'samaipata-sessions', label: 'Sesiones Samaipata - Desde $750/persona' },
     { value: 'influencer-escape', label: 'Creador de Contenido - Desde $890/persona' },
     { value: 'vida-loca', label: 'La Vida Loca - Desde $1,250/persona' },
-    { value: 'cooking-culture', label: 'Curso de Cocina Cruceña - Desde $340/persona' },
+    { value: 'cooking-culture', label: 'Curso de Cocina Cruceña (Salteñas, Empanadas & Más) - Desde $340/persona' },
     { value: 'custom-vip', label: 'VIP Personalizado Puro - Por consulta' },
     { value: 'not-sure', label: 'Sin preferencia - sorpréndeme' }
   ];
