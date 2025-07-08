@@ -1,24 +1,27 @@
 import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface TripTypeSelectorProps {
   value: string;
   onChange: (value: string) => void;
 }
 
-const tripTypes = [
-  { value: 'party', label: 'Party 🎉' },
-  { value: 'chill', label: 'Chill 🌴' },
-  { value: 'explore', label: 'Explore 🌄' },
-  { value: 'vip', label: 'VIP 💎' },
-  { value: 'other', label: 'Other' }
-];
-
 export const TripTypeSelector = ({ value, onChange }: TripTypeSelectorProps) => {
+  const { t } = useTranslation();
+  
+  const tripTypes = [
+    { value: 'party', label: `${t('form.party')} 🎉` },
+    { value: 'romantic', label: `${t('form.romantic')} 💕` },
+    { value: 'business', label: `${t('form.business')} 💼` },
+    { value: 'cultural', label: `${t('form.cultural')} 🏛️` },
+    { value: 'wellness', label: `${t('form.wellness')} 🧘` },
+    { value: 'custom', label: `${t('form.custom')} ✨` }
+  ];
   return (
     <div className="space-y-3">
       <Label className="text-lg font-semibold text-jungle-800">
-        What kind of trip is this? *
+        {t('form.tripType')} *
       </Label>
       <RadioGroup 
         value={value} 

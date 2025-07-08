@@ -24,10 +24,10 @@ interface Package {
 const packages: Package[] = [
   {
     id: 'weekend-bender',
-    title: 'Weekend Bender',
+    title: 'pkg.weekendBender',
     emoji: '🥳',
-    description: 'Pool villa madness with DJ, VIP access, and non-stop vibes',
-    features: ['VIP club access', 'Live DJ set', 'Pool villa with bar', 'Airport VIP pickup', 'Welcome bottle service'],
+    description: 'pkg.weekendBenderDesc',
+    features: ['feature.vipClub', 'feature.liveDJ', 'feature.poolVilla', 'feature.airportVIP', 'feature.bottleService'],
     price: 'From $450/person',
     duration: '2 nights',
     groupSize: '4-8 people',
@@ -37,10 +37,10 @@ const packages: Package[] = [
   },
   {
     id: 'santa-cruz-sampler',
-    title: 'Santa Cruz Sampler',
+    title: 'pkg.santaCruzSampler',
     emoji: '🌆',
-    description: 'Taste the city — food, culture, and nightlife in one epic trip',
-    features: ['City boutique hotel', 'Guided food tour', 'Nightlife VIP access', 'Cultural experiences', 'Local insider guide'],
+    description: 'pkg.santaCruzSamplerDesc',
+    features: ['feature.boutiqueHotel', 'feature.foodTour', 'feature.nightlifeVIP', 'feature.culturalExp', 'feature.insiderGuide'],
     price: 'From $380/person',
     duration: '2 nights',
     groupSize: '2-8 people',
@@ -49,10 +49,10 @@ const packages: Package[] = [
   },
   {
     id: 'chill-grill',
-    title: 'Chill & Grill',
+    title: 'pkg.chillGrill',
     emoji: '🍃',
-    description: 'Laid-back luxury with private chef, massages, and good vibes',
-    features: ['Private luxury house', 'Personal BBQ chef', 'In-house massage therapy', 'Premium game setup', 'Sunset cocktail service'],
+    description: 'pkg.chillGrillDesc',
+    features: ['feature.luxuryHouse', 'feature.bbqChef', 'feature.massageTherapy', 'feature.gameSetup', 'feature.cocktailService'],
     price: 'From $520/person',
     duration: '2 nights',
     groupSize: '4-6 people',
@@ -61,10 +61,10 @@ const packages: Package[] = [
   },
   {
     id: 'romantic-escape',
-    title: 'Romance & Roses',
+    title: 'pkg.romance',
     emoji: '💘',
-    description: 'Couple\'s paradise with candlelit dinners and spa luxury',
-    features: ['Luxury penthouse suite', 'Private chef dinner', 'Couples spa package', 'Romantic city tour', 'Champagne & roses'],
+    description: 'pkg.romanceDesc',
+    features: ['feature.penthouseSuite', 'feature.privateChef', 'feature.couplesSpa', 'feature.romanticTour', 'feature.champagneRoses'],
     price: 'From $680/couple',
     duration: '3 nights',
     groupSize: '2 people',
@@ -73,10 +73,10 @@ const packages: Package[] = [
   },
   {
     id: 'samaipata-sessions',
-    title: 'Samaipata Sessions',
+    title: 'pkg.samaipata',
     emoji: '🧭',
-    description: 'Nature meets luxury — guided adventures with 5-star comfort',
-    features: ['Eco-luxury lodge', 'Private nature guides', 'Samaipata ruins tour', 'Adventure activities', 'Gourmet trail meals'],
+    description: 'pkg.samaipataDesc',
+    features: ['feature.ecoLodge', 'feature.natureGuides', 'feature.ruinsTour', 'feature.adventureActivities', 'feature.trailMeals'],
     price: 'From $750/person',
     duration: '3 nights',
     groupSize: '2-6 people',
@@ -85,10 +85,10 @@ const packages: Package[] = [
   },
   {
     id: 'influencer-escape',
-    title: 'Content Creator',
+    title: 'pkg.influencer',
     emoji: '📸',
-    description: 'Instagram-perfect setups with professional content creation',
-    features: ['Aesthetic luxury villa', 'Professional photographer', 'Drone videography', 'Content styling', 'Social media package'],
+    description: 'pkg.influencerDesc',
+    features: ['feature.aestheticVilla', 'feature.photographer', 'feature.droneVideo', 'feature.contentStyling', 'feature.socialPackage'],
     price: 'From $890/person',
     duration: '2 nights',
     groupSize: '2-4 people',
@@ -97,10 +97,10 @@ const packages: Package[] = [
   },
   {
     id: 'vida-loca',
-    title: 'La Vida Loca',
+    title: 'pkg.vidaLoca',
     emoji: '🎶',
-    description: 'Maximum chaos — pool raves, VIP everything, zero limits',
-    features: ['Private mansion takeover', 'Pool rave production', 'Celebrity photographer', 'Premium bottle service', 'Personal concierge team'],
+    description: 'pkg.vidaLocaDesc',
+    features: ['feature.mansionTakeover', 'feature.poolRave', 'feature.celebrityPhoto', 'feature.premiumBottles', 'feature.conciergeTeam'],
     price: 'From $1,250/person',
     duration: '3 nights',
     groupSize: '6-12 people',
@@ -110,10 +110,10 @@ const packages: Package[] = [
   },
   {
     id: 'custom-vip',
-    title: 'Pure Custom VIP',
+    title: 'pkg.customVip',
     emoji: '💎',
-    description: 'Sky\'s the limit — your wildest dreams, our execution',
-    features: ['Unlimited customization', 'Exclusive venue access', 'Personal luxury concierge', '24/7 dedicated support', 'Bespoke experiences'],
+    description: 'pkg.customVipDesc',
+    features: ['feature.unlimitedCustom', 'feature.exclusiveVenue', 'feature.luxuryConcierge', 'feature.dedicatedSupport', 'feature.bespokeExp'],
     price: 'By consultation',
     duration: 'Your call',
     groupSize: 'Any size',
@@ -125,19 +125,19 @@ const packages: Package[] = [
 
 const testimonials = [
   {
-    text: "We did La Vida Loca and it was 🔥🔥🔥! DJ was fire, house was perfect, and Benny's team had everything stocked before we arrived.",
-    author: "Andrew, NYC",
-    package: "La Vida Loca"
+    text: "testimonial.andrew",
+    author: "testimonial.andrewAuthor",
+    package: "pkg.vidaLoca"
   },
   {
-    text: "Romance & Roses package exceeded all expectations. The penthouse was stunning and our private chef was incredible!",
-    author: "Maria & Carlos, Miami",
-    package: "Romance & Roses"
+    text: "testimonial.maria",
+    author: "testimonial.mariaAuthor",
+    package: "pkg.romance"
   },
   {
-    text: "Santa Cruz Sampler was the perfect intro to the city. Hit all the best spots without any planning stress.",
-    author: "Jake, LA",
-    package: "Santa Cruz Sampler"
+    text: "testimonial.jake",
+    author: "testimonial.jakeAuthor",
+    package: "pkg.santaCruzSampler"
   }
 ];
 
@@ -146,8 +146,8 @@ const getTierInfo = (tier: string) => {
     case 'budget':
       return {
         icon: '',
-        label: 'Essential',
-        description: 'Quality experiences, smart value',
+        label: 'tier.essential',
+        description: 'tier.essentialDesc',
         color: 'gray',
         cardClass: 'border-gray-200 bg-white hover:shadow-sm',
         badgeClass: 'bg-gray-100 text-gray-700 border border-gray-200',
@@ -157,8 +157,8 @@ const getTierInfo = (tier: string) => {
     case 'premium':
       return {
         icon: '',
-        label: 'Premium',
-        description: 'Enhanced amenities & service',
+        label: 'tier.premium',
+        description: 'tier.premiumDesc',
         color: 'gray',
         cardClass: 'border-gray-200 bg-white hover:shadow-sm',
         badgeClass: 'bg-gray-100 text-gray-700 border border-gray-200',
@@ -168,8 +168,8 @@ const getTierInfo = (tier: string) => {
     case 'luxury':
       return {
         icon: '',
-        label: 'Luxury',
-        description: 'Sophisticated experiences',
+        label: 'tier.luxury',
+        description: 'tier.luxuryDesc',
         color: 'gray',
         cardClass: 'border-gray-200 bg-white hover:shadow-sm',
         badgeClass: 'bg-gray-100 text-gray-700 border border-gray-200',
@@ -179,8 +179,8 @@ const getTierInfo = (tier: string) => {
     case 'vip':
       return {
         icon: '👑',
-        label: 'VIP Exclusive',
-        description: 'Exclusive venues, personal concierge, white-glove service',
+        label: 'tier.vip',
+        description: 'tier.vipDesc',
         color: 'gray',
         cardClass: 'border-gray-700 bg-gradient-to-br from-gray-50 to-gray-100 hover:shadow-xl ring-1 ring-gray-300',
         badgeClass: 'bg-gray-900 text-white border border-gray-900',
@@ -190,8 +190,8 @@ const getTierInfo = (tier: string) => {
     default:
       return {
         icon: '',
-        label: 'Experience',
-        description: 'Curated adventure',
+        label: 'tier.essential',
+        description: 'tier.essentialDesc',
         color: 'gray',
         cardClass: 'border-gray-200 bg-white hover:shadow-sm',
         badgeClass: 'bg-gray-100 text-gray-700 border border-gray-200',
@@ -252,9 +252,9 @@ const Packages = () => {
                     }`}
                     onClick={() => handleTierClick(tier)}
                   >
-                    {tierInfo.label}
+                    {t(tierInfo.label)}
                   </Badge>
-                  <p className="text-xs text-gray-500">{tierInfo.description}</p>
+                  <p className="text-xs text-gray-500">{t(tierInfo.description)}</p>
                 </div>
               );
             })}
@@ -268,7 +268,7 @@ const Packages = () => {
                 onClick={() => setSelectedTier(null)}
                 className="border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400"
               >
-                Show All Packages
+                {t('pkg.showAll')}
               </Button>
             </div>
           )}
@@ -276,7 +276,7 @@ const Packages = () => {
           {/* Filter Status */}
           {selectedTier && (
             <p className="text-gray-600 mb-8">
-              Showing {filteredPackages.length} {getTierInfo(selectedTier).label} package{filteredPackages.length !== 1 ? 's' : ''}
+              {t('pkg.showing')} {filteredPackages.length} {t(getTierInfo(selectedTier).label)} {filteredPackages.length !== 1 ? t('pkg.packages') : t('pkg.package')}
             </p>
           )}
         </div>
@@ -296,7 +296,7 @@ const Packages = () => {
               >
                 {/* Package Image Placeholder */}
                 <div className="h-40 bg-gray-100 flex items-center justify-center relative overflow-hidden">
-                  <div className="text-2xl text-gray-400">{pkg.title}</div>
+                  <div className="text-2xl text-gray-400">{t(pkg.title)}</div>
                   {pkg.popular && (
                     <div className="absolute top-2 right-2 bg-gray-900 text-white px-2 py-1 text-xs font-normal">
                       <Star className="inline h-3 w-3 mr-1" />
@@ -313,14 +313,14 @@ const Packages = () => {
                 <CardHeader className="text-center pb-4">
                   <div className="flex justify-center mb-2">
                     <Badge className={`${tierInfo.badgeClass} text-xs px-2 py-1 font-normal`}>
-                      {tierInfo.label}
+                      {t(tierInfo.label)}
                     </Badge>
                   </div>
                   <h3 className="text-xl font-medium mb-2 text-gray-900">
-                    {pkg.title}
+                    {t(pkg.title)}
                   </h3>
                   <p className="text-sm mb-4 text-gray-600 font-light">
-                    {pkg.description}
+                    {t(pkg.description)}
                   </p>
                   
                   {/* Vibe Rating */}
@@ -345,7 +345,7 @@ const Packages = () => {
                     {pkg.features.map((feature, index) => (
                       <div key={index} className="flex items-center text-sm text-gray-700">
                         <div className="w-2 h-2 bg-gray-400 rounded-full mr-2 flex-shrink-0"></div>
-                        {feature}
+                        {t(feature)}
                       </div>
                     ))}
                   </div>
@@ -358,10 +358,10 @@ const Packages = () => {
                       className="w-full bg-gray-900 hover:bg-gray-800 text-white transition-all duration-300 font-normal text-sm"
                       onClick={scrollToForm}
                     >
-                      {pkg.id === 'custom-vip' ? 'Plan Custom Experience' : 
-                       pkg.tier === 'vip' ? 'Reserve This Experience' : 
-                       pkg.popular ? 'Book Popular Choice' :
-                       'Customize Package'}
+                      {pkg.id === 'custom-vip' ? t('pkg.planCustom') : 
+                       pkg.tier === 'vip' ? t('pkg.reserve') : 
+                       pkg.popular ? t('pkg.bookPopular') :
+                       t('pkg.customize')}
                     </Button>
                   </div>
                 </CardContent>
@@ -409,7 +409,7 @@ const Packages = () => {
         {/* Testimonials Section */}
         <div className="mb-16">
           <h3 className="text-3xl font-light text-center text-gray-900 mb-8">
-            Client <span className="text-gray-700">Testimonials</span>
+            {t('testimonials.title')} <span className="text-gray-700">{t('testimonials.titleSpan')}</span>
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {testimonials.map((testimonial, index) => (
@@ -420,10 +420,10 @@ const Packages = () => {
                       <Star key={i} className="h-4 w-4 fill-gray-400 text-gray-400" />
                     ))}
                   </div>
-                  <p className="text-gray-700 mb-4 italic font-light">"{testimonial.text}"</p>
+                  <p className="text-gray-700 mb-4 italic font-light">"{t(testimonial.text)}"</p>
                   <div className="flex justify-between items-center">
-                    <p className="text-sm font-medium text-gray-600">— {testimonial.author}</p>
-                    <Badge className="bg-gray-100 text-gray-700 border border-gray-200 text-xs font-normal">{testimonial.package}</Badge>
+                    <p className="text-sm font-medium text-gray-600">— {t(testimonial.author)}</p>
+                    <Badge className="bg-gray-100 text-gray-700 border border-gray-200 text-xs font-normal">{t(testimonial.package)}</Badge>
                   </div>
                 </CardContent>
               </Card>

@@ -6,6 +6,7 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { Calendar as CalendarIcon } from 'lucide-react';
 import { format } from 'date-fns';
 import { cn } from '@/lib/utils';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface DateSelectorProps {
   startDate?: Date;
@@ -24,15 +25,16 @@ export const DateSelector = ({
   onEndDateChange,
   onFlexibilityChange
 }: DateSelectorProps) => {
+  const { t } = useTranslation();
   return (
     <div className="space-y-3">
       <Label className="text-lg font-semibold text-jungle-800">
-        Preferred dates
+        {t('form.travelDates')}
       </Label>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Start Date */}
         <div className="space-y-2">
-          <Label className="text-sm text-jungle-600">Start Date</Label>
+          <Label className="text-sm text-jungle-600">{t('form.startDate')}</Label>
           <Popover>
             <PopoverTrigger asChild>
               <Button
@@ -61,7 +63,7 @@ export const DateSelector = ({
 
         {/* End Date */}
         <div className="space-y-2">
-          <Label className="text-sm text-jungle-600">End Date</Label>
+          <Label className="text-sm text-jungle-600">{t('form.endDate')}</Label>
           <Popover>
             <PopoverTrigger asChild>
               <Button
@@ -99,7 +101,7 @@ export const DateSelector = ({
           onCheckedChange={onFlexibilityChange}
         />
         <Label htmlFor="flexibility" className="text-sm text-jungle-600">
-          I'm flexible with dates
+          {t('form.flexible')}
         </Label>
       </div>
     </div>

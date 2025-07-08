@@ -1,5 +1,6 @@
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface GroupSizeBudgetInputsProps {
   groupSize: string;
@@ -14,15 +15,16 @@ export const GroupSizeBudgetInputs = ({
   onGroupSizeChange, 
   onBudgetChange 
 }: GroupSizeBudgetInputsProps) => {
+  const { t } = useTranslation();
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       <div className="space-y-3">
         <Label htmlFor="groupSize" className="text-lg font-semibold text-jungle-800">
-          How many people? *
+          {t('form.groupSize')} *
         </Label>
         <Select onValueChange={onGroupSizeChange}>
           <SelectTrigger>
-            <SelectValue placeholder="Select group size" />
+            <SelectValue placeholder={t('form.groupSizePlaceholder')} />
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="1-2">1-2 people</SelectItem>
@@ -36,11 +38,11 @@ export const GroupSizeBudgetInputs = ({
 
       <div className="space-y-3">
         <Label htmlFor="budget" className="text-lg font-semibold text-jungle-800">
-          Budget per person (USD) *
+          {t('form.budget')} *
         </Label>
         <Select onValueChange={onBudgetChange}>
           <SelectTrigger>
-            <SelectValue placeholder="Select budget range" />
+            <SelectValue placeholder={t('form.budgetPlaceholder')} />
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="300-500">$300-500</SelectItem>
