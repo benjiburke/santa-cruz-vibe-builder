@@ -5,6 +5,7 @@ import VibeSelector from '@/components/VibeSelector';
 import Packages from '@/components/Packages';
 import EventsPreview from '@/components/EventsPreview';
 import IntakeForm from '@/components/IntakeForm';
+import FloatingSectionNav from '@/components/FloatingSectionNav';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import BackToTop from '@/components/BackToTop';
 import { Diamond } from 'lucide-react';
@@ -26,6 +27,7 @@ const Index = () => {
       <section id="book">
         <IntakeForm />
       </section>
+      <FloatingSectionNav />
       <WhatsAppButton />
       <BackToTop />
       
