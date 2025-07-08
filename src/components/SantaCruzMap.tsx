@@ -18,8 +18,8 @@ const SantaCruzMap = () => {
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/light-v11',
-      center: [-64.9631, -16.2902], // Bolivia center coordinates
-      zoom: 5.5, // Show whole Bolivia
+      center: [-60.0, -15.0], // South America center to show Bolivia in context
+      zoom: 3.5, // Show more of South America continent
       pitch: 0,
     });
 
@@ -70,8 +70,8 @@ const SantaCruzMap = () => {
     if (!map.current) return;
     
     map.current.flyTo({
-      center: [-64.9631, -16.2902],
-      zoom: 5.5,
+      center: [-60.0, -15.0],
+      zoom: 3.5,
       pitch: 0,
       duration: 2000,
       essential: true
@@ -101,7 +101,7 @@ const SantaCruzMap = () => {
             className="bg-white/90 hover:bg-white text-gray-900 border border-gray-200 shadow-sm"
           >
             <ZoomIn className="w-3 h-3 mr-2" />
-            Show Bolivia
+            Show South America
           </Button>
         )}
       </div>
@@ -109,10 +109,10 @@ const SantaCruzMap = () => {
       {/* Location Info */}
       <div className="absolute bottom-4 left-4 z-10 bg-white/90 backdrop-blur-sm p-3 rounded-lg border border-gray-200 shadow-sm">
         <div className="text-xs font-medium text-gray-900">
-          {isZoomedIn ? 'Santa Cruz de la Sierra' : 'Bolivia'}
+          {isZoomedIn ? 'Santa Cruz de la Sierra' : 'Bolivia, South America'}
         </div>
         <div className="text-xs text-gray-600">
-          {isZoomedIn ? 'Our Location' : 'South America'}
+          {isZoomedIn ? 'Our Location' : 'Heart of the Continent'}
         </div>
       </div>
     </div>
