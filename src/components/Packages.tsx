@@ -177,12 +177,12 @@ const getTierInfo = (tier: string) => {
       };
     case 'vip':
       return {
-        icon: '',
+        icon: '👑',
         label: 'VIP Exclusive',
-        description: 'Ultimate luxury service',
+        description: 'Private jets, celebrity access, unlimited luxury',
         color: 'gray',
-        cardClass: 'border-gray-300 bg-gray-50 hover:shadow-sm',
-        badgeClass: 'bg-gray-800 text-white border border-gray-800',
+        cardClass: 'border-gray-700 bg-gradient-to-br from-gray-50 to-gray-100 hover:shadow-xl ring-1 ring-gray-300',
+        badgeClass: 'bg-gray-900 text-white border border-gray-900',
         priceClass: 'text-gray-900',
         buttonClass: 'bg-gray-900 hover:bg-gray-800 text-white'
       };
@@ -230,8 +230,11 @@ const Packages = () => {
           <h2 className="text-4xl sm:text-5xl font-light text-gray-900 mb-4">
             Experience <span className="text-gray-700">Packages</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8 font-light">
-            Carefully curated experiences designed to exceed expectations. Choose your preferred level of service.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-4 font-light">
+            Full-service packages include accommodation, activities, and coordination. These are complete trips, not just activities.
+          </p>
+          <p className="text-sm text-gray-500 mb-8">
+            Looking for individual activities only? Check out our <a href="/curated-experiences" className="underline hover:text-gray-700">Curated Day Experiences</a>
           </p>
           
           {/* Enhanced Tier Legend with Filtering */}
@@ -405,7 +408,7 @@ const Packages = () => {
             Need Something Completely Custom?
           </h3>
           <p className="text-lg mb-6 text-gray-300 font-light">
-            From intimate getaways to elaborate celebrations — we design experiences at every level. Your vision, our expertise.
+            Private jets, exclusive venues, celebrity connections, impossible requests - we specialize in making the extraordinary happen. No limits, just possibilities.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
@@ -418,7 +421,7 @@ const Packages = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-white/30 text-white hover:bg-white/10 hover:border-white px-8 py-3 font-normal"
+              className="border-white text-white hover:bg-white/10 hover:border-white px-8 py-3 font-normal"
               onClick={scrollToForm}
             >
               Start Planning
