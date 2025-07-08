@@ -16,35 +16,35 @@ interface Vibe {
 const vibes: Vibe[] = [
   {
     id: 'party',
-    emoji: '🎉',
-    title: 'Party',
-    description: 'Turn up the heat with VIP club access, pool parties, and legendary nights that never end.',
+    emoji: '',
+    title: 'Vibrant',
+    description: 'Sophisticated nightlife experiences with VIP access and curated social events.',
     packages: ['Weekend Bender', 'La Vida Loca', 'Santa Cruz Sampler'],
-    intensity: '🔥🔥🔥🔥'
+    intensity: 'High Energy'
   },
   {
     id: 'relax',
-    emoji: '🌴',
-    title: 'Relax',
-    description: 'Unwind in luxury with spa treatments, private pools, and peaceful vibes that heal your soul.',
+    emoji: '',
+    title: 'Tranquil',
+    description: 'Peaceful luxury experiences with spa treatments and private relaxation.',
     packages: ['Romance & Roses', 'Chill & Grill', 'Content Creator'],
-    intensity: '🔥🔥'
+    intensity: 'Peaceful'
   },
   {
     id: 'explore',
-    emoji: '🌄',
-    title: 'Explore',
-    description: 'Discover hidden gems, natural wonders, and authentic local experiences with luxury comfort.',
+    emoji: '',
+    title: 'Discovery',
+    description: 'Cultural immersion and authentic local experiences with luxury comfort.',
     packages: ['Samaipata Sessions', 'Santa Cruz Sampler', 'Pure Custom VIP'],
-    intensity: '🔥🔥🔥'
+    intensity: 'Adventure'
   },
   {
     id: 'vip',
-    emoji: '💎',
-    title: 'VIP',
-    description: 'The ultimate luxury experience with full concierge, unlimited customization, and zero limits.',
+    emoji: '',
+    title: 'Exclusive',
+    description: 'Ultimate luxury with full concierge service and unlimited customization.',
     packages: ['Pure Custom VIP', 'La Vida Loca', 'Content Creator'],
-    intensity: '🔥🔥🔥🔥🔥'
+    intensity: 'Premium'
   }
 ];
 
@@ -68,14 +68,14 @@ const VibeSelector = () => {
   };
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-onyx-900 via-midnight-800 to-onyx-900">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-            Choose Your <span className="text-gold-400">Vibe</span>
+          <h2 className="text-4xl sm:text-5xl font-light text-gray-900 mb-4">
+            Choose Your <span className="text-gray-700">Experience</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Every trip is different. Tell us what you're feeling and we'll craft the perfect chaos.
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light">
+            Every journey is unique. Tell us your preference and we'll craft the perfect experience.
           </p>
         </div>
 
@@ -86,39 +86,37 @@ const VibeSelector = () => {
               key={vibe.id}
               variant={selectedVibe === vibe.id ? "default" : "outline"}
               size="lg"
-              className={`flex items-center gap-2 px-6 py-3 rounded-full text-lg font-medium transition-all duration-300 ${
+              className={`flex items-center gap-2 px-6 py-3 text-lg font-normal transition-all duration-300 ${
                 selectedVibe === vibe.id
-                  ? 'bg-gold-500 hover:bg-gold-600 text-onyx-900 shadow-lg scale-105 border-gold-400'
-                  : 'border-gold-400/50 text-gold-400 hover:bg-gold-400/20 hover:border-gold-400'
+                  ? 'bg-gray-900 hover:bg-gray-800 text-white shadow-sm'
+                  : 'border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400'
               }`}
               onClick={() => setSelectedVibe(vibe.id)}
             >
-              <span className="text-2xl">{vibe.emoji}</span>
               {vibe.title}
             </Button>
           ))}
         </div>
 
         {/* Active Vibe Content */}
-        <Card className="bg-gradient-to-br from-white via-gray-50 to-gray-100 backdrop-blur-sm border-gold-300 shadow-2xl animate-fade-in">
+        <Card className="bg-white border border-gray-200 shadow-sm">
           <CardContent className="p-8">
             <div className="text-center mb-8">
-              <div className="text-6xl mb-4">{activeVibe.emoji}</div>
-              <h3 className="text-3xl font-bold text-onyx-800 mb-4">
-                {activeVibe.title} Vibes
+              <h3 className="text-3xl font-light text-gray-900 mb-4">
+                {activeVibe.title} Experiences
               </h3>
-              <div className="text-2xl mb-4 text-gold-600">
+              <div className="text-sm mb-4 text-gray-600 bg-gray-50 inline-block px-3 py-1 border border-gray-200">
                 {activeVibe.intensity}
               </div>
-              <p className="text-lg text-onyx-600 max-w-2xl mx-auto mb-6">
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-6 font-light leading-relaxed">
                 {activeVibe.description}
               </p>
               <Link to={getVibeLink(activeVibe.id)}>
                 <Button 
                   size="lg"
-                  className="bg-gold-600 hover:bg-gold-700 text-white px-8 py-3 rounded-full font-semibold shadow-lg"
+                  className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-3 font-normal text-sm"
                 >
-                  🚀 Lock In {activeVibe.title} Mode
+                  Explore {activeVibe.title} Options
                 </Button>
               </Link>
             </div>
@@ -127,21 +125,21 @@ const VibeSelector = () => {
               {activeVibe.packages.map((packageName, index) => (
                 <div
                   key={index}
-                  className="bg-gradient-to-br from-gold-100 via-sunset-100 to-coral-100 p-6 rounded-xl border border-gold-300 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:border-gold-400"
+                  className="bg-gray-50 p-6 border border-gray-200 hover:shadow-sm transition-all duration-300 hover:border-gray-300"
                 >
-                  <h4 className="text-xl font-semibold text-onyx-800 mb-2">
+                  <h4 className="text-xl font-medium text-gray-900 mb-2">
                     {packageName}
                   </h4>
-                  <p className="text-onyx-600 text-sm mb-4">
-                    Perfect for your {activeVibe.title.toLowerCase()} adventure
+                  <p className="text-gray-600 text-sm mb-4 font-light">
+                    Perfect for your {activeVibe.title.toLowerCase()} experience
                   </p>
                   <Button 
                     variant="outline" 
                     size="sm" 
-                    className="w-full border-gold-400 text-gold-700 hover:bg-gold-600 hover:text-white font-medium"
+                    className="w-full border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 font-normal text-xs"
                     onClick={() => document.getElementById('packages')?.scrollIntoView({ behavior: 'smooth' })}
                   >
-                    See Package Details
+                    View Details
                   </Button>
                 </div>
               ))}

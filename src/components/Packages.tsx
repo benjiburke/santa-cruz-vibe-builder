@@ -144,58 +144,58 @@ const getTierInfo = (tier: string) => {
   switch (tier) {
     case 'budget':
       return {
-        icon: '💸',
-        label: 'Budget Friendly',
-        description: 'Maximum fun, smart budget',
-        color: 'emerald',
-        cardClass: 'border-emerald-300 bg-gradient-to-br from-white via-emerald-50 to-emerald-100 hover:shadow-emerald-400/50',
-        badgeClass: 'bg-emerald-600 text-white',
-        priceClass: 'text-emerald-700',
-        buttonClass: 'bg-emerald-600 hover:bg-emerald-700 text-white'
+        icon: '',
+        label: 'Essential',
+        description: 'Quality experiences, smart value',
+        color: 'gray',
+        cardClass: 'border-gray-200 bg-white hover:shadow-sm',
+        badgeClass: 'bg-gray-100 text-gray-700 border border-gray-200',
+        priceClass: 'text-gray-900',
+        buttonClass: 'bg-gray-900 hover:bg-gray-800 text-white'
       };
     case 'premium':
       return {
-        icon: '🔥',
+        icon: '',
         label: 'Premium',
-        description: 'Upgraded amenities & experiences',
-        color: 'sunset',
-        cardClass: 'border-sunset-300 bg-gradient-to-br from-white via-sunset-50 to-sunset-100 hover:shadow-sunset-400/50',
-        badgeClass: 'bg-sunset-600 text-white',
-        priceClass: 'text-sunset-700',
-        buttonClass: 'bg-sunset-600 hover:bg-sunset-700 text-white'
+        description: 'Enhanced amenities & service',
+        color: 'gray',
+        cardClass: 'border-gray-200 bg-white hover:shadow-sm',
+        badgeClass: 'bg-gray-100 text-gray-700 border border-gray-200',
+        priceClass: 'text-gray-900',
+        buttonClass: 'bg-gray-900 hover:bg-gray-800 text-white'
       };
     case 'luxury':
       return {
-        icon: '✨',
+        icon: '',
         label: 'Luxury',
-        description: 'High-end everything',
-        color: 'gold',
-        cardClass: 'border-gold-400 bg-gradient-to-br from-white via-gold-50 to-gold-100 hover:shadow-gold-400/60',
-        badgeClass: 'bg-gold-600 text-white',
-        priceClass: 'text-gold-700',
-        buttonClass: 'bg-gold-600 hover:bg-gold-700 text-white'
+        description: 'Sophisticated experiences',
+        color: 'gray',
+        cardClass: 'border-gray-200 bg-white hover:shadow-sm',
+        badgeClass: 'bg-gray-100 text-gray-700 border border-gray-200',
+        priceClass: 'text-gray-900',
+        buttonClass: 'bg-gray-900 hover:bg-gray-800 text-white'
       };
     case 'vip':
       return {
-        icon: '💎',
+        icon: '',
         label: 'VIP Exclusive',
-        description: 'Sky\'s the limit luxury',
-        color: 'gold',
-        cardClass: 'border-gold-500 bg-gradient-to-br from-onyx-900 via-midnight-800 to-onyx-900 text-white hover:shadow-gold-400/70 animate-luxury-glow',
-        badgeClass: 'bg-onyx-800 text-gold-400 border-gold-400 animate-pulse-gold',
-        priceClass: 'text-gold-400',
-        buttonClass: 'bg-gold-500 hover:bg-gold-600 text-onyx-900 font-bold'
+        description: 'Ultimate luxury service',
+        color: 'gray',
+        cardClass: 'border-gray-300 bg-gray-50 hover:shadow-sm',
+        badgeClass: 'bg-gray-800 text-white border border-gray-800',
+        priceClass: 'text-gray-900',
+        buttonClass: 'bg-gray-900 hover:bg-gray-800 text-white'
       };
     default:
       return {
-        icon: '🎯',
+        icon: '',
         label: 'Experience',
         description: 'Curated adventure',
-        color: 'jungle',
-        cardClass: 'border-jungle-200 bg-gradient-to-br from-white to-jungle-50',
-        badgeClass: 'bg-jungle-600 text-white',
-        priceClass: 'text-jungle-600',
-        buttonClass: 'bg-jungle-600 hover:bg-jungle-700 text-white'
+        color: 'gray',
+        cardClass: 'border-gray-200 bg-white hover:shadow-sm',
+        badgeClass: 'bg-gray-100 text-gray-700 border border-gray-200',
+        priceClass: 'text-gray-900',
+        buttonClass: 'bg-gray-900 hover:bg-gray-800 text-white'
       };
   }
 };
@@ -224,14 +224,14 @@ const Packages = () => {
   };
 
   return (
-    <section id="packages" className="py-20 px-4 sm:px-6 lg:px-8 bg-dark-luxury">
+    <section id="packages" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-            Choose Your Level of <span className="text-gold-400">Chaos</span>
+          <h2 className="text-4xl sm:text-5xl font-light text-gray-900 mb-4">
+            Experience <span className="text-gray-700">Packages</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            From budget backpacker vibes to billionaire-level madness. We handle the wild — you choose your level.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8 font-light">
+            Carefully curated experiences designed to exceed expectations. Choose your preferred level of service.
           </p>
           
           {/* Enhanced Tier Legend with Filtering */}
@@ -242,16 +242,14 @@ const Packages = () => {
               return (
                 <div key={tier} className="text-center">
                   <Badge 
-                    className={`${tierInfo.badgeClass} px-4 py-2 text-sm font-semibold mb-2 flex items-center gap-2 cursor-pointer transition-all duration-300 hover:scale-105 ${
-                      isSelected ? 'ring-2 ring-white scale-110' : ''
+                    className={`bg-gray-100 text-gray-700 border border-gray-200 px-4 py-2 text-sm font-normal mb-2 flex items-center gap-2 cursor-pointer transition-all duration-300 hover:bg-gray-200 ${
+                      isSelected ? 'bg-gray-900 text-white border-gray-900' : ''
                     }`}
                     onClick={() => handleTierClick(tier)}
                   >
-                    <span>{tierInfo.icon}</span>
                     {tierInfo.label}
-                    {tier === 'vip' && <Crown className="h-4 w-4" />}
                   </Badge>
-                  <p className="text-xs text-gray-400">{tierInfo.description}</p>
+                  <p className="text-xs text-gray-500">{tierInfo.description}</p>
                 </div>
               );
             })}
@@ -263,7 +261,7 @@ const Packages = () => {
               <Button
                 variant="outline"
                 onClick={() => setSelectedTier(null)}
-                className="border-gold-400 text-gold-400 hover:bg-gold-400 hover:text-onyx-900"
+                className="border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400"
               >
                 Show All Packages
               </Button>
@@ -272,7 +270,7 @@ const Packages = () => {
 
           {/* Filter Status */}
           {selectedTier && (
-            <p className="text-gold-400 mb-8">
+            <p className="text-gray-600 mb-8">
               Showing {filteredPackages.length} {getTierInfo(selectedTier).label} package{filteredPackages.length !== 1 ? 's' : ''}
             </p>
           )}
@@ -287,53 +285,45 @@ const Packages = () => {
             return (
               <Card 
                 key={pkg.id} 
-                className={`group relative overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 ${tierInfo.cardClass} ${
-                  pkg.popular ? 'ring-2 ring-gold-400 shadow-lg scale-105' : ''
+                className={`group relative overflow-hidden transition-all duration-300 hover:shadow-lg bg-white border border-gray-200 ${
+                  pkg.popular ? 'ring-1 ring-gray-300 shadow-md' : ''
                 }`}
               >
                 {/* Package Image Placeholder */}
-                <div className={`h-40 bg-gradient-to-br ${
-                  isVip ? 'from-gold-400 to-gold-600' : 
-                  pkg.tier === 'luxury' ? 'from-gold-300 to-sunset-400' :
-                  pkg.tier === 'premium' ? 'from-sunset-300 to-coral-400' :
-                  'from-emerald-300 to-jungle-400'
-                } flex items-center justify-center relative overflow-hidden`}>
-                  <div className="text-6xl opacity-80">{pkg.emoji}</div>
+                <div className="h-40 bg-gray-100 flex items-center justify-center relative overflow-hidden">
+                  <div className="text-2xl text-gray-400">{pkg.title}</div>
                   {pkg.popular && (
-                    <div className="absolute top-2 right-2 bg-gold-400 text-onyx-800 px-2 py-1 text-xs font-bold rounded-full flex items-center">
+                    <div className="absolute top-2 right-2 bg-gray-900 text-white px-2 py-1 text-xs font-normal">
                       <Star className="inline h-3 w-3 mr-1" />
-                      Most Popular
+                      Popular
                     </div>
                   )}
                   {pkg.badge && !pkg.popular && (
-                    <div className={`absolute top-2 right-2 px-2 py-1 text-xs font-bold rounded-full flex items-center ${
-                      isVip ? 'bg-gold-500 text-onyx-900' : 'bg-coral-500 text-white'
-                    }`}>
-                      {isVip && <Sparkles className="inline h-3 w-3 mr-1" />}
+                    <div className="absolute top-2 right-2 bg-gray-700 text-white px-2 py-1 text-xs font-normal">
                       {pkg.badge}
                     </div>
                   )}
                 </div>
 
-                <CardHeader className={`text-center pb-4 ${isVip ? 'text-white' : ''}`}>
+                <CardHeader className="text-center pb-4">
                   <div className="flex justify-center mb-2">
-                    <Badge className={`${tierInfo.badgeClass} text-xs px-2 py-1`}>
-                      {tierInfo.icon} {tierInfo.label}
+                    <Badge className={`${tierInfo.badgeClass} text-xs px-2 py-1 font-normal`}>
+                      {tierInfo.label}
                     </Badge>
                   </div>
-                  <h3 className={`text-xl font-bold mb-2 ${isVip ? 'text-gold-400' : 'text-onyx-800'}`}>
+                  <h3 className="text-xl font-medium mb-2 text-gray-900">
                     {pkg.title}
                   </h3>
-                  <p className={`text-sm mb-4 ${isVip ? 'text-gray-300' : 'text-onyx-600'}`}>
+                  <p className="text-sm mb-4 text-gray-600 font-light">
                     {pkg.description}
                   </p>
                   
                   {/* Vibe Rating */}
-                  <div className={`text-lg mb-3 ${isVip ? 'text-gold-400' : tierInfo.priceClass}`}>
+                  <div className="text-sm mb-3 text-gray-500">
                     {pkg.vibeRating}
                   </div>
                   
-                  <div className={`flex justify-center gap-4 text-xs ${isVip ? 'text-gray-400' : 'text-onyx-500'}`}>
+                  <div className="flex justify-center gap-4 text-xs text-gray-500">
                     <div className="flex items-center gap-1">
                       <Calendar className="h-3 w-3" />
                       {pkg.duration}
@@ -348,27 +338,25 @@ const Packages = () => {
                 <CardContent className="space-y-4">
                   <div className="space-y-2">
                     {pkg.features.map((feature, index) => (
-                      <div key={index} className={`flex items-center text-sm ${isVip ? 'text-gray-300' : 'text-onyx-700'}`}>
-                        <div className={`w-2 h-2 rounded-full mr-2 flex-shrink-0 ${
-                          isVip ? 'bg-gold-400' : 'bg-coral-400'
-                        }`}></div>
+                      <div key={index} className="flex items-center text-sm text-gray-700">
+                        <div className="w-2 h-2 bg-gray-400 rounded-full mr-2 flex-shrink-0"></div>
                         {feature}
                       </div>
                     ))}
                   </div>
 
-                  <div className="border-t pt-4 border-opacity-20">
-                    <div className={`text-lg font-bold mb-3 ${tierInfo.priceClass}`}>
+                  <div className="border-t pt-4 border-gray-200">
+                    <div className="text-lg font-medium mb-3 text-gray-900">
                       {pkg.price}
                     </div>
                     <Button 
-                      className={`w-full transition-all duration-300 font-semibold ${tierInfo.buttonClass}`}
+                      className="w-full bg-gray-900 hover:bg-gray-800 text-white transition-all duration-300 font-normal text-sm"
                       onClick={scrollToForm}
                     >
-                      {pkg.id === 'custom-vip' ? '🚀 Let\'s Go Crazy' : 
-                       pkg.tier === 'vip' ? '⚡ Lock In This Vibe' : 
-                       pkg.popular ? '🔥 Book Most Popular' :
-                       '✨ Customize This Package'}
+                      {pkg.id === 'custom-vip' ? 'Plan Custom Experience' : 
+                       pkg.tier === 'vip' ? 'Reserve This Experience' : 
+                       pkg.popular ? 'Book Popular Choice' :
+                       'Customize Package'}
                     </Button>
                   </div>
                 </CardContent>
@@ -380,7 +368,7 @@ const Packages = () => {
         {/* No Results Message */}
         {selectedTier && filteredPackages.length === 0 && (
           <div className="text-center mb-16">
-            <p className="text-gray-400 text-lg">
+            <p className="text-gray-500 text-lg">
               No packages found for {getTierInfo(selectedTier).label} tier.
             </p>
           </div>
@@ -388,22 +376,22 @@ const Packages = () => {
 
         {/* Testimonials Section */}
         <div className="mb-16">
-          <h3 className="text-3xl font-bold text-center text-white mb-8">
-            What Our <span className="text-gold-400">Legends</span> Say
+          <h3 className="text-3xl font-light text-center text-gray-900 mb-8">
+            Client <span className="text-gray-700">Testimonials</span>
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="bg-gradient-to-br from-white via-gold-50 to-gold-100 border-gold-300">
+              <Card key={index} className="bg-white border border-gray-200">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-gold-400 text-gold-400" />
+                      <Star key={i} className="h-4 w-4 fill-gray-400 text-gray-400" />
                     ))}
                   </div>
-                  <p className="text-onyx-700 mb-4 italic">"{testimonial.text}"</p>
+                  <p className="text-gray-700 mb-4 italic font-light">"{testimonial.text}"</p>
                   <div className="flex justify-between items-center">
-                    <p className="text-sm font-semibold text-onyx-600">— {testimonial.author}</p>
-                    <Badge className="bg-gold-600 text-white text-xs">{testimonial.package}</Badge>
+                    <p className="text-sm font-medium text-gray-600">— {testimonial.author}</p>
+                    <Badge className="bg-gray-100 text-gray-700 border border-gray-200 text-xs font-normal">{testimonial.package}</Badge>
                   </div>
                 </CardContent>
               </Card>
@@ -412,31 +400,28 @@ const Packages = () => {
         </div>
 
         {/* Enhanced Custom VIP Banner */}
-        <div className="bg-gradient-to-r from-onyx-900 via-midnight-800 to-onyx-900 rounded-2xl p-8 text-center text-white border border-gold-400/30 shadow-2xl">
-          <div className="flex justify-center mb-4">
-            <Crown className="h-12 w-12 text-gold-400 animate-pulse-gold" />
-          </div>
-          <h3 className="text-3xl font-bold mb-4 text-gold-400">
+        <div className="bg-gray-900 p-8 text-center text-white shadow-sm">
+          <h3 className="text-3xl font-light mb-4 text-white">
             Need Something Completely Custom?
           </h3>
-          <p className="text-lg mb-6 text-gray-300">
-            From budget backpacker madness to private jet luxury — we design experiences at every price point. Your wildest vision, our flawless execution.
+          <p className="text-lg mb-6 text-gray-300 font-light">
+            From intimate getaways to elaborate celebrations — we design experiences at every level. Your vision, our expertise.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg" 
-              className="bg-gold-500 hover:bg-gold-600 text-onyx-900 font-bold border-2 border-gold-400 px-8 py-3"
-              onClick={() => window.open('https://wa.me/1234567890?text=Hi! I want to plan something completely custom and wild in Santa Cruz', '_blank')}
+              className="bg-white hover:bg-gray-100 text-gray-900 font-normal px-8 py-3"
+              onClick={() => window.open('https://wa.me/1234567890?text=Hi! I want to plan something completely custom in Santa Cruz', '_blank')}
             >
-              💬 WhatsApp Us Now
+              Contact Us
             </Button>
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-gold-400 text-gold-400 hover:bg-gold-400 hover:text-onyx-900 px-8 py-3"
+              className="border-white/30 text-white hover:bg-white/10 hover:border-white px-8 py-3 font-normal"
               onClick={scrollToForm}
             >
-              🎯 Start Custom Request
+              Start Planning
             </Button>
           </div>
         </div>

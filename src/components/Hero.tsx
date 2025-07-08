@@ -24,30 +24,30 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Video/Image Placeholder */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-50">
+      {/* Background Image Placeholder */}
       <div className="absolute inset-0 z-0">
         <div 
-          className="w-full h-full bg-gradient-to-br from-onyx-800 via-midnight-700 to-onyx-900 bg-cover bg-center"
+          className="w-full h-full bg-gray-200 bg-cover bg-center"
           style={{
-            backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url(${videos[currentVideo].src})`
+            backgroundImage: `linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.2)), url(${videos[currentVideo].src})`
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30" />
+        <div className="absolute inset-0 bg-white/30" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
         <div className="animate-fade-in">
-          <Diamond className="w-12 h-12 text-gold-400 mx-auto mb-8" />
+          <Diamond className="w-12 h-12 text-gray-700 mx-auto mb-8" />
           
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-light text-white mb-8 leading-tight tracking-wide">
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-light text-gray-900 mb-8 leading-tight tracking-wide">
             Sophisticated Santa Cruz
             <br />
-            <span className="text-gold-400">Experiences</span>
+            <span className="text-gray-700">Experiences</span>
           </h1>
           
-          <p className="text-xl sm:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
+          <p className="text-xl sm:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
             Curated luxury stays and exclusive experiences in Bolivia's most vibrant city. 
             Crafted for the discerning traveler.
           </p>
@@ -55,7 +55,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Button 
               size="lg" 
-              className="bg-gold-600 hover:bg-gold-700 text-white px-10 py-4 text-lg font-medium rounded-none transition-all duration-300 transform hover:scale-105 shadow-xl"
+              className="bg-gray-900 hover:bg-gray-800 text-white px-10 py-4 text-lg font-normal transition-all duration-300 shadow-sm"
               onClick={() => scrollToSection('intake-form')}
             >
               <Calendar className="mr-2 h-5 w-5" />
@@ -64,7 +64,8 @@ const Hero = () => {
             
             <Button 
               size="lg" 
-              className="bg-green-600 hover:bg-green-700 text-white px-10 py-4 text-lg font-medium rounded-none transition-all duration-300 transform hover:scale-105 shadow-xl"
+              variant="outline"
+              className="border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 px-10 py-4 text-lg font-normal transition-all duration-300"
               onClick={openWhatsApp}
             >
               <MessageCircle className="mr-2 h-5 w-5" />
@@ -74,7 +75,7 @@ const Hero = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-gold-400/50 text-gold-400 hover:bg-gold-400/10 hover:border-gold-400 px-10 py-4 text-lg font-medium rounded-none transition-all duration-300 backdrop-blur-sm"
+              className="border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 px-10 py-4 text-lg font-normal transition-all duration-300"
               onClick={() => scrollToSection('packages')}
             >
               <MapPin className="mr-2 h-5 w-5" />
@@ -90,7 +91,7 @@ const Hero = () => {
           <button
             key={index}
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              currentVideo === index ? 'bg-gold-400' : 'bg-white/50'
+              currentVideo === index ? 'bg-gray-700' : 'bg-gray-400'
             }`}
             onClick={() => setCurrentVideo(index)}
           />
