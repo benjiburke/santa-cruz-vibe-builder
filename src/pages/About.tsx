@@ -59,9 +59,14 @@ const About = () => {
             <h2 className="text-3xl font-light text-gray-900 mb-4">
               Why Santa Cruz, Bolivia
             </h2>
-            <p className="text-base text-gray-600 max-w-xl mx-auto font-light leading-relaxed">
-              Where modern sophistication meets authentic South American culture.
+            <p className="text-base text-gray-600 max-w-2xl mx-auto font-light leading-relaxed mb-4">
+              The world's 14th fastest-growing city. Bolivia's economic powerhouse where authentic culture meets modern luxury - without the crowds.
             </p>
+            <div className="flex flex-wrap justify-center gap-4 text-sm">
+              <Badge className="bg-gray-100 text-gray-700 border-gray-200">No Altitude Sickness</Badge>
+              <Badge className="bg-gray-100 text-gray-700 border-gray-200">Undiscovered by Mass Tourism</Badge>
+              <Badge className="bg-gray-100 text-gray-700 border-gray-200">Economic Capital</Badge>
+            </div>
           </div>
           
           <div className="mb-12">
@@ -72,11 +77,11 @@ const About = () => {
             <Card className="bg-white border border-gray-200">
               <CardHeader className="text-center pb-3">
                 <Palmtree className="h-6 w-6 text-gray-700 mx-auto mb-3" />
-                <h3 className="text-base font-medium text-gray-900">Tropical Gateway</h3>
+                <h3 className="text-base font-medium text-gray-900">Raw & Authentic</h3>
               </CardHeader>
               <CardContent className="text-center pt-0">
                 <p className="text-gray-600 font-light leading-relaxed text-sm">
-                  Perfect year-round climate with access to both Amazon rainforest and Andean highlands.
+                  A working city untouched by mass tourism. Experience real Bolivia where locals live, work, and play - no tourist traps.
                 </p>
               </CardContent>
             </Card>
@@ -84,11 +89,11 @@ const About = () => {
             <Card className="bg-white border border-gray-200">
               <CardHeader className="text-center pb-3">
                 <Globe className="h-6 w-6 text-gray-700 mx-auto mb-3" />
-                <h3 className="text-base font-medium text-gray-900">Cultural Hub</h3>
+                <h3 className="text-base font-medium text-gray-900">Economic Powerhouse</h3>
               </CardHeader>
               <CardContent className="text-center pt-0">
                 <p className="text-gray-600 font-light leading-relaxed text-sm">
-                  Bolivia's economic capital blending indigenous traditions with modern luxury and international connectivity.
+                  Bolivia's largest city and financial capital. Where the country's wealthy gather - modern skylines meet tropical vibes.
                 </p>
               </CardContent>
             </Card>
@@ -96,11 +101,11 @@ const About = () => {
             <Card className="bg-white border border-gray-200">
               <CardHeader className="text-center pb-3">
                 <Mountain className="h-6 w-6 text-gray-700 mx-auto mb-3" />
-                <h3 className="text-base font-medium text-gray-900">Adventure Access</h3>
+                <h3 className="text-base font-medium text-gray-900">World-Class Value</h3>
               </CardHeader>
               <CardContent className="text-center pt-0">
                 <p className="text-gray-600 font-light leading-relaxed text-sm">
-                  Gateway to Uyuni Salt Flats, Amazon expeditions, and exclusive experiences unavailable elsewhere.
+                  Luxury experiences at a fraction of global costs. Year-round tropical climate without altitude sickness.
                 </p>
               </CardContent>
             </Card>
@@ -108,10 +113,10 @@ const About = () => {
 
           <div className="text-center">
             <p className="text-base text-gray-700 mb-4 font-light leading-relaxed max-w-2xl mx-auto">
-              Santa Cruz de la Sierra offers something truly unique: a sophisticated urban environment in one of South America's most naturally diverse regions. While other destinations focus on either luxury or adventure, Santa Cruz delivers both with authentic Bolivian warmth and hospitality.
+              While everyone flocks to Peru or Brazil, Santa Cruz remains South America's best-kept secret. This rapidly growing metropolis pulses with authentic energy - vibrant nightlife, incredible food, warm people, and a culture that hasn't been packaged for tourists.
             </p>
             <p className="text-base text-gray-700 font-light leading-relaxed max-w-2xl mx-auto">
-              Our deep local connections and international standards create experiences that showcase the best of Bolivia while maintaining the discretion and sophistication our clients expect.
+              As the world's 14th fastest-growing city, Santa Cruz offers luxury at local prices with none of the altitude issues of La Paz. It's where Bolivia's elite live and where international business gets done - all while maintaining that raw, authentic charm you can't find anywhere else.
             </p>
           </div>
         </div>
