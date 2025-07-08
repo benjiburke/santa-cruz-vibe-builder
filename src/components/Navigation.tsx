@@ -22,8 +22,22 @@ const Navigation = () => {
     { code: 'PT', label: 'Português', flag: '🇧🇷' }
   ];
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const mainNavLinks = [
     { to: '/', label: t('nav.home') }
+  ];
+
+  const sectionLinks = [
+    { id: 'vibes', label: 'Vibes' },
+    { id: 'packages', label: 'Packages' },
+    { id: 'events', label: 'Events' },
+    { id: 'book', label: 'Book Trip' }
   ];
 
   const experiencesLinks = [
@@ -71,6 +85,33 @@ const Navigation = () => {
             >
               {t('nav.home')}
             </Link>
+
+            {/* Quick Section Links - only show on homepage */}
+            {window.location.pathname === '/' && (
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button 
+                    variant="ghost" 
+                    size="sm"
+                    className="h-auto px-0 text-gray-700 hover:text-gray-900 hover:bg-transparent font-normal text-sm"
+                  >
+                    Sections
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="start" className="w-48 bg-white border border-gray-200 shadow-lg">
+                  {sectionLinks.map((link) => (
+                    <DropdownMenuItem key={link.id} className="p-0">
+                      <button
+                        onClick={() => scrollToSection(link.id)}
+                        className="w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 text-left"
+                      >
+                        {link.label}
+                      </button>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+            )}
 
             {/* Experiences Dropdown */}
             <DropdownMenu>
@@ -203,6 +244,27 @@ const Navigation = () => {
               >
                 {t('nav.home')}
               </Link>
+
+              {/* Quick Section Links for mobile - only show on homepage */}
+              {window.location.pathname === '/' && (
+                <div className="border-t border-gray-100 pt-3">
+                  <div className="px-2 mb-2">
+                    <span className="text-xs text-gray-500 font-medium">SECTIONS</span>
+                  </div>
+                  {sectionLinks.map((link) => (
+                    <button
+                      key={link.id}
+                      onClick={() => {
+                        scrollToSection(link.id);
+                        setIsOpen(false);
+                      }}
+                      className="text-gray-700 hover:text-gray-900 transition-colors font-normal text-sm px-2 py-1 block w-full text-left"
+                    >
+                      {link.label}
+                    </button>
+                  ))}
+                </div>
+              )}
 
               {/* Experiences Section */}
               <div className="border-t border-gray-100 pt-3">

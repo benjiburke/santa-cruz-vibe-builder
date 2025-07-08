@@ -14,10 +14,18 @@ const Index = () => {
     <div className="min-h-screen bg-white">
       <Navigation />
       <Hero />
-      <VibeSelector />
-      <Packages />
-      <EventsPreview />
-      <IntakeForm />
+      <section id="vibes">
+        <VibeSelector />
+      </section>
+      <section id="packages">
+        <Packages />
+      </section>
+      <section id="events">
+        <EventsPreview />
+      </section>
+      <section id="book">
+        <IntakeForm />
+      </section>
       <WhatsAppButton />
       <BackToTop />
       
