@@ -377,6 +377,33 @@ const Packages = () => {
           </div>
         )}
 
+        {/* Flight Assistance Section */}
+        <div className="mb-16">
+          <div className="bg-gray-50 border border-gray-200 p-8 rounded-lg">
+            <div className="text-center mb-6">
+              <div className="text-3xl mb-4">✈️</div>
+              <h3 className="text-2xl font-light text-gray-900 mb-4">
+                Global Flight Assistance <span className="text-sm font-normal text-gray-500">(Optional Perk)</span>
+              </h3>
+              <p className="text-lg font-medium text-gray-700 mb-4">
+                Flying in from New York? Dubai? São Paulo? We've got you.
+              </p>
+            </div>
+            
+            <div className="max-w-3xl mx-auto text-gray-700 space-y-4 font-light">
+              <p>
+                We provide discreet, personalized help finding and booking the best airfare to Santa Cruz — no matter where you're coming from. Whether you're traveling from the U.S., Europe, Asia, or the Middle East, we'll guide you to the ideal routes, best airlines, and smoothest connections.
+              </p>
+              <p>
+                You can book it yourself, or let us handle it completely — just say the word. We don't mark up flights — we simply make sure you land here relaxed and ready.
+              </p>
+              <div className="bg-white border-l-4 border-gray-400 p-4 italic text-gray-600 text-center">
+                This perk is included with all full-experience bookings. Because luxury doesn't start when you arrive — it starts when you board.
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Testimonials Section */}
         <div className="mb-16">
           <h3 className="text-3xl font-light text-center text-gray-900 mb-8">
