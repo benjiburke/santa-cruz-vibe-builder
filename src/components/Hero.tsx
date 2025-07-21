@@ -60,12 +60,12 @@ const Hero = () => {
           
           {/* Subtitle */}
           <p className="text-xl sm:text-2xl mb-4 font-light opacity-90" style={{ color: '#F8F1E9' }}>
-            Bespoke Experiences from Estate Retreats to Natural Havens
+            Bespoke Experiences from Estate Retreats to Natural Adventures
           </p>
           
           {/* Description */}
           <p className="text-lg mb-12 max-w-3xl mx-auto font-light leading-relaxed opacity-80" style={{ color: '#F8F1E9' }}>
-            {t('hero.description')}
+            Where international luxury meets authentic Bolivian culture. Complete concierge services for sophisticated travelers seeking extraordinary Santa Cruz experiences.
           </p>
 
           {/* Luxury Experience Cards */}
@@ -94,21 +94,21 @@ const Hero = () => {
 
             {/* Nature Escapes Card */}
             <div className="backdrop-blur-sm border rounded-lg p-6 hover:bg-white/10 transition-all duration-300 group" 
-                 style={{ backgroundColor: 'rgba(248, 241, 233, 0.08)', borderColor: 'rgba(28, 37, 33, 0.4)' }}>
+                 style={{ backgroundColor: 'rgba(248, 241, 233, 0.12)', borderColor: 'rgba(144, 160, 120, 0.4)' }}>
               <div className="flex items-center justify-center mb-4">
                 <div className="w-12 h-12 rounded-full flex items-center justify-center" 
-                     style={{ backgroundColor: 'rgba(28, 37, 33, 0.3)' }}>
-                  <MapPin className="w-6 h-6" style={{ color: '#1C2521' }} />
+                     style={{ backgroundColor: 'rgba(144, 160, 120, 0.3)' }}>
+                  <MapPin className="w-6 h-6" style={{ color: '#90A078' }} />
                 </div>
               </div>
-              <h3 className="text-xl font-medium mb-3" style={{ color: '#1C2521' }}>Natural Havens</h3>
+              <h3 className="text-xl font-medium mb-3" style={{ color: '#90A078' }}>Natural Escapes</h3>
               <p className="text-sm mb-4 leading-relaxed" style={{ color: '#F8F1E9' }}>
-                Redwood retreats, coastal hideaways, private hiking experiences, and luxury eco-lodges
+                Amboró National Park adventures, private hiking trails, luxury eco-lodges, and exclusive nature experiences
               </p>
               <Button
                 onClick={() => scrollToSection('packages')}
                 className="w-full text-white border-0 transition-all duration-300 group-hover:scale-105"
-                style={{ backgroundColor: '#1C2521', color: '#F8F1E9' }}
+                style={{ backgroundColor: '#90A078', color: '#F8F1E9' }}
               >
                 Discover Escapes
               </Button>
@@ -141,21 +141,13 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Elegant Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce" style={{ color: '#F8F1E9' }}>
-        <div className="flex flex-col items-center opacity-70">
-          <span className="text-sm font-light mb-2">{t('hero.scrollDiscover')}</span>
-          <ChevronDown className="w-6 h-6" />
-        </div>
-      </div>
-
       {/* Subtle Luxury Floating Elements */}
       <div className="absolute top-20 left-20 w-32 h-32 rounded-full blur-2xl animate-pulse" 
            style={{ backgroundColor: 'rgba(212, 175, 55, 0.08)' }} />
       <div className="absolute bottom-32 right-20 w-24 h-24 rounded-full blur-xl animate-pulse" 
            style={{ backgroundColor: 'rgba(248, 241, 233, 0.05)' }} />
       <div className="absolute top-1/3 right-32 w-16 h-16 rounded-full blur-lg animate-pulse" 
-           style={{ backgroundColor: 'rgba(28, 37, 33, 0.08)' }} />
+           style={{ backgroundColor: 'rgba(144, 160, 120, 0.08)' }} />
     </section>
   );
 };
