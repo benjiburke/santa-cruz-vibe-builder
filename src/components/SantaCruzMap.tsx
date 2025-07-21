@@ -61,6 +61,54 @@ const SantaCruzMap = () => {
       category: 'party'
     },
     {
+      id: 'avenida-monssenor',
+      name: 'Avenida Monseñor Rivero',
+      type: 'nightlife',
+      coordinates: [-63.1820, -17.7830],
+      description: 'Main party strip with bars and clubs',
+      category: 'party'
+    },
+    {
+      id: 'ventura-mall-rooftop',
+      name: 'Ventura Mall Rooftop Bars',
+      type: 'nightlife',
+      coordinates: [-63.1950, -17.7650],
+      description: 'Upscale rooftop bars with city views',
+      category: 'party'
+    },
+    {
+      id: 'casa-del-camba',
+      name: 'Casa del Camba',
+      type: 'nightlife',
+      coordinates: [-63.1780, -17.7890],
+      description: 'Traditional Bolivian party venue with live music',
+      category: 'party'
+    },
+    {
+      id: 'equipetrol-nightlife',
+      name: 'Equipetrol Night District',
+      type: 'nightlife',
+      coordinates: [-63.1920, -17.7720],
+      description: 'High-end clubs and cocktail lounges',
+      category: 'party'
+    },
+    {
+      id: 'plaza-24-septiembre',
+      name: 'Plaza 24 de Septiembre',
+      type: 'nightlife',
+      coordinates: [-63.1820, -17.7830],
+      description: 'Central plaza with surrounding bars and restaurants',
+      category: 'party'
+    },
+    {
+      id: 'megacenter-entertainment',
+      name: 'Megacenter Entertainment',
+      type: 'nightlife',
+      coordinates: [-63.1600, -17.7500],
+      description: 'Mall complex with bars, clubs and entertainment',
+      category: 'party'
+    },
+    {
       id: 'lomas-arena',
       name: 'Lomas de Arena',
       type: 'nature',
