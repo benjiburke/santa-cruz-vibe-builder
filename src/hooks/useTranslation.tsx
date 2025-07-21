@@ -35,6 +35,18 @@ const translations = {
     'hero.events': 'Events',
     'hero.bookTrip': 'Book Trip',
     
+    // Hero Split Design
+    'hero.partyTitle': 'Party Like a',
+    'hero.partySubtitle': 'Santa Cruz King',
+    'hero.partyDescription': 'VIP nightlife, luxury venues, and unforgettable experiences',
+    'hero.partyButton': 'Plan Epic Night',
+    'hero.natureTitle': 'Escape to',
+    'hero.natureSubtitle': 'Coastal Serenity',
+    'hero.natureDescription': 'Private retreats, natural beauty, and peaceful luxury',
+    'hero.natureButton': 'Book Retreat',
+    'hero.centralTitle': 'Choose Your Vibe',
+    'hero.centralSubtitle': 'Every experience is tailored to you',
+    
     // Vibe Selector
     'vibe.title': 'Choose Your',
     'vibe.titleSpan': 'Experience',
@@ -294,6 +306,18 @@ const translations = {
     'hero.events': 'Eventos',
     'hero.bookTrip': 'Reservar Viaje',
     
+    // Hero Split Design
+    'hero.partyTitle': 'Fiesta Como un',
+    'hero.partySubtitle': 'Rey de Santa Cruz',
+    'hero.partyDescription': 'Vida nocturna VIP, lugares de lujo y experiencias inolvidables',
+    'hero.partyButton': 'Planear Noche Épica',
+    'hero.natureTitle': 'Escapa a la',
+    'hero.natureSubtitle': 'Serenidad Costera',
+    'hero.natureDescription': 'Retiros privados, belleza natural y lujo pacífico',
+    'hero.natureButton': 'Reservar Retiro',
+    'hero.centralTitle': 'Elige Tu Ambiente',
+    'hero.centralSubtitle': 'Cada experiencia está hecha para ti',
+    
     // Vibe Selector
     'vibe.title': 'Elige Tu',
     'vibe.titleSpan': 'Experiencia',
@@ -540,6 +564,18 @@ const translations = {
     'hero.events': '活动',
     'hero.bookTrip': '预订旅行',
     
+    // Hero Split Design
+    'hero.partyTitle': '像圣克鲁斯',
+    'hero.partySubtitle': '国王一样狂欢',
+    'hero.partyDescription': 'VIP夜生活、奢华场所和难忘体验',
+    'hero.partyButton': '规划史诗之夜',
+    'hero.natureTitle': '逃离到',
+    'hero.natureSubtitle': '海岸宁静',
+    'hero.natureDescription': '私人度假、自然美景和宁静奢华',
+    'hero.natureButton': '预订度假',
+    'hero.centralTitle': '选择您的氛围',
+    'hero.centralSubtitle': '每种体验都为您量身定制',
+    
     // Vibe Selector
     'vibe.title': '选择您的',
     'vibe.titleSpan': '体验',
@@ -628,6 +664,18 @@ const translations = {
     'hero.packages': 'Pacotes',
     'hero.events': 'Eventos',
     'hero.bookTrip': 'Reservar Viagem',
+    
+    // Hero Split Design
+    'hero.partyTitle': 'Festa Como um',
+    'hero.partySubtitle': 'Rei de Santa Cruz',
+    'hero.partyDescription': 'Vida noturna VIP, locais de luxo e experiências inesquecíveis',
+    'hero.partyButton': 'Planejar Noite Épica',
+    'hero.natureTitle': 'Escape para a',
+    'hero.natureSubtitle': 'Serenidade Costeira',
+    'hero.natureDescription': 'Retiros privados, beleza natural e luxo tranquilo',
+    'hero.natureButton': 'Reservar Retiro',
+    'hero.centralTitle': 'Escolha Seu Ambiente',
+    'hero.centralSubtitle': 'Cada experiência é feita para você',
     
     // Vibe Selector
     'vibe.title': 'Escolha Sua',

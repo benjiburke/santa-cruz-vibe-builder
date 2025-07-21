@@ -230,6 +230,16 @@ export default {
 					'50%': {
 						opacity: '0.7'
 					}
+				},
+				'gradient-x': {
+					'0%, 100%': {
+						'background-size': '200% 200%',
+						'background-position': 'left center'
+					},
+					'50%': {
+						'background-size': '200% 200%',
+						'background-position': 'right center'
+					}
 				}
 			},
 			animation: {
@@ -238,7 +248,8 @@ export default {
 				'fade-in': 'fade-in 0.6s ease-out',
 				'slide-up': 'slide-up 0.8s ease-out',
 				'luxury-glow': 'luxury-glow 2s ease-in-out infinite',
-				'pulse-gold': 'pulse-gold 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+				'pulse-gold': 'pulse-gold 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+				'gradient-x': 'gradient-x 15s ease infinite'
 			},
 			backgroundImage: {
 				'luxury-gradient': 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0a1f0c 100%)',
