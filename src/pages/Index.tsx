@@ -5,6 +5,7 @@ import VibeSelector from '@/components/VibeSelector';
 import Packages from '@/components/Packages';
 import EventsPreview from '@/components/EventsPreview';
 import IntakeForm from '@/components/IntakeForm';
+import SantaCruzMap from '@/components/SantaCruzMap';
 import FloatingSectionNav from '@/components/FloatingSectionNav';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import BackToTop from '@/components/BackToTop';
@@ -76,6 +77,22 @@ const Index = () => {
       <section id="events">
         <EventsPreview />
       </section>
+      
+      {/* Santa Cruz Location */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl sm:text-4xl font-light text-gray-900 mb-4">
+              Our Santa Cruz Location
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto font-light">
+              Perfectly positioned in Bolivia's economic capital, gateway to incredible adventures.
+            </p>
+          </div>
+          <SantaCruzMap />
+        </div>
+      </section>
+      
       <section id="book">
         <IntakeForm />
       </section>

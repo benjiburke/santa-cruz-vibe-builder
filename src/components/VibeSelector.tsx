@@ -4,6 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 import { useTranslation } from '@/hooks/useTranslation';
+import luxuryPoolImage from '@/assets/santa-cruz-luxury-pool.jpg';
+import amberoParksImage from '@/assets/ambero-national-park.jpg';
 
 interface Vibe {
   id: string;
@@ -102,7 +104,14 @@ const VibeSelector = () => {
         </div>
 
         {/* Active Vibe Content */}
-        <Card className="bg-white border border-gray-200 shadow-sm">
+        <Card className="bg-white border border-gray-200 shadow-sm overflow-hidden">
+          {/* Hero Image */}
+          <div className="h-48 bg-cover bg-center relative" 
+               style={{ 
+                 backgroundImage: `url(${activeVibe.id === 'party' || activeVibe.id === 'vip' ? luxuryPoolImage : amberoParksImage})` 
+               }}>
+            <div className="absolute inset-0 bg-black/20"></div>
+          </div>
           <CardContent className="p-8">
             <div className="text-center mb-8">
               <h3 className="text-3xl font-light text-gray-900 mb-4">
