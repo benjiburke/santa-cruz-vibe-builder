@@ -59,6 +59,14 @@ const SantaCruzMap = () => {
       coordinates: [-63.1700, -17.7700],
       description: 'Exclusive nightlife and entertainment',
       category: 'party'
+    },
+    {
+      id: 'lomas-arena',
+      name: 'Lomas de Arena',
+      type: 'nature',
+      coordinates: [-63.1500, -18.0500],
+      description: 'Famous sandboarding dunes and desert adventure',
+      category: 'nature'
     }
   ];
 
