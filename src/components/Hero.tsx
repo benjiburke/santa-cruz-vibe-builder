@@ -5,7 +5,34 @@ import { MessageCircle, MapPin, Calendar, PartyPopper, Trees, Sparkles } from 'l
 import { useTranslation } from '@/hooks/useTranslation';
 
 const Hero = () => {
-  const { t } = useTranslation();
+  // Use a try-catch to handle potential context issues
+  let t: (key: string) => string;
+  try {
+    const translationHook = useTranslation();
+    t = translationHook.t;
+  } catch (error) {
+    // Fallback translations if context is not available
+    t = (key: string) => {
+      const fallbackTranslations: Record<string, string> = {
+        'hero.partyTitle': 'Party Like a',
+        'hero.partySubtitle': 'Santa Cruz King',
+        'hero.partyDescription': 'VIP nightlife, luxury venues, and unforgettable experiences',
+        'hero.partyButton': 'Plan Epic Night',
+        'hero.natureTitle': 'Escape to',
+        'hero.natureSubtitle': 'Coastal Serenity',
+        'hero.natureDescription': 'Private retreats, natural beauty, and peaceful luxury',
+        'hero.natureButton': 'Book Retreat',
+        'hero.centralTitle': 'Choose Your Vibe',
+        'hero.centralSubtitle': 'Every experience is tailored to you',
+        'hero.planExperience': 'Plan Your Experience',
+        'hero.consultation': 'Consultation',
+        'hero.vibes': 'Vibes',
+        'hero.packages': 'Packages',
+        'hero.events': 'Events'
+      };
+      return fallbackTranslations[key] || key;
+    };
+  }
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -36,8 +63,7 @@ const Hero = () => {
             <PartyPopper className="w-16 h-16 mx-auto mb-6 animate-bounce" />
             
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              {t('hero.partyTitle')}
-              <br />
+              {t('hero.partyTitle')}<br />
               <span className="text-yellow-300 animate-pulse">{t('hero.partySubtitle')}</span>
             </h1>
             
@@ -80,8 +106,7 @@ const Hero = () => {
             <Trees className="w-16 h-16 mx-auto mb-6 text-green-200" />
             
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-light mb-6 leading-tight">
-              {t('hero.natureTitle')}
-              <br />
+              {t('hero.natureTitle')}<br />
               <span className="text-amber-200">{t('hero.natureSubtitle')}</span>
             </h1>
             
