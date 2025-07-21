@@ -62,30 +62,66 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Enhanced dark luxury theme colors
-				jungle: {
-					50: '#f0fdf4',
-					100: '#dcfce7',
-					200: '#bbf7d0',
-					300: '#86efac',
-					400: '#4ade80',
-					500: '#22c55e',
-					600: '#15803d',
-					700: '#14532d',
-					800: '#0f2419',
-					900: '#051206',
+				// Luxury Brand Colors - Professional Palette
+				'luxury-gold': {
+					50: '#fefef7',
+					100: '#fdfaeb',
+					200: '#faf2d0',
+					300: '#f6e4a5',
+					400: '#f0d177',
+					500: '#D4AF37', // Main Gold
+					600: '#c29b32',
+					700: '#a1812a',
+					800: '#846926',
+					900: '#6d5521',
 				},
-				emerald: {
-					50: '#ecfdf5',
-					100: '#d1fae5',
-					200: '#a7f3d0',
-					300: '#6ee7b7',
-					400: '#34d399',
-					500: '#10b981',
-					600: '#059669',
-					700: '#047857',
-					800: '#065f46',
-					900: '#064e3b',
+				'midnight-navy': {
+					50: '#f1f3f7',
+					100: '#e1e7ef',
+					200: '#c8d4e2',
+					300: '#a3bbce',
+					400: '#7899b6',
+					500: '#587ca1',
+					600: '#46658a',
+					700: '#3a5371',
+					800: '#334761',
+					900: '#1A2A44', // Main Navy
+				},
+				'deep-charcoal': {
+					50: '#f6f6f6',
+					100: '#e7e7e7',
+					200: '#d1d1d1',
+					300: '#b0b0b0',
+					400: '#888888',
+					500: '#6d6d6d',
+					600: '#5d5d5d',
+					700: '#4f4f4f',
+					800: '#454545',
+					900: '#333333', // Main Charcoal
+				},
+				'luxury-ivory': {
+					50: '#fefefe',
+					100: '#fdfdfd',
+					200: '#fcfcfc',
+					300: '#fafafa',
+					400: '#f8f8f8',
+					500: '#F8F1E9', // Main Ivory
+					600: '#e6dfd7',
+					700: '#d3ccc4',
+					800: '#c0b9b1',
+					900: '#ada69e',
+				},
+				'emerald-luxury': {
+					50: '#f0f8f0',
+					100: '#dcf0dc',
+					200: '#b9e1b9',
+					300: '#8bcc8b',
+					400: '#5bad5b',
+					500: '#378f37',
+					600: '#2a742a',
+					700: '#225e22',
+					800: '#1e4c1e',
+					900: '#1C2521', // Darker Emerald
 				},
 				sunset: {
 					50: '#fff7ed',
@@ -252,12 +288,12 @@ export default {
 				'gradient-x': 'gradient-x 15s ease infinite'
 			},
 			backgroundImage: {
-				'luxury-gradient': 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0a1f0c 100%)',
-				'sunset-luxury': 'linear-gradient(135deg, #ea580c 0%, #f59e0b 50%, #d97706 100%)',
-				'emerald-luxury': 'linear-gradient(135deg, #059669 0%, #10b981 50%, #047857 100%)',
-				'dark-luxury': 'linear-gradient(135deg, #1a1d23 0%, #27272a 50%, #18181b 100%)',
-				'gold-shimmer': 'linear-gradient(45deg, #f59e0b, #fbbf24, #f59e0b)',
-				'platinum-gradient': 'linear-gradient(135deg, #27272a 0%, #3f3f46 50%, #18181b 100%)'
+				'luxury-gradient': 'linear-gradient(135deg, #333333 0%, #1A2A44 50%, #1C2521 100%)',
+				'gold-luxury': 'linear-gradient(135deg, #D4AF37 0%, #BFAF37 50%, #A18428 100%)',
+				'ivory-luxury': 'linear-gradient(135deg, #F8F1E9 0%, #E6DFD7 50%, #D3CCC4 100%)',
+				'charcoal-luxury': 'linear-gradient(135deg, #333333 0%, #454545 50%, #1A1A1A 100%)',
+				'navy-shimmer': 'linear-gradient(45deg, #1A2A44, #334761, #1A2A44)',
+				'professional-gradient': 'linear-gradient(135deg, #1A2A44 0%, #333333 50%, #1C2521 100%)'
 			}
 		}
 	},
